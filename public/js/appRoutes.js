@@ -1,3 +1,4 @@
+// Routes for main Angular application
 var mod = angular.module("appRoutes", ["ngRoute"]);
 
 mod.config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider){
@@ -12,10 +13,4 @@ mod.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 		});
 
 	$locationProvider.html5Mode(true);
-
-	// $locationProvider.html5Mode({
-	// 	enabled: true,
-	// 	requiredBase: false
-	// });
-
 }]);

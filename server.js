@@ -28,4 +28,3 @@ db.once("open", function() {
 
 // Routes
 require("./app/routes")(app)
-

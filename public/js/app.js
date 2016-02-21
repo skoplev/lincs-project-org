@@ -1,2 +1,2 @@
 // Lincs Angular application
-angular.module("LincsApp", ["Main", "appRoutes"]);
+angular.module("LincsApp", ["Main", "Header", "Footer", "appRoutes"]);
