@@ -1,0 +1,16 @@
+{
+	"name": "lincs-project-org",
+	"version": "0.0.0",
+	"description": "Primary web site for LINCS.",
+	"main": "server.js",
+	"author": "Simon Koplev (simon.koplev@mssm.edu)",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/skoplev/lincs-project-org"
+	},
+	"dependencies": {
+		"express": "*",
+		"mongoose": "*",
+		"body-parser": "*"
+	}
+}

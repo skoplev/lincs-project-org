@@ -1,7 +1,7 @@
-// Angular application
-var app = angular.module("LincsApp", []);
+// Main module for the Lincs front end Angular application
+var mod = angular.module("Main", []);
 
-app.controller("LincsCtrl", ["$scope", "$http", function($scope, $http) {
+mod.controller("MainCtrl", ["$scope", "$http", function($scope, $http) {
 	$scope.greeting = "Hrej from Angular";
 	console.log("controller initialized");
 

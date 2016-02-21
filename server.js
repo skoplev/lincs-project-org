@@ -26,60 +26,6 @@ db.once("open", function() {
 	// Do something after database connection has opened.
 });
 
-// Register Mongoose data model. Encapsulates the database connection.
-var Todo = mongoose.model("Todo", {
-	text: String
-});
-
 // Routes
-// Load single view file
-app.get("/", function(request, response) {
-	// response.sendFile("./public/index.html");
-	response.sendFile(path.join(__dirname, "public/index.html"));
-});
+require("./app/routes")(app)
 
-// Express router (a sub Express application handling the HTTP API).
-var api_router = express.Router();
-
-// Middleware for all API requests
-api_router.use(function(request, response, next) {
-	console.log("API request");
-	next();  // next API function in stack
-});
-
-// Register routes with the main application
-app.use("/api", api_router);
-
-// API requests
-api_router.get("/", function(request, response) {
-	response.json({message: "hruray!"});
-});
-
-// Get requests for all todo items
-api_router.get("/todos", function(request, response) {
-	Todo.find(function(error, elements) {
-		if (error)
-			response.send(error);
-		response.json(elements);
-	});
-});
-
-api_router.post("/todos", function(request, response) {
-	console.log(request.body);
-
-	Todo.create({
-		text: request.body.text,
-		done: false
-	}, function(error, todo) {
-		// create callback
-		if (error)
-			response.send(error);
-
-		// Find all todo entries and return as json.
-		Todo.find(function(error, todos) {
-			if (error)
-				response.send(error)
-			response.json(todos);
-		});
-	});
-});
