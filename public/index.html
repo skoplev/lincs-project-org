@@ -5,7 +5,7 @@
 	<!-- Required for Angular-route -->
 	<base href="/">
 
-	<title>LINCS</title>
+	<title>The LINCS Project</title>
 
 	<!-- Styles -->
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
@@ -24,6 +24,8 @@
 	<!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>-->
 	<script src="libs/angular/angular.min.js"></script>
 	<script src="libs/angular-route/angular-route.min.js"></script>
+	<script src="libs/angular-strap/dist/angular-strap.min.js"></script>
+	<script src="libs/angular-strap/dist/angular-strap.tpl.min.js"></script>
 
 	<!-- Angular application -->
 	<script src="js/modules/Main.js"></script>
@@ -38,12 +40,12 @@
 <!-- HEADER an angular directive-->
 <div header></div>
 
-<div class="container">
+<!--
+<img src="img/NIH-banner-sm.jpg" width="100%" style="opacity: 0.8;">
+-->
 
-	<!-- ANGULAR DYNAMIC CONTENT -->
-	<div ng-view></div>
-
-</div>
+<!-- ANGULAR DYNAMIC CONTENT -->
+<div ng-view></div>
 
 <!-- FOOTER an Angular directive -->
 <div footer></div>

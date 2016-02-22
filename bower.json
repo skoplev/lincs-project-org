@@ -5,6 +5,7 @@
 		"bootstrap": "latest",
 		"angular": "latest",
 		"jquery": "latest",
-		"angular-route": "latest"
+		"angular-route": "latest",
+		"angular-strap": "latest"
 	}
 }

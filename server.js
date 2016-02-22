@@ -11,8 +11,8 @@ var app = express();  // init Express application
 app.use(express.static(__dirname + "/public"));  // set static file folder
 
 // Set port of application.
-app.listen(8080);
-console.log("Listening on port 8080");
+app.listen(8000);
+console.log("Listening on port 8000");
 
 app.use(bodyParser.json());  // enables json encoded POST requests
 app.use(bodyParser.urlencoded({ extended: true }));  // enable encoded POST body

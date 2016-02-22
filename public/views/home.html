@@ -1,11 +1,75 @@
-<div class="row">
-	<div class="col-xs-6">
-		<h1>I'm a title</h1>
-		{{ greeting }}
-
-		<div ng-repeat="todo in todos">
-			<hr>
-			{{ todo.text }}
-		</div>
+<div class="container-fluid placard">
+	<!-- <div></div> -->
+	<div class="placard-text">
+		<p>
+			LINCS aims to create a network-based understanding of biology by cataloging changes in gene expression and other cellular processes that occur when cells are exposed to a variety of perturbing agents.
+		</p>
 	</div>
 </div>
+
+<div class="container">
+
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="panel panel-default">
+				<div class="panel-heading"><h3 class="panel-title">Announcements</h3></div>
+				<div class="panel-body">I'm an announcement</div>
+			</div>
+
+			<!--
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					I'm a title
+				</div>
+
+				<div class="panel-body">
+					{{ greeting }}
+
+					<div ng-repeat="todo in todos">
+						<hr>
+						{{ todo.text }}
+					</div>
+				</div>
+			</div>
+			-->
+
+			<div class="panel panel-default">
+				<div class="panel-heading"><h3 class="panel-title">The LINCS Consortium</h3></div>
+				<div class="panel-body">
+					<p>
+						LINCS aims to create a network-based understanding of biology by cataloging changes in gene expression and other cellular processes that occur when cells are exposed to a variety of perturbing agents, and by using computational tools to integrate this diverse information into a comprehensive view of normal and disease states that can be applied for the development of new biomarkers and therapeutics. By generating and making public data that indicates how cells respond to various genetic and environmental stressors, the LINCS project will help us gain a more detailed understanding of cell pathways and aid efforts to develop therapies that might restore perturbed pathways and networks to their normal states.
+					</p>
+					<p>
+						The LINCS website is a source of information for the research community and general public about the LINCS project. The website contains details about the assays, cell types, and perturbagens currently part of the library, as well as links to participating sites, the data releases from the sites, and software that can be used for analyzing the data.
+					</p>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="col-sm-6">
+			<div class="panel panel-default">
+				<div class="panel-heading"><h3 class="panel-title">Recent releases</h3></div>
+				<div class="panel-body">Panel content</div>
+			</div>
+
+
+		</div>
+
+
+		<div class="col-sm-6">
+
+
+		</div>
+
+		<div class="col-sm-6">
+			<div class="panel panel-default">
+				<div class="panel-heading"><h3 class="panel-title">Recent publications</h3></div>
+				<div class="panel-body">I'm an announcement</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+

@@ -7,7 +7,6 @@ mod.directive("footer", function() {
 		restrict: "A",
 		templateUrl: "../../partials/footer.html",
 		controller: ["$scope", function($scope) {
-			
 		}]
 	}
 })

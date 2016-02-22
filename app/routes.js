@@ -1,5 +1,6 @@
 var Todo = require("./models/todo");
 var express = require("express");
+var path = require("path");
 
 // module.exports 
 module.exports = function(app) {
@@ -51,9 +52,13 @@ module.exports = function(app) {
 		});
 	});
 
+	// app.get("/data-releases", function(request, response) {
+	// 	response.redirect("#/data-releases");
+	// })
+
 	// Load single page application.
 	// Wild card only applies after the above routes (order matters).
 	app.get("*", function(request, response) {
-		response.sendFile(path.join(__dirname, "public/index.html"));
+		response.sendFile(path.join(__dirname, "../public/index.html"));
 	});
 }
