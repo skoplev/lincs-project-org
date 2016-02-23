@@ -19,14 +19,17 @@ mod.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 			templateUrl: "views/docs.html",
 			controller: "DocsCtrl"
 		})
+		.when("/centers", {
+			templateUrl: "views/centers.html",
+			controller: "CentersCtrl"
+		})
 		.when("/test", {
 			templateUrl: "views/test.html"
 			// controller: "MainCtrl"
-		})
-		.otherwise({
-			redirectTo: "/"
 		});
-
+		// .otherwise({
+		// 	redirectTo: "/"
+		// });
 
 	$locationProvider.html5Mode(true);
 }]);

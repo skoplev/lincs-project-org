@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="row">
+
+		<h2>Data and signature generation</h2>
+
+		<p>Building on a successful pilot project, the National Institutes of Health has awarded grants to six research institutions to establish centers, collectively called the Data and Signature Generation Centers. The National Human Genome Research Institute (NHGRI) and the National Heart, Lung, and Blood Institute (NHLBI), both part of NIH, administer the program on behalf of the NIH Common Fund.</p>
+		<hr>
+
+		<!-- Boostrap clearfix -->
+		<div class="clearfix"></div>
+		<div class="col-sm-6 clearfloat" ng-repeat="center in centers.generation">
+			<div class="panel panel-default">
+				<div class="panel-body" center data="center"></div>
+			</div>
+		</div>
+
+		<div class="clearfix"></div>
+		<h2>Data coordination and integration</h2>
+		<hr>
+
+		<div class="col-sm-6 clearfloat" ng-repeat="center in centers.coordination">
+			<div class="panel panel-default">
+				<div class="panel-body" center data="center"></div>
+			</div>
+		</div>
+	</div>
+</div>

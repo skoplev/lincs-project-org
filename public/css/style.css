@@ -69,7 +69,8 @@ img.logo {
 }
 
 div.panel {
-	margin: 5px;
+	// margin: 5px;
+	// padding: 3px;
 }
 
 div.panel div.panel-heading {
@@ -81,6 +82,12 @@ iframe {
 	width: 100%;
 	// height: 500px;
 }
+
+// Div content padding
+// div.content {
+	// padding: 20px;
+	// background-color: blue;
+// }
 
 div.icon {
 	background-repeat: no-repeat;
@@ -115,4 +122,18 @@ div.icon.software-development {
 }
 div.icon.review {
 	background-image: url(/icons/text.svg);
+}
+
+.center-logo {
+  max-height: 30px;
+  max-width: 140px;
+}
+
+/* bootstrip fix. Words for .col-sm-6 classes only.*/
+div.clearfloat.col-sm-6:nth-child(2n+1){
+    clear: left;
+}
+
+div.clearfloat.col-sm-4:nth-child(3n+1){
+    clear: left;
 }

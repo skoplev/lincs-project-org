@@ -27,4 +27,4 @@ db.once("open", function() {
 });
 
 // Routes
-require("./app/routes")(app)
+require("./serverModules/routes")(app)

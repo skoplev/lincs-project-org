@@ -57,10 +57,13 @@ module.exports = function(app) {
 		response.sendFile(path.join(__dirname, "../public/markdown/docs.md"));
 	});
 
-
 	api_router.get("/publications", function(request, response) {
-		response.sendFile(path.join(__dirname, "../public/content/publications.json"))
+		response.sendFile(path.join(__dirname, "../public/content/publications.json"));
 	});
+
+	api_router.get("/centers", function(request, response) {
+		response.sendFile(path.join(__dirname, "../public/content/centers.json"));
+	})
 
 	// app.get("/data-releases", function(request, response) {
 	// 	response.redirect("#/data-releases");

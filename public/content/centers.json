@@ -1,0 +1,83 @@
+{
+	"generation": [
+		{
+		    "title": "Drug Toxicity Signature Generation Center",
+		    "affiliation": "Icahn School of Medicine at Mount Sinai",
+		    "logoUrl": "img/lincs-centers/dtox_logo2.png",
+		    "tags": ["drug side effects", "cardiomyocytes", "hepatocytes", "neurons"],
+		    "links": {
+		        "website": "http://dtoxs.org/", 
+		        "description": "http://www.lincsproject.org/centers/data-and-signature-generating-centers/dtoxs/"
+		    },
+		    "description": "The Drug Toxicity Signature Generation Center aims to develop cell signatures that will predict adverse events that might be caused by drugs and will identify other drugs that might lessen these side effects. The center will leverage the U.S. Food and Drug Administration’s (FDA) Adverse Event Reporting System database to identify drugs that produce adverse events in heart, liver and neuronal function, and to search for drugs that may mitigate these events."
+		},
+		{
+		    "title": "HMS LINCS Center",
+		    "affiliation": "Harvard Medical School",
+		    "logoUrl": "img/lincs-centers/hms_lincs.png",
+		    "tags": ["dose response", "drug sensitivity", "drug resistance", "kinase inhibitors", "epigenome modifiers", "growth factors", "inflammatory cytokines", "cancer", "autoimmune diseases"],
+		    "links": {
+		        "website": "http://lincs.hms.harvard.edu/",
+		        "description": "http://www.lincsproject.org/centers/data-and-signature-generating-centers/hms-lincs-u54/"
+		    },
+		    "description": "The HMS LINCS Center develops new measurement methods and computer algorithms to detect and analyze perturbations induced by therapeutic drugs in healthy and diseased human cells."
+		},
+		{
+		    "title": "LINCS Center for Transcriptomics",
+		    "affiliation": "The Broad Institute of MIT and Harvard",
+		    "logoUrl": "img/lincs-centers/cmap2.jpg",
+		    "tags": ["transcriptomics", "cellular states", "protein function", "CRISPR knock-out", "shRNA knock-down", "ORF overexpression", "small-molecules", "user interfaces"],
+		    "links": {
+		        "website": "http://www.lincscloud.org/",
+		        "description": "http://www.lincsproject.org/centers/data-and-signature-generating-centers/broad-trx/"
+		    },
+		    "description": "The LINCS Center for Transcriptomics is studying up to 50 cell types perturbed by a large number of chemical compounds and genetic reagents that activate or deactivate genes. Each perturbation will produce about 1,000 gene-expression readouts. By the project’s end, the center expects to have generated more than 1 million profiles of how genes are expressed in different cells."
+		},
+		{
+		    "title": "LINCS Proteomic Characterization Center for Signaling and Epigenetics",
+		    "affiliation": "The Broad Institute of MIT and Harvard",
+		    "logoUrl": "img/lincs-centers/pccse1-300x67.png",
+		    "tags": ["proteomics", "mass spectromertry", "epigenetics", "cellular states", "histone modifications", "pathway perturbations", "cancer cell lines", "neurobiology", "cellular differentiation"],
+		    "links": {
+		        "resource": "https://panoramaweb.org/labkey/project/LINCS/begin.view",
+		        "description": "http://www.lincsproject.org/centers/data-and-signature-generating-centers/broad-prx/"
+		    },
+		    "description": "The LINCS Proteomic Characterization Center for Signaling and Epigenetics studies cell disruption at the most basic levels: phosphorylation-mediated signaling — that is, how cells communicate internally; and epigenetics, or how cells perpetuate non-genetic information as they grow."
+		},
+		{
+		    "title": "Microenvironment Perturbagen (MEP) LINCS Center",
+		    "affiliation": "Oregon Health and Science University",
+		    "logoUrl": "img/lincs-centers/ohsu.jpg",
+		    "tags": ["microenvironment", "RNA expression", "protein expression", "cellular imaging", "molecular networks"],
+		    "links": {
+		        "resource": "https://www.synapse.org/#!Synapse:syn2862345/wiki/72486",
+		        "description": "http://www.lincsproject.org/centers/data-and-signature-generating-centers/oregon-u/"
+		    },
+		    "description": "The MEP LINCS Center studies how both malignant and non-malignant cells are controlled by the microenvironments in which they live. The researchers will provide measurements of the impacts of thousands of different microenvironments on cellular phenotypes, protein make-up and gene expression readouts in cell lines."
+		},
+		{
+		    "title": "NeuroLINCS Center",
+		    "affiliation": "University of California, Irvine",
+		    "logoUrl": "img/lincs-centers/neurolincs.png",
+		    "tags": ["astrocytes", "oligodendrocytes", "neurodegenerative diseases", "iPSC", "disease modeling", "omics", "statistics"],
+		    "links": {
+		        "website": "http://www.neurolincs.org/",
+		        "description": "http://www.lincsproject.org/centers/data-and-signature-generating-centers/neurolincs/"
+		    },
+		    "description": "The NeuroLINCS Center concentrates on human brain cells, which are far less understood than other cells in the body. The researchers believe it will be necessary to study these cell types directly to understand the causes of neurological disease and to develop new therapies. By applying LINCS-type perturbations to studying an array of human brain cells, the researchers hope to identify targets for developing drugs against neurodegenerative diseases such as Parkinson’s disease, amyotrophic lateral sclerosis (ALS, also known as Lou Gehrig’s disease), spinal muscular atrophy and Huntington’s disease."
+		}
+	],
+	"coordination": [
+		{
+			"title": "BD2K-LINCS Data Coordination and Integration Center",
+			"affiliation": "Icahn School of Medicine at Mount Sinai",
+			"logoUrl": "img/lincs-centers/DCIC_1000x750_cropped.png",
+			"tags": ["data coordination", "data integration"],
+			"links": {
+				"website": "http://lincs-dcic.org/"
+			},
+			"description": "The BD2K-LINCS DCIC is comprised of four major components: Integrated Knowledge Environment (IKE), Data Science Research (DSR), Community Training and Outreach (CTO) and Consortium Coordination and Administration (CCA). The Center is constructing a high-capacity scalable integrated knowledge environment enabling federated access, intuitive querying and integrative analysis and visualization across all LINCS resources and many additional external data types from other relevant resources. The Center’s data science research projects are aimed at addressing various data integration and intracellular molecular regulatory network challenges. The Center aims to develop: 1) methods to connect cellular and organismal phenotypes with molecular cellular signatures, and 2) novel data visualization methods for dynamically interacting with large-genomics and proteomics datasets."
+		}
+	]
+}
+
