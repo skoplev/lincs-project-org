@@ -52,6 +52,16 @@ module.exports = function(app) {
 		});
 	});
 
+	api_router.get("/docs", function(request, response) {
+		// console.log("documentation API called");
+		response.sendFile(path.join(__dirname, "../public/markdown/docs.md"));
+	});
+
+
+	api_router.get("/publications", function(request, response) {
+		response.sendFile(path.join(__dirname, "../public/content/publications.json"))
+	});
+
 	// app.get("/data-releases", function(request, response) {
 	// 	response.redirect("#/data-releases");
 	// })

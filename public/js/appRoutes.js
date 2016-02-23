@@ -7,12 +7,20 @@ mod.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 			templateUrl: "views/home.html"
 			// controller: "MainCtrl"
 		})
-		.when("/test", {
-			templateUrl: "views/test.html"
-			// controller: "MainCtrl"
-		})
 		.when("/data-releases", {
 			templateUrl: "views/data-releases.html"
+			// controller: "MainCtrl"
+		})
+		.when("/publications", {
+			templateUrl: "views/publications.html",
+			controller: "PublicationsCtrl"
+		})
+		.when("/docs", {
+			templateUrl: "views/docs.html",
+			controller: "DocsCtrl"
+		})
+		.when("/test", {
+			templateUrl: "views/test.html"
 			// controller: "MainCtrl"
 		})
 		.otherwise({

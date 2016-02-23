@@ -1,0 +1,723 @@
+[
+	{
+		"title": "Large-scale computational screening identifies first in class multitarget inhibitor of EGFR kinase and BRD4",
+		"authors": ["Allen BK", "Mehta S", "Ember SW", "Schonbrunn E", "Ayad N", "Schurer SC"],
+		"journal": "Scientific Reports",
+		"year": 2015,
+		"tags": ["data-analysis", "data-integration"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/26596901"
+	},
+	{
+		"title": "Highly multiplexed imaging of single cells using a high-throughput cyclic immunofluorescence method",
+		"authors": ["Lin JR", "Fallahi-Sichani M", "Sorger PK"],
+		"journal": "Nature Communications",
+		"year": 2015,
+		"tags": ["assay-development", "data-generation", "signature-generation"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/26399630",
+		"resources": [
+			{
+				"name": "Data exploration website",
+				"url": "http://lincs.hms.harvard.edu/lin-natcommun-2015/"
+			}
+		]
+	},
+	{
+		"title": "Abstraction for data integration: Fusing mammalian molecular, cellular and phenotype big datasets for better knowledge extraction",
+		"authors": ["Rouillard AD", "Wang Z", "Ma’ayan A"],
+		"journal": "Computational Biology and Chemistry",
+		"year": 2015,
+		"tags": ["data-analysis", "data-integration", "review"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/26297300"
+	},
+	{
+		"title": "Dynamics of the discovery process of protein-protein interactions from low content studies",
+		"authors": ["Wang Z", "Clark NC", "Ma’ayan A"],
+		"journal": "BMC Systems Biology",
+		"year": 2015,
+		"tags": ["data-analysis", "data-integration", "software-development"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/26048415",
+		"resources": [
+			{
+				"name": "Custom code"
+			}
+		]
+	},
+	{
+		"title": "GEO2Enrichr: browser extension and server app to extract gene sets from GEO and analyze them for biological functions",
+		"authors": ["Gundersen GW", "Jones MR", "Rouillard AD", "Kou Y", "Monteiro CD", "Feldmann AS", "Hu KS", "Ma’ayan A"],
+		"journal": "Bioinformatics",
+		"year": 2015,
+		"tags": ["data-analysis", "data-integration", "software-development"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/25971742",
+		"resources": [
+			{
+				"name": "GEO2Enrichr",
+				"url": "http://amp.pharm.mssm.edu/g2e/"
+			},
+			{
+				"name": "Enrichr",
+				"url": "http://amp.pharm.mssm.edu/Enrichr/"
+			}
+		]
+	},
+	{
+		"title": "Fractional killing arises from cell-to-cell variability in overcoming a caspase activity threshold",
+		"authors": ["Roux J", "Hafner M", "Bandara S", "Sims JJ", "Hudson H", "Chai D", "Sorger PK"],
+		"journal": "Molecular Systems Biology",
+		"year": 2015,
+		"tags": ["data-analysis", "data-integration"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/25953765",
+		"resources": [
+			{
+				"name": "Data exploration",
+				"url": "http://lincs.hms.harvard.edu/roux-molsystbiol-2015/"
+			}
+		]
+	},
+	{
+		"title": "Systematic analysis of BRAFV600E melanomas reveals a role for JNK/c-Jun pathway in adaptive resistance to drug-induced apoptosis",
+		"authors": ["Fallahi-Sichani M", "Moerke NJ", "Niepel M", "Zhang T", "Gray NS", "Sorger PK"],
+		"journal": "Molecular Systems Biology",
+		"year": 2015,
+		"tags": ["data-analysis", "data-generation", "data-integration", "signature-generation"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/25814555",
+		"resources": [
+			{
+				"name": "Data exploration",
+				"url": "http://lincs.hms.harvard.edu/fallahi-sichani-molsystbiol-2015/"
+			}
+		]
+	},
+	{
+		"title": "PhosphoSitePlus, 2014: mutations, PTMs and recalibrations",
+		"authors": ["Hornbeck PV", "Zhang B", "Murray B", "Kornhauser JM", "Latham V", "Skrzypek E"],
+		"journal": "Nucleic Acids Research",
+		"year": 2015,
+		"tags": ["data-integration", "software-development"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/25514926",
+		"resources": [
+			{
+				"name": "PhosphoSitePlus",
+				"url": "http://www.phosphosite.org/"
+			}
+		]
+	},
+	{
+		"title": "Multitask learning of signaling and regulatory networks with application to studying human response to flu",
+		"authors": ["Jain S", "Gitter A", "Bar-Joseph Z"],
+		"journal": "PLoS Computational Biology",
+		"year": 2014,
+		"tags": ["data-analysis", "data-integration", "software-development"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/25522349",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "Drug/Cell-line Browser: interactive canvas visualization of cancer drug/cell-line viability assay datasets",
+		"authors": ["Duan Q", "Wang Z", "Fernandez NF", "Rouillard AD", "Tan CM", "Benes CH", "Ma’ayan A"],
+		"journal": "Bioinformatics ",
+		"year": 2014,
+		"tags": ["data-analysis", "data-integration", "software-development"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/25100688",
+		"resources": [
+			{
+				"name": "LINCS Drug/Cell-line Browser",
+				"url": "http://www.maayanlab.net/LINCS/DCB/"
+			}
+		]
+	},
+	{
+		"title": "A noncanonical Frizzled2 pathway regulates epithelial-mesenchymal transition and metastasis",
+		"authors": ["Gujral TS", "Chan M", "Peshkin L", "Sorger PK", "Kirschner MW", "MacBeath G"],
+		"journal": "Cell",
+		"year": 2014,
+		"tags": ["data-analysis", "data-generation"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/25417160",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "An unbiased approach to identify endogenous substrates of “histone” deacetylase 8.",
+		"authors": ["Olson DE", "Udeshi ND", "Wolfson NA", "Pitcairn CA"],
+		"journal": "ACS Chemical Biology",
+		"year": 2014,
+		"tags": ["data-analysis", "data-generation"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/25089360",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "A blueprint of cell identity",
+		"authors": ["Ma’ayan A", "Duan Q"],
+		"journal": "Nature Biotechnology",
+		"year": 2014,
+		"tags": ["data-integration", "review"],
+		"url": "",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "Large-scale integration of small molecule-induced genome-wide transcriptional responses, Kinome-wide binding affinities and cell-growth inhibition profiles reveal global trends characterizing systems-level drug action",
+		"authors": ["Vidović D", "Koleti A", "Schürer SC"],
+		"journal": "Frontiers in Genetics",
+		"year": 2014,
+		"tags": ["data-analysis", "data-integration", "software-development"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/25324859",
+		"resources": [
+			{
+				"name": "LIFE",
+				"url": "http://life.ccs.miami.edu/life/"
+			}
+		]
+	},
+	{
+		"title": "Panorama: a targeted proteomics knowledge base",
+		"authors": ["Sharma V", "Eckels J", "Taylor GK", "Shulman NJ", "Stergachis AB", "Joyner SA", "Yan P", "Whiteaker JR", "Halusa GN", "Schilling B", "Gibson BW", "Colangelo CM", "Paulovich AG", "Carr SA", "Jaffe JD", "MacCoss MJ", "MacLean B"],
+		"journal": "Journal of Proteome Research",
+		"year": 2014,
+		"tags": ["data-analysis", "data-integration", "software-development"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/25102069",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "Lean Big Data integration in systems biology and systems pharmacology",
+		"authors": ["Ma’ayan A", "Rouillard AD", "Clark NR", "Wang Z", "Duan Q", "Kou Y"],
+		"journal": "Trends in Pharmacological Sciences",
+		"year": 2014,
+		"tags": ["data-integration", "review"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/25109570",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "Fast and accurate semantic annotation of bioassays exploiting a hybrid of machine learning and user confirmation",
+		"authors": ["Clark AM", "Bunin BA", "Litterman NK", "Schürer SC", "Visser U"],
+		"journal": "PeerJ",
+		"year": 2014,
+		"tags": ["data-standards"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/25165633",
+		"resources": [
+			{
+				"name": "LIFE",
+				"url": "http://life.ccs.miami.edu/life/"
+			}
+		]
+	},
+	{
+		"title": "LINCS Canvas Browser: interactive web app to query, browse and interrogate LINCS L1000 gene expression signatures",
+		"authors": ["Duan Q", "Flynn C", "Niepel M", "Hafner M", "Muhlich JL", "Fernandez NF", "Rouillard AD", "Tan CM", "Chen EY", "Golub TR", "Sorger PK", "Subramanian A", "Ma’ayan A"],
+		"journal": "Nucleic Acids Research",
+		"year": 2014,
+		"tags": ["data-analysis", "data-integration", "software-development"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/24906883",
+		"resources": [
+			{
+				"name": "LINCS Canvas Browser",
+				"url": "http://www.maayanlab.net/LINCS/LCB"
+			}
+		]
+	},
+	{
+		"title": "Evolving BioAssay Ontology (BAO): modularization, integration and applications",
+		"authors": ["Abeyruwan S", "Vempati UD", "Küçük-McGinty H", "Visser U", "Koleti A", "Mir A", "Sakurai K", "Chung C", "Bittker JA", "Clemons PA", "Brudz S", "Siripala A", "Morales AJ", "Romacker M", "Twomey D", "Bureeva S", "Lemmon V", "Schürer SC"],
+		"journal": "Journal of Biomedical Semantics",
+		"year": 2014,
+		"tags": ["data-standards"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/25093074",
+		"resources": [
+			{
+				"name": "LIFE",
+				"url": "http://life.ccs.miami.edu/life/"
+			}
+		]
+	},
+	{
+		"title": "Red blood cells tracking using optical flow methods",
+		"authors": ["Guo D", "van de Ven AL", "Zhou X"],
+		"journal": "IEEE Journal of Biomedical and Health Informatics",
+		"year": 2014,
+		"tags": [],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/24058034",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "Analysis of growth factor signaling in genetically diverse breast cancer lines",
+		"authors": ["Niepel M", "Hafner M", "Pace EA", "Chung M", "Chai DH", "Zhou L", "Muhlich JL", "Schoeberl B", "Sorger PK"],
+		"journal": "BMC Biology",
+		"year": 2014,
+		"tags": ["data-analysis", "data-generation", "data-integration", "signature-generation"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/24655548",
+		"resources": [
+			{
+				"name": "Data exploration",
+				"url": "http://lincs.hms.harvard.edu/niepel-bmcbiol-2014/"
+			}
+		]
+	},
+	{
+		"title": "Metadata Standard and Data Exchange Specifications to Describe, Model, and Integrate Complex and Diverse High-Throughput Screening Data from the Library of Integrated Network-based Cellular Signatures (LINCS)",
+		"authors": ["Vempati UD", "Chung C", "Mader C", "Koleti A"],
+		"journal": "Journal of Biomolecular Screening",
+		"year": 2014,
+		"tags": ["data-standards", "software-development"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/24518066",
+		"resources": [
+			{
+				"name": "LIFE",
+				"url": "http://life.ccs.miami.edu/life/"
+			},
+			{
+				"name": "Data standards",
+				"url": "http://www.lincsproject.org/data/data-standards/"
+			}
+		]
+	},
+	{
+		"title": "Differential determinants of cancer cell insensitivity to antimitotic drugs discriminated by a one-step cell imaging assay",
+		"authors": ["Tang Y", "Xie T", "Florian S", "Moerke N", "Shamu C", "Benes C", "Mitchison TJ "],
+		"journal": "Journal of Biomolecular Screening",
+		"year": 2013,
+		"tags": ["assay-development", "data-integration"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/23788527",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "Mass spectrometry based method to increase throughput for kinome analyses using ATP probes",
+		"authors": ["McAllister FE", "Niepel M", "Haas W", "Huttlin E", "Sorger PK", "Gygi SP"],
+		"journal": "Analytical Chemistry",
+		"year": 2013,
+		"tags": [],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/23607489",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "Enrichr: Interactive and collaborative HTML5 gene list enrichment analysis tool",
+		"authors": ["Chen EY", "Tan CM", "Kou Y", "Duan Q", "Wang Z", "Vaz Meirelles G", "Clark NR", "Ma’ayan A"],
+		"journal": "BMC Bioinformatics",
+		"year": 2013,
+		"tags": ["data-analysis", "data-integration"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/23586463",
+		"resources": [
+			{
+				"name": "Enrichr",
+				"url": "http://amp.pharm.mssm.edu/Enrichr/"
+			}
+		]
+	},
+	{
+		"title": "The UCSC Interaction Browser: multidimensional data views in pathway context",
+		"authors": ["Wong CK", "Vaske CJ", "Ng S", "Sanborn JZ", "Benz SC", "Haussler D", "Stuart JM "],
+		"journal": "Nucleic Acids Research",
+		"year": 2013,
+		"tags": ["software-development"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/23748957",
+		"resources": [
+			{
+				"name": "UCSC Interaction Browser",
+				"url": "http://sysbio.soe.ucsc.edu/nets"
+			}
+		]
+	},
+	{
+		"title": "Genome-wide signatures of transcription factor activity: connecting transcription factors, disease, and small molecules",
+		"authors": ["Chen J", "Hu Z", "Phatak M", "Reichard J", "Freudenberg JM", "Sivaganesan S", "Medvedovic M"],
+		"journal": "PLoS Computational Biology",
+		"year": 2013,
+		"tags": ["data-analysis", "data-integration", "software-development"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/24039560",
+		"resources": [
+			{
+				"name": "TREG",
+				"url": "http://genomicsportals.org/"
+			}
+		]
+	},
+	{
+		"title": "Functionalizing genomic data for personalization of medicine",
+		"authors": ["Benes CH"],
+		"journal": "Clinical Pharmacology and Therapeutics",
+		"year": 2013,
+		"tags": ["review"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/23321554",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "Metasignatures identify two major subtypes of breast cancer",
+		"authors": ["Duan Q", "Kou Y", "Clark NR", "Gordonov S", "Ma’ayan A"],
+		"journal": "Pharmacometrics and Systems Pharmacology",
+		"year": 2013,
+		"tags": ["data-analysis", "data-integration"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/23836026",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "Characterization of Torin2, an ATP-competitive inhibitor of mTOR, ATM, and ATR",
+		"authors": ["Liu Q", "Xu C", "Kirubakaran S", "Zhang X"],
+		"journal": "Cancer Research",
+		"year": 2013,
+		"tags": ["assay-development", "data-generation"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/23436801",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "Metrics other than potency reveal systematic variation in responses to cancer drugs",
+		"authors": ["Fallahi-Sichani M", "Honarnejad S", "Heiser LM", "Gray JW", "Sorger PK"],
+		"journal": "Nature Chemical Biology",
+		"year": 2013,
+		"tags": ["data-analysis", "data-integration"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/24013279",
+		"resources": [
+			{
+				"name": "Data exploration",
+				"url": "https://lincs.hms.harvard.edu/fallahi-sichani-nchembio-2013/"
+			}
+		]
+	},
+	{
+		"title": "A melanocyte lineage program confers resistance to MAP kinase pathway inhibition",
+		"authors": ["Johannessen CM", "Johnson LA", "Piccioni F", "Townes A", "Frederick DT", "Donahue MK", "Narayan R", "Flaherty KT", "Wargo JA", "Root DE", "Garraway LA"],
+		"journal": "Nature",
+		"year": 2013,
+		"tags": ["data-analysis", "data-generation"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/24185007",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "High-throughput secretomic analysis of single cells to assess functional cellular heterogeneity",
+		"authors": ["Lu Y", "Chen JJ", "Mu L", "Xue Q", "Xue Q", "Wu PH", "Li J", "Vortmeyer AO", "Miller-Jensen K", "Wirtz D", "Fan R"],
+		"journal": "Analytical Chemistry",
+		"year": 2013,
+		"tags": ["assay-development"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/23339603",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "Profiles of basal and stimulated receptor signaling networks predict drug response in breast cancer lines",
+		"authors": ["Niepel M", "Hafner M", "Pace EA", "Chung M", "Chai DH", "Zhou L", "Schoeberl B", "Sorger PK"],
+		"journal": "Science Signaling",
+		"year": 2013,
+		"tags": ["data-analysis", "data-generation", "signature-generation"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/24065145",
+		"resources": [
+			{
+				"name": "Data exploration",
+				"url": "http://lincs.hms.harvard.edu/niepel_scisignal_2013/"
+			}
+		]
+	},
+	{
+		"title": "Discovering causal pathways linking genomic events to transcriptional states using tied diffusion through interacting events (TieDIE)",
+		"authors": ["Paull EO", "Carlin DE", "Niepel M", "Sorger PK", "Haussler D", "Stuart JM"],
+		"journal": "Bioinformatics",
+		"year": 2013,
+		"tags": ["data-integration", "signature-generation", "software-development"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/23986566",
+		"resources": [
+			{
+				"name": "TieDIE",
+				"url": "https://sysbiowiki.soe.ucsc.edu/tiedie"
+			}
+		]
+	},
+	{
+		"title": "Tight coordination of protein translation and HSF1 activation supports the anabolic malignant state",
+		"authors": ["Santagata S", "Mendillo ML", "Tang YC", "Subramanian A"],
+		"journal": "Science",
+		"year": 2013,
+		"tags": ["data-analysis", "data-generation"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/23869022",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "Kinome-wide activity modeling from diverse public high-quality data sets",
+		"authors": ["Schürer SC", "Muskal SM"],
+		"journal": "Journal of Chemical Information Modeling",
+		"year": 2013,
+		"tags": ["data-analysis"],
+		"url": "",
+		"resources": [
+			{
+				"name": "LIFE",
+				"url": "http://life.ccs.miami.edu/life/"
+			}
+		]
+	},
+	{
+		"title": "Systematically studying kinase inhibitor induced signaling network signature by integrating both therapeutic and side effects",
+		"authors": ["Shao H", "Peng T", "Ji Z", "Su J", "Zhou X"],
+		"journal": "PLoS One",
+		"year": 2013,
+		"tags": ["data-analysis"],
+		"url": "",
+		"resources": [
+			{
+				"name": "KIEP",
+				"url": "http://ctsb.is.wfubmc.edu/itNETZ/KIEP.html"
+			}
+		]
+	},
+	{
+		"title": "Network2Canvas: Network visualization on a canvas with enrichment analysis",
+		"authors": ["Tan CM", "Chen EY", "Dannenfelser R", "Clark NR", "Ma’ayan A"],
+		"journal": "Bioinformatics",
+		"year": 2013,
+		"tags": ["data-analysis", "data-integration", "software-development"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/23749960",
+		"resources": [
+			{
+				"name": "Network2Canvas",
+				"url": "http://www.maayanlab.net/N2C"
+			}
+		]
+	},
+	{
+		"title": "A fluorescent colorimetric pH sensor and the influences of matrices on sensing performances",
+		"authors": ["Tian Y", "Fuller E", "Klug S", "Lee F", "Su F", "Zhang L", "Chao S", "Meldrum D"],
+		"journal": "Sensors and Actuators B, Chemical",
+		"year": 2013,
+		"tags": [],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/24078772",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "A dual sensor for real-time monitoring of glucose and oxygen",
+		"authors": ["Zhang L", "Su F", "Buizer S", "Lu H", "Gao W", "Tian Y", "Meldrum D"],
+		"journal": "Biomaterials",
+		"year": 2013,
+		"tags": [],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/24090834",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "Synthetic lethal interaction of combined BCL-XL and MEK inhibition promotes tumor regressions in KRAS mutant cancer models",
+		"authors": ["Corcoran RB", "Cheng KA", "Hata AN", "Faber AC"],
+		"journal": "Cancer Cell",
+		"year": 2013,
+		"tags": ["data-generation", "signature-generation"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/23245996",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "Systems pharmacology meets predictive, preventive, personalized and participatory medicine",
+		"authors": ["Jenkins SL", "Ma’ayan A"],
+		"journal": "Pharmacogenomics",
+		"year": 2013,
+		"tags": ["review"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/23327571",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "Sets2Networks: network inference from repeated observations of sets",
+		"authors": ["Clark NR", "Dannenfelser R", "Tan CM", "Komosinski ME", "Ma’ayan A"],
+		"journal": "BMC Systems Biology",
+		"year": 2012,
+		"tags": ["data-analysis", "data-integration", "software-development"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/22824380",
+		"resources": [
+			{
+				"name": "Sets2Networks",
+				"url": "http://www.maayanlab.net/S2N"
+			}
+		]
+	},
+	{
+		"title": "Selective ATP-competitive inhibitors of TOR suppress rapamycin-insensitive function of TORC2 in Saccharomyces cerevisiae",
+		"authors": ["Liu Q", "Ren T", "Fresques T", "Oppliger W", "Niles BJ", "Hur W", "Sabatini DM", "Hall MN", "Powers T", "Gray NS"],
+		"journal": "ACS Chemical Biology",
+		"year": 2012,
+		"tags": ["assay-development", "data-generation"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/22496512",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "Functional characterization of an isoform-selective inhibitor of PI3K-p110β as a potential anticancer agent",
+		"authors": ["Ni J", "Liu Q", "Xie S", "Carlson C", "Von T", "Vogel K", "Riddle S", "Benes C", "Eck M", "Roberts T", "Gray N", "Zhao J"],
+		"journal": "Cancer Discovery",
+		"year": 2012,
+		"tags": ["assay-development", "data-generation"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/22588880",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "Creating and analyzing pathway and protein interaction compendia for modelling signal transduction networks",
+		"authors": ["Kirouac DC", "Saez-Rodriguez J", "Swantek J", "Burke JM", "Lauffenburger DA", "Sorger PK"],
+		"journal": "BMC Systems Biology",
+		"year": 2012,
+		"tags": ["data-analysis", "data-integration"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/22548703",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "Systematic identification of genomic markers of drug sensitivity in cancer cells",
+		"authors": ["Garnett MJ", "Edelman EJ", "Heidorn SJ", "Greenman CD"],
+		"journal": "Nature",
+		"year": 2012,
+		"tags": ["data-generation", "signature-generation"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/22460902",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "Kinome-wide selectivity profiling of ATP-competitive mammalian target of rapamycin (mTOR) inhibitors and characterization of their binding kinetics",
+		"authors": ["Liu Q", "Kirubakaran S", "Hur W", "Niepel M"],
+		"journal": "The Journal of Biological Chemistry",
+		"year": 2012,
+		"tags": ["assay-development", "data-generation"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/22223645",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "Toward interoperable bioscience data",
+		"authors": ["Sansone SA", "Rocca-Serra P", "Field D", "Maguire E"],
+		"journal": "Nature Genetics",
+		"year": 2012,
+		"tags": ["data-standards"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/22281772",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "Formalization, annotation and analysis of diverse drug and probe screening assay datasets using the BioAssay Ontology (BAO)",
+		"authors": ["Vempati UD", "Przydzial MJ", "Chung C", "Abeyruwan S", "Mir A", "Sakurai K", "Visser U", "Lemmon VP", "Schürer SC"],
+		"journal": "PLoS One",
+		"year": 2012,
+		"tags": ["data-analysis", "data-integration", "data-standards", "software-development"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/23155465",
+		"resources": [
+			{
+				"name": "BAO",
+				"url": "http://bioportal.bioontology.org/ontologies/1533"
+			}
+		]
+	},
+	{
+		"title": "Discovery of potent and selective covalent inhibitors of JNK",
+		"authors": ["Zhang T", "Inesta-Vaquera F", "Niepel M", "Zhang J"],
+		"journal": "Chemistry and Biology",
+		"year": 2012,
+		"tags": [],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/22284361",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "High-content single cell analysis on chip using a laser microarray scanner",
+		"authors": ["Zhou J", "Wu Y", "Lee SK", "Fan R"],
+		"journal": "Lab on a Chip",
+		"year": 2012,
+		"tags": ["data-analyis"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/22991099",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "A dual array-based approach to assess the abundance and posttranslational modification state of signaling proteins",
+		"authors": ["Luckert K", "Gujral", "Chan M", "Sevecka M", "Joos TO", "Sorger PK", "Macbeath G", "Potz O"],
+		"journal": "Science Signaling",
+		"year": 2012,
+		"tags": ["assay-development", "data-generation"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/22234610",
+		"resources": [
+			{
+			}
+		]
+	},
+	{
+		"title": "Adaptive informatics for multifactorial and high-content biological data",
+		"authors": ["Millard BL", "Niepel M", "Menden MP", "Muhlich JL", "Sorger PK"],
+		"journal": "Nature Methods",
+		"year": 2012,
+		"tags": ["data-generation", "software-development"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/21516115",
+		"resources": [
+			{
+				"name": "SDCubes",
+				"url": "https://github.com/sorgerlab/SDCube_API"
+			}
+		]
+	},
+	{
+		"title": "Crowdsourcing network inference: the dream predictive signaling network challenge",
+		"authors": ["Prill RJ", "Saez-Rodriguez J", "Alexopoulos LG", "Sorger PK", "Stolovitzky G "],
+		"journal": "Science Signaling",
+		"year": 2011,
+		"tags": ["review"],
+		"url": "http://www.ncbi.nlm.nih.gov/pubmed/21900204",
+		"resources": [
+			{
+			}
+		]
+	}
+]
