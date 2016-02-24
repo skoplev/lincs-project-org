@@ -1,10 +1,27 @@
-<div class="container panel panel-default">
-	<div>
-		<ul>
-			<li ng-repeat="item in entries">{{ item }}</li>
-		</ul>
+
+
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-2">
+			<ul class="nav" id="sidebar">
+				<li><a ng-click="loadIndex()">{{ title }}</a></li>
+				<li ng-repeat="item in entries"><a ng-click="loadContent(item)">{{ item }}</a></li>
+			</ul>
+		</div>
+
+		<div class="col-sm-10 panel panel-default" ng-bind-html="documentation" ng-init="loadIndex()">
+		</div>
 	</div>
-	<div ng-bind-html="documentation"></div>
 	<!-- <h1>test</h1> -->
 	<!-- <p>{{ text }}</p> -->
 </div>
+
+
+<script type="text/javascript">
+	$('#sidebar').affix({
+	      offset: {
+	        top: 50
+	      }
+	});
+</script>

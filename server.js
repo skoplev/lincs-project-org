@@ -2,6 +2,7 @@
 
 // init 
 var express = require("express");
+var validator = require("validator");
 var mongoose = require("mongoose");
 var path = require("path");
 var bodyParser = require("body-parser");  // for getting POST parameters

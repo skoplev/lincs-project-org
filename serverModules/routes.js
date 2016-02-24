@@ -5,6 +5,8 @@ module.exports = function(app) {
 	var express = require("express");
 	var path = require("path");
 	var fs = require("fs");  // file operations
+	var validator = require("validator");
+	// var assert = require("assert");
 	// var glob = require("glob");
 
 	// Data stored in memory
@@ -69,11 +71,33 @@ module.exports = function(app) {
 	});
 
 	api_router.get("/wiki/articleDir/:entry", function(request, response) {
-		fs.readdir(path.join(__dirname, "../public/wiki", request.params.entry, "articles"), function(error, files) {
-			// filter for file extension
-			response.json(files.filter(function(name) {
-				return(path.extname(name) === ".md");
-			}))
+		// Interpret user input
+		var entry_path = path.join(__dirname, "../public/wiki", request.params.entry, "articles");
+
+		// Validation of user input
+		// Check if entry is specified
+		if (validator.equals(request.params.entry, "")) {
+			response.status(400).send({error: "Wiki entry must be provided."});
+			return;  // terminate response
+		} 
+
+		if (validator.equals(request.params.entry, "undefined")) {
+			response.status(400).send({error: "Request for 'undefined' entry."});
+			return;  // terminate response
+		} 
+
+		// All static tests passed
+		// assert.equal(typeof(request.params.entry), "string");
+		fs.readdir(entry_path, function(error, files) {
+			// debugger;
+			if (error) {
+				response.status(404).send({error: "Entry does not exist."});
+			} else {
+				// filter for file extension
+				response.json(files.filter(function(name) {
+					return(path.extname(name) === ".md");
+				}))
+			}
 		});
 	});
 
