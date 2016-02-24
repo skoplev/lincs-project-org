@@ -23,6 +23,11 @@ mod.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 			templateUrl: "views/centers.html",
 			controller: "CentersCtrl"
 		})
+		// Wiki route with variable entry
+		.when("/wiki/:entry", {
+			templateUrl: "views/wiki.html",
+			controller: "WikiCtrl"
+		})
 		.when("/test", {
 			templateUrl: "views/test.html"
 			// controller: "MainCtrl"

@@ -1,17 +1,23 @@
-var Todo = require("./models/todo");
-var express = require("express");
-var path = require("path");
 
 // module.exports 
 module.exports = function(app) {
+	var Todo = require("./models/todo");
+	var express = require("express");
+	var path = require("path");
+	var fs = require("fs");  // file operations
+	// var glob = require("glob");
 
+	// Data stored in memory
+
+	var publications = require(path.join(__dirname, "../public/content/publications.json"))
+	var centers = require(path.join(__dirname, "../public/content/centers.json"))
 
 	// Express router (a sub Express application handling the HTTP API).
 	var api_router = express.Router();
 
 	// Middleware for all API requests
 	api_router.use(function(request, response, next) {
-		console.log("API request");
+		// console.log("API request");
 		next();  // next API function in stack
 	});
 
@@ -52,18 +58,24 @@ module.exports = function(app) {
 		});
 	});
 
-	api_router.get("/docs", function(request, response) {
-		// console.log("documentation API called");
-		response.sendFile(path.join(__dirname, "../public/markdown/docs.md"));
-	});
-
 	api_router.get("/publications", function(request, response) {
-		response.sendFile(path.join(__dirname, "../public/content/publications.json"));
+		// response.sendFile(path.join(__dirname, "../public/content/publications.json"));
+		response.json(publications);
 	});
 
 	api_router.get("/centers", function(request, response) {
-		response.sendFile(path.join(__dirname, "../public/content/centers.json"));
-	})
+		// response.sendFile(path.join(__dirname, "../public/content/centers.json"));
+		response.json(centers);
+	});
+
+	api_router.get("/wiki/articleDir/:entry", function(request, response) {
+		fs.readdir(path.join(__dirname, "../public/wiki", request.params.entry, "articles"), function(error, files) {
+			// filter for file extension
+			response.json(files.filter(function(name) {
+				return(path.extname(name) === ".md");
+			}))
+		});
+	});
 
 	// app.get("/data-releases", function(request, response) {
 	// 	response.redirect("#/data-releases");
