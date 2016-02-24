@@ -1,12 +1,9 @@
-
-
-
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-2">
 			<ul class="nav" id="sidebar">
-				<li><a ng-click="loadIndex()">{{ title }}</a></li>
-				<li ng-repeat="item in entries"><a ng-click="loadContent(item)">{{ item }}</a></li>
+				<li><a href="#" ng-click="loadIndex()">{{ title }}</a></li>
+				<li ng-repeat="item in entries"><a href="#" ng-click="loadContent(item)">{{ item }}</a></li>
 			</ul>
 		</div>
 
