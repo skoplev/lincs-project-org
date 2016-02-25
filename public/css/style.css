@@ -8,14 +8,21 @@ body {
 }
 */
 
+
 html,body {
 	/* height and weight required for responsibe footer */
 	height: 100%;
 	width: 100%;
+	background-color: rgb(250,250,250);
+
 }
 
 body {
 	display: table;  /* required for responsibe fixed footer */
+}
+
+div.wiki-page {
+	padding: 20px 50px;
 }
 
 ::selection {

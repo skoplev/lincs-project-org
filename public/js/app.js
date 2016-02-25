@@ -10,7 +10,7 @@ var app = angular.module("LincsApp", [
 	"WikiIndex",  // index controller for all wiki entries
 	"Wiki",  // wiki renderer
 	"appRoutes",  // single page application routing
-	'ngLocationUpdate',  // update location path without refresh
+	"ngLocationUpdate",  // update location path without refresh
 	"Docs"  // documentation page
 ]);
 
