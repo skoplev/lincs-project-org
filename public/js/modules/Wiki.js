@@ -44,16 +44,19 @@ mod.controller("WikiCtrl",
 		$scope.setContentFile(mdfile);
 
 		// console.log("loading: ", mdfile);
-		$http.get("/wiki/" + $routeParams.entry + "/articles/" + $scope.mdfile)
+		$http.get($scope.base_path + "/articles/" + $scope.mdfile)
 			.success(function(data) {
 				$scope.documentation = $sce.trustAsHtml(marked(data));
 
+				// update url without refresh to 
+				$location.update_path($scope.base_path + "/" + $scope.mdfile.split(".")[0]);
+
 				// Go to hash, timeout places the anchorscroll in the execution queue after the update of the view (due to documentaion beeing bound to the main view).
-				$timeout(function() {
-					if ($location.hash()) {
+				if ($location.hash()) {
+					$timeout(function() {
 						$anchorScroll();
-					}
-				}, 0);
+					}, 0);
+				}
 
 			})
 			.error(function(data) {
@@ -67,6 +70,9 @@ mod.controller("WikiCtrl",
 		$http.get("/wiki/" + $routeParams.entry + "/index.md")
 			.success(function(data) {
 				$scope.documentation = $sce.trustAsHtml(marked(data));
+
+				// Update url without refresh
+				$location.update_path($scope.base_path);
 			})
 			.error(function(data) {
 				console.log("Error: ", data);

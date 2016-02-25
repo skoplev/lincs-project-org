@@ -46,13 +46,20 @@ div.placard {
 	// background-color: rgb(153, 178, 207);
 	// background-color: rgb(166, 206, 227);
 	// background-color: rgb(116, 169, 207);
-	background-color: rgb(5, 112, 176);
-	// background-color: rgb(31, 120, 180);
+	// background-color: rgb(5, 112, 176);
+	background-color: rgb(44, 63, 102);
 	color: white;
 	// color: rgb(51, 160, 44);
 	width: 100%;
 	text-align: center;
-	padding: 40px;
+	// padding: 40px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+div.fit-to-content {
+	display: table;
+	margin: 0 auto;
 }
 
 div.placard-text {
@@ -68,6 +75,11 @@ img.logo {
 	margin: 3px
 }
 
+img.inverted {
+	-webkit-filter: invert(100%);
+	filter: invert(100%);
+}
+
 div.panel {
 	// margin: 5px;
 	// padding: 3px;
@@ -81,6 +93,21 @@ iframe {
 	overflow: hidden;
 	width: 100%;
 	// height: 500px;
+}
+
+a.primary-link {
+	text-decoration: none;
+	color: inherit;
+
+	-webkit-transition: color 2s, font-size 2s;
+	-moz-transition: color 2s, font-size 2s;
+	-o-transition: color 2s, font-size 2s;
+	transition: color 2s, font-size 2s;
+}
+
+a.primary-link:hover {
+	color: yellow;
+	// font-size: 16px;
 }
 
 // Div content padding
