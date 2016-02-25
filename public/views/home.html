@@ -1,11 +1,11 @@
-<div class="container-fluid placard">
-
+<div id="placard" class="container-fluid placard">
 	<div class="row">
+	<button class="close-div inverted" onclick="closePlacard()" placement="bottom" bs-tooltip data-title="Dismiss panel"></button>
 		<div class="clearfix"></div>
 		<div class="col-sm-4">
 			<a class="primary-link" href="/data-releases">
 				<h3>Data releases</h3>
-				<p>Data is continously and openly being releases by the LINCS data generation centers and is available for analysis.</p>
+				<p>Data is continously and openly being releases by the LINCS data generation centers and are available for analysis.</p>
 				<br>
 				<img class="center inverted" src="icons/rack-servers.svg" style="height: 100px;">
 			</a>
@@ -52,6 +52,7 @@
 
 
 <div class="container">
+	<br><br>
 	<div class="row">
 		<div class="col-sm-6">
 			<div class="panel panel-default">
@@ -113,6 +114,14 @@
 		</div>
 
 	</div>
-
 </div>
+
+<script type="text/javascript">
+	var closePlacard = function() {
+		console.log("closing");
+		$("#placard").fadeOut({
+			duration: 200
+		});
+	}
+</script>
 

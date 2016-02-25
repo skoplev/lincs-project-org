@@ -48,13 +48,13 @@ div.placard {
 	// background-color: rgb(116, 169, 207);
 	// background-color: rgb(5, 112, 176);
 	background-color: rgb(44, 63, 102);
-	color: white;
-	// color: rgb(51, 160, 44);
+	color: rgb(250, 250, 250);
 	width: 100%;
 	text-align: center;
-	// padding: 40px;
 	padding-top: 40px;
 	padding-bottom: 40px;
+
+	position: relative;
 }
 
 div.fit-to-content {
@@ -75,9 +75,9 @@ img.logo {
 	margin: 3px
 }
 
-img.inverted {
-	-webkit-filter: invert(100%);
-	filter: invert(100%);
+.inverted {
+	-webkit-filter: invert(97%);
+	filter: invert(97%);
 }
 
 div.panel {
@@ -107,6 +107,8 @@ a.primary-link {
 
 a.primary-link:hover {
 	color: yellow;
+	// color: rgb(236, 112, 20);
+
 	// font-size: 16px;
 }
 
@@ -167,12 +169,28 @@ div.clearfloat.col-sm-4:nth-child(3n+1){
 
 #sidebar.affix-top {
 	position: static;
-	// margin-top: 30px;
-	// width: 228px;
+	margin-top: 30px;
+	width: 228px;
 }
 
 #sidebar.affix {
 	position: fixed;
 	top: 0px;
-	// width: 228px;
+	width: 228px;
+}
+
+button.close-div {
+	border: none;
+	position: absolute;
+	top: 4px;
+	right: 4px;
+
+	background-color: rgba(0,0,0,0.0);
+
+	width: 20px;
+	height: 20px;
+
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url(/icons/delete-button.svg);
 }
