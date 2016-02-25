@@ -1,19 +1,26 @@
-<div class="container-fluid">
+<div class="container-fluid" data-ng-init="init()">
 	<div class="row">
 		<div class="col-sm-2">
 			<ul class="nav" id="sidebar">
-				<li><a href="#" ng-click="loadIndex()">{{ title }}</a></li>
-				<li ng-repeat="item in entries"><a href="#" ng-click="loadContent(item)">{{ item }}</a></li>
+				<li><a href="" ng-click="loadIndex()"><h4>{{ title }}<h4></a></li>
+				<!-- <li><a href="/wiki/{{ title }}" ng-click="loadIndex()"><h4>{{ title }}<h4></a></li> -->
+				<!-- <li><a ng-href="/wiki/{{ title }}"><h4>{{ title }}<h4></a></li> -->
+				<ul class="nav">
+					<li ng-repeat="item in entries"><a href="" ng-click="loadContent(item); resetUrl();"> {{ item.split('.')[0] }}</a></li>
+					<!-- <li ng-repeat="item in entries"><a href="" ng-click="loadContent(item)"> {{ item.split('.')[0] }}</a></li> -->
+					<!-- <li ng-repeat="item in entries"><a href="/wiki/{{ title }}/{{ item.split('.')[0]}}" ng-click="loadContent(item); resetUrl();"> {{ item.split('.')[0] }}</a></li> -->
+					<!-- <li ng-repeat="item in entries"><a ng-href="/wiki/{{ title }}/{{ item.split('.')[0] }}"> {{ item.split('.')[0] }}</a></li> -->
+				</ul>
+				<!-- <li><a href="#" ng-click="gotoAnchor('data-standards')">goto</a></li> -->
+				<!-- <li><button ng-click="gotoHash()">goto</button></li> -->
 			</ul>
 		</div>
 
-		<div class="col-sm-10 panel panel-default" ng-bind-html="documentation" ng-init="loadIndex()">
-		</div>
+		<div class="col-sm-10 panel panel-default" ng-bind-html="documentation" ng-init="loadContent(mdfile)"></div>
+		<!-- <div class="col-sm-10 panel panel-default" data-content="{{getContent(mdfile)}}"></div> -->
+		<!-- <div class="col-sm-10 panel panel-default" ng-bind-html="documentation"></div> -->
 	</div>
-	<!-- <h1>test</h1> -->
-	<!-- <p>{{ text }}</p> -->
 </div>
-
 
 <script type="text/javascript">
 	$('#sidebar').affix({
@@ -22,3 +29,5 @@
 	      }
 	});
 </script>
+
+<!-- try &nbsp for white space indentation of menus -->

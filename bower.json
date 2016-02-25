@@ -8,6 +8,6 @@
 		"angular-route": "latest",
 		"angular-strap": "latest",
 		"marked": "latest",
-		"markdown-toc": "latest",
+		"angular-location-update": "latest"
 	}
 }
