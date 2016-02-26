@@ -1,0 +1,12 @@
+# Microenvironment Perturbagen (MEP) LINCS Center
+
+* Project Title: [Extrinsic Perturbations of Cell Physiology and Associated Regulatory Networks (1U54HG008100)](http://projectreporter.nih.gov/project_description.cfm?projectnumber=1U54HG008100-01)
+* Principal Investigators: [Joe Gray PhD](http://www.ohsu.edu/xd/education/schools/school-of-medicine/departments/basic-science-departments/biomedical-engineering/people/joe-gray.cfm), [Laura Heiser PhD](http://www.ohsu.edu/xd/education/schools/school-of-medicine/departments/basic-science-departments/biomedical-engineering/people/laura-heiser.cfm), [James Korkola PhD](http://www.ohsu.edu/xd/education/schools/school-of-medicine/departments/basic-science-departments/biomedical-engineering/people/james-korkola.cfm)
+* Awardee Institution: [Oregon Health and Science University](http://www.ohsu.edu/xd/)
+
+Our goal in this project is to contribute to further development of the NIH Library of Integrated Network-based cellular signatures (LINCS) program by developing a dataset and computational strategy to elucidate how microenvironment (ME) signals affect cell intrinsic intracellular transcriptional- and protein-defined molecular networks to generate experimentally observable cellular phenotypes. We will infer these regulatory relationships by combining measurements of ME perturbagen-induced changes in multiple cellular phenotypes, RNA expression and regulatory protein expression in a core set of cell lines with measurements of responses of the same lines to chemical and genomic perturbagens made by our team in other projects and by other LINCS sites. Our data will complement existing perturbagen response LINCS data by providing information on ME perturbagen-induced changes and by providing quantitative image based measurements of seven cellular response phenotypes plus associated changes in gene transcription and regulatory protein expression. Integrative analysis of these data will enable us to address four key questions:
+
+1. How are ME peturbagen-induced cellular phenotypes regulated by specific molecular networks?
+2. Do subsets of ME-induced perturbations elicit common molecular network changes and phenotypic responses?
+3. Do specific molecular network signatures influence multiple cellular phenotypes?
+4. Are the ME perturbagen-induced network changes similar to the genetic or chemically induced network changes identified in other LINCS projects?

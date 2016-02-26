@@ -1,7 +1,6 @@
 # HMS LINCS Center
 
 * Project Title: [Pharmaco-Response Signatures and Disease Mechanisms (1U54HL127365)](http://projectreporter.nih.gov/project_description.cfm?projectnumber=1U54HL127365-01)
-
 * Principal Investigator: [Peter Sorger PhD](http://sorger.med.harvard.edu/people/peter-sorger-phd/)
 * Awardee Institution: [Harvard Medical School](http://hms.harvard.edu/)
 * Center Website: [HMS LINCS Center](http://lincs.hms.harvard.edu/)

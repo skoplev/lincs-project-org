@@ -1,0 +1,43 @@
+[
+	{
+		"title": "LINCS",
+		"url": "/docs/LINCS",
+		"description": "General information about the Library of Integrated Network-based Cellular Signatures (LINCS) project."
+	},
+	{
+		"title": "DCIC",
+		"url": "/docs/DCIC",
+		"description": "Information about the Data Coordination and Integration Center (DCIC)."
+	},
+	{
+		"title": "HMS-LINCS",
+		"url": "/docs/HMS-LINCS",
+		"description": "Information about the Harvard Medical School's center associated with LINCS."
+	},
+	{
+		"title": "DToxS",
+		"url": "/docs/DToxS",
+		"description": "Information about the Drug Toxicity Signature Generation Center (DToxS)."
+	},
+	{
+		"title": "LINCS-Proteomics",
+		"url": "/docs/LINCS-Proteomics",
+		"description": "Information about the LINCS Center for Transcriptomics."
+	},
+	{
+		"title": "LINCS-Transcriptomics",
+		"url": "/docs/LINCS-Transcriptomics",
+		"description": "Information about the LINCS Proteomic Characterization Center for Signaling and Epigenetics."
+	},
+	{
+		"title": "MEP",
+		"url": "/docs/MEP",
+		"description": "Information about the Microenvironment Perturbagen (MEP) LINCS Center"
+	},
+	{
+		"title": "NeuroLINCS",
+		"url": "/docs/NeuroLINCS",
+		"description": "Information about the NeuroLINCS Center."
+	}
+
+]
