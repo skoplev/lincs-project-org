@@ -7,10 +7,11 @@ var app = angular.module("LincsApp", [
 	"Footer",  // Footer module
 	"Publications",  // LINCS publication controller
 	"Centers",  // LINCS center controller
-	"WikiIndex",  // index controller for all wiki entries
-	"Wiki",  // wiki renderer
+	"DocsIndex",  // index controller for all wiki entries
+	"Docs",  // documentation renderer
 	"appRoutes",  // single page application routing
 	"ngLocationUpdate",  // update location path without refresh
+	"LincsDirectAccessTools",
 	"Docs"  // documentation page
 ]);
 

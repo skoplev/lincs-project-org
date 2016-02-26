@@ -70,14 +70,14 @@ module.exports = function(app) {
 		response.json(centers);
 	});
 
-	api_router.get("/wiki/articleDir/:entry", function(request, response) {
+	api_router.get("/docs/articleDir/:entry", function(request, response) {
 		// Interpret user input
-		var entry_path = path.join(__dirname, "../public/wiki", request.params.entry, "articles");
+		var entry_path = path.join(__dirname, "../public/docs", request.params.entry, "articles");
 
 		// Validation of user input
 		// Check if entry is specified
 		if (validator.equals(request.params.entry, "")) {
-			response.status(400).send({error: "Wiki entry must be provided."});
+			response.status(400).send({error: "Docs entry must be provided."});
 			return;  // terminate response
 		} 
 

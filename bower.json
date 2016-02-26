@@ -8,6 +8,7 @@
 		"angular-route": "latest",
 		"angular-strap": "latest",
 		"marked": "latest",
-		"angular-location-update": "latest"
+		"angular-location-update": "latest",
+		"lincs-direct-access-tools": "https://github.com/skoplev/lincs-direct-access-tools.git"
 	}
 }
