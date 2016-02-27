@@ -9,9 +9,12 @@
 		"url": "https://github.com/skoplev/lincs-project-org"
 	},
 	"dependencies": {
-		"express": "*",
-		"mongoose": "*",
-		"body-parser": "*",
-		"validator": "*"
+		"express": "4.13.4",
+		"mongoose": "4.4.5",
+		"body-parser": "1.15.0",
+		"validator": "5.0.0",
+		"feedparser": "1.1.4",
+		"meta-marked": "*",
+		"marked-toc": "*"
 	}
 }

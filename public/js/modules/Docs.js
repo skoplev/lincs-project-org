@@ -10,7 +10,7 @@ mod.controller("DocsCtrl",
 	$scope.base_path = "/docs/" + $routeParams.entry;
 
 	$scope.documentation = "";  // current documentation, loaded and parsed dynamically
-	$scope.mdfile = "../index.md";  // currently selected .md file
+	$scope.mdfile = "index.md";  // currently selected .md file
 
 	// $http.get("/api/docs/" + $routeParams.entry + "/articleDir")
 	$http.get("/api/docs/articleDir/" + $routeParams.entry)
@@ -40,17 +40,29 @@ mod.controller("DocsCtrl",
 	// 		});
 	// }
 
+	// Loads content in mdfile.
+	// index.md treated as a special case.
+	// Uses the /api/parsemd to retrieve parsed html, metadata, and the table of content
 	$scope.loadContent = function(mdfile) {
-		// Set selected .md file path
-		$scope.setContentFile(mdfile);
 
-		// console.log("loading: ", mdfile);
-		$http.get($scope.base_path + "/articles/" + $scope.mdfile)
+		var api_request = "";
+		if (mdfile === "index.md") {
+			api_request = "/api/parsemd" + $scope.base_path + "/index.md";
+		} else {
+			api_request = "/api/parsemd" + $scope.base_path + "/articles/" + mdfile;
+		}
+
+		// $http.get($scope.base_path + "/articles/" + $scope.mdfile)
+		$http.get(api_request)
 			.success(function(data) {
-				$scope.documentation = $sce.trustAsHtml(marked(data));
+				// $scope.documentation = $sce.trustAsHtml(marked(data));
+				$scope.documentation = $sce.trustAsHtml(marked(data.toc.toc) + data.html);
+				// $scope.documentation = $sce.trustAsHtml(data.html);
 
-				// update url without refresh to 
-				$location.update_path($scope.base_path + "/" + $scope.mdfile.split(".")[0]);
+				// update url without refresh unless
+				if (mdfile !== "index.md") {
+					$location.update_path($scope.base_path + "/" + mdfile.split(".")[0]);
+				}
 
 				// Go to hash, timeout places the anchorscroll in the execution queue after the update of the view (due to documentaion beeing bound to the main view).
 				if ($location.hash()) {
@@ -66,19 +78,19 @@ mod.controller("DocsCtrl",
 		// TODO: update navigation
 	};
 
-	$scope.loadIndex = function() {
-		// Get index markdown file
-		$http.get("/docs/" + $routeParams.entry + "/index.md")
-			.success(function(data) {
-				$scope.documentation = $sce.trustAsHtml(marked(data));
+	// $scope.loadIndex = function() {
+	// 	// Get index markdown file
+	// 	$http.get("/docs/" + $routeParams.entry + "/index.md")
+	// 		.success(function(data) {
+	// 			$scope.documentation = $sce.trustAsHtml(marked(data));
 
-				// Update url without refresh
-				$location.update_path($scope.base_path);
-			})
-			.error(function(data) {
-				console.log("Error: ", data);
-			});
-	};
+	// 			// Update url without refresh
+	// 			$location.update_path($scope.base_path);
+	// 		})
+	// 		.error(function(data) {
+	// 			console.log("Error: ", data);
+	// 		});
+	// };
 
 	// Initialization called, specified using data-ng-init="init()"
 	$scope.init = function() {

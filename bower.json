@@ -9,6 +9,8 @@
 		"angular-strap": "latest",
 		"marked": "latest",
 		"angular-location-update": "latest",
-		"lincs-direct-access-tools": "https://github.com/skoplev/lincs-direct-access-tools.git"
+		"lincs-direct-access-tools": "https://github.com/skoplev/lincs-direct-access-tools.git",
+		"meta-marked": "https://github.com/j201/meta-marked.git",
+		"js-yaml": "latest"
 	}
 }
