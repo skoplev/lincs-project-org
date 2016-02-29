@@ -1,7 +1,7 @@
 ---
 title: a title
 summary: I'm a short summary
-type: news
+type: test-news
 tags: important-news
 author: Simon Koplev
 email: simon.koplev@mssm.edu

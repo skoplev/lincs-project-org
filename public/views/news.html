@@ -1,17 +1,21 @@
-<div class="container">
+<div class="container" ng-controller="NewsCtrl" ng-init="init('news')">
 	<div class="row">
-		<h2>News</h2>
-		<hr>
-		<div class="media" ng-repeat="article in articles">
-			<span class="media-left" >
-				<img src="{{ article.img }}" width="200px">
-			</span>
-			<div class="media-body">
-				<a href="{{ article.url }}"><h4>{{ article.title }}</h4></a>
-				<p class="text-muted">By {{ article.author }} on {{ article.date | date:"mediumDate"}}</p>
-				<p>{{ article.summary }}</p>
-			</div>
+		<div class="col-xs-12">
+			<h2>News</h2>
 			<hr>
+			<div class="media" ng-repeat="article in articles">
+				<span class="media-left" >
+					<img src="{{ article.img }}" width="150px">
+				</span>
+				<div class="media-body">
+					<a href="{{ article.url }}"><h4>{{ article.title }}</h4></a>
+					<p class="text-muted">By {{ article.author }} on {{ article.date | date:"mediumDate"}}</p>
+					<p>{{ article.summary }}</p>
+				</div>
+				<hr>
+			</div>
+
 		</div>
+		
 	</div>
 </div>

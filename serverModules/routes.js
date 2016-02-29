@@ -8,22 +8,10 @@ module.exports = function(app) {
 	var validator = require("validator");
 	var metaMarked = require("meta-marked");
 	var toc = require("marked-toc");
+	var url = require("url");  // parsing url requests
 
 	// Load story metadata into memory
 	var stories = readMetaData("stories/");
-
-	// Sort by recent stories
-	stories = stories.sort(function(a, b) {
-		// return new Date(b.date.split("-")) - new Date(a.date.split("-"));
-		return new Date(b.date) - new Date(a.date);
-	});
-
-	// console.log(stories);
-
-
-
-	// var assert = require("assert");
-	// var glob = require("glob");
 
 	// Data stored in memory
 
@@ -47,6 +35,7 @@ module.exports = function(app) {
 		response.json({message: "hruray!"});
 	});
 
+	// Training, safe to delete
 	// Get requests for all todo items
 	api_router.get("/todos", function(request, response) {
 		Todo.find(function(error, elements) {
@@ -56,6 +45,7 @@ module.exports = function(app) {
 		});
 	});
 
+	// Training, safe to delete
 	api_router.post("/todos", function(request, response) {
 		console.log(request.body);
 
@@ -86,6 +76,7 @@ module.exports = function(app) {
 		response.json(centers);
 	});
 
+	// Get Docs md file list in Docs entry
 	api_router.get("/docs/articleDir/:entry", function(request, response) {
 		// Interpret user input
 		var entry_path = path.join(__dirname, "../public/docs", request.params.entry, "articles");
@@ -117,8 +108,31 @@ module.exports = function(app) {
 		});
 	});
 
+	// Api for retrieving news stories
+	// n: number to retrieve
+	// type: category
+	// from: start from, 0-indexed
 	api_router.get("/articles", function(request, response) {
-		response.send(stories);
+		// Get url parameters
+		var url_request = url.parse(request.url, true);
+
+		// Default complete slice specification
+		var istart = url_request.query["from"] || 0;
+		var n = url_request.query["n"] || stories.length;
+
+		if ("type" in url_request.query) {
+			// Prefilter for type specified in url
+			response.send(stories
+				.filter(function(x) {
+					return x.type === url_request.query["type"];
+				})
+				.slice(istart, istart + n)
+			);
+		} else {
+			response.send(stories
+				.slice(istart, istart + n)
+			);
+		}
 	});
 
 	// parses markdown files specified by path.

@@ -46,8 +46,9 @@ mod.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 			controller: "DirectAccessToolsCtrl"
 		})
 		.when("/news", {
-			templateUrl: "/views/news.html",
-			controller: "NewsCtrl"
+			templateUrl: "/views/news.html"
+			// controller: "NewsCtrl",
+			// ngInit: "init('news')"
 		});
 		// .otherwise({
 		// 	redirectTo: "/"

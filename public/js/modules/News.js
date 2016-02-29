@@ -2,16 +2,30 @@
 var mod = angular.module("News", []);
 
 mod.controller("NewsCtrl", ["$scope", "$http", function($scope, $http) {
-	console.log("News controller");
 	// Load center data
 	$scope.centers = [];
+	$scope.type = "";
 
-	$http.get("/api/articles")
-		.success(function(data) {
-			$scope.articles = data;
-			// console.log($scope.articles);
-		})
-		.error(function(error) {
-			console.log("Error: ", data);
-		});
+
+	$scope.init = function(type) {
+		console.log("NewsCtrl init");
+
+		if (type) {
+			$http.get("/api/articles?type=" + type)
+				.success(function(data) {
+					$scope.articles = data;
+				})
+				.error(function(error) {
+					console.log("Error: ", data);
+				});
+		} else {
+			$http.get("/api/articles")
+				.success(function(data) {
+					$scope.articles = data;
+				})
+				.error(function(error) {
+					console.log("Error: ", data);
+				});
+		}
+	};
 }]);
