@@ -9,6 +9,7 @@ var app = angular.module("LincsApp", [
 	"Centers",  // LINCS center controller
 	"DocsIndex",  // index controller for all wiki entries
 	"Docs",  // documentation renderer
+	"News",
 	"appRoutes",  // single page application routing
 	"ngLocationUpdate",  // update location path without refresh
 	"LincsDirectAccessTools",

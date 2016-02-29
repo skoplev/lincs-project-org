@@ -43,11 +43,11 @@ mod.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 		.when("/tools", {
 			// templateUrl: "views/tools.html",
 			templateUrl: "/libs/lincs-direct-access-tools/partials/direct-access-tools.html",
-			"controller": "DirectAccessToolsCtrl"
+			controller: "DirectAccessToolsCtrl"
 		})
-		.when("/test", {
-			templateUrl: "/views/test.html"
-			// controller: "MainCtrl"
+		.when("/news", {
+			templateUrl: "/views/news.html",
+			controller: "NewsCtrl"
 		});
 		// .otherwise({
 		// 	redirectTo: "/"

@@ -19,7 +19,7 @@ app.use(bodyParser.json());  // enables json encoded POST requests
 app.use(bodyParser.urlencoded({ extended: true }));  // enable encoded POST body
 
 // mongoose interface to local mongodb database
-mongoose.connect("mongodb://localhost/test")
+mongoose.connect("mongodb://localhost/test");
 var db = mongoose.connection;  // database handle
 
 db.on("error", console.error.bind(console, "conenction error:"));
@@ -27,5 +27,5 @@ db.once("open", function() {
 	// Do something after database connection has opened.
 });
 
-// Routes
-require("./serverModules/routes")(app)
+// Routes module
+require("./serverModules/routes")(app);
