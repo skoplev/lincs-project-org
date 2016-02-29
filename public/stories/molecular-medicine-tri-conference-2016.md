@@ -5,6 +5,7 @@ type: news
 tags: event
 author: Sherry Jenkins
 email: sherry.jenkins@mssm.edu
+img: http://www.lincsproject.org/wp-content/uploads/2016/02/tricon2016-300x78.png
 date: 2016-02-05
 ---
 

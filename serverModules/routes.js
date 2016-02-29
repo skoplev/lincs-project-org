@@ -13,11 +13,14 @@ module.exports = function(app) {
 	var stories = readMetaData("stories/");
 
 	// Sort by recent stories
-	stories.sort(function(a, b) {
-		return new Date(a.date) - new Date(b.date);
+	stories = stories.sort(function(a, b) {
+		// return new Date(b.date.split("-")) - new Date(a.date.split("-"));
+		return new Date(b.date) - new Date(a.date);
 	});
 
-	// console.
+	// console.log(stories);
+
+
 
 	// var assert = require("assert");
 	// var glob = require("glob");
@@ -147,26 +150,42 @@ module.exports = function(app) {
 	});
 }
 
-// Read metadata from folder of md files with YAML metadata specification
+// Read metadata from folder of md files with YAML metadata specification.
+// Returns array of metadata sorted by the most recent entries.
 var readMetaData = function(folder_path) {
 	var fs = require("fs");
 	var metaMarked = require("meta-marked");
 
-	var meta_data = [];  // sorted by date
+	var meta_data = [];  // metadata sorted by date at last iteration
 	// Loop over all files in stories folder
 	try {
 		fs.readdir("public/" + folder_path, function(error, files) {
 			if (error)
 				throw(error);
+			// 
 			files.forEach(function(file_name) {
 				// Read file
 				fs.readFile("public/" + folder_path + file_name, "utf8", function(error, data) {
 					if (error) 
 						throw(error);
+					// Read article including metadata
 					var article = metaMarked(data);
-					article.meta.url = folder_path + file_name.split(".")[0];
+
+					// Guess url if not provided
+					if (article.meta["url"] === undefined) {
+						article.meta.url = folder_path + file_name.split(".")[0];
+					}
+
 					// Store meta data
 					meta_data.push(article.meta);
+
+					// Check if last element
+					if (file_name === files[files.length - 1]) {
+						// Sort metadata by recent date
+						meta_data = meta_data.sort(function(a, b) {
+							return new Date(b.date) - new Date(a.date);
+						});
+					}
 				});
 			});
 		});
@@ -176,4 +195,3 @@ var readMetaData = function(folder_path) {
 
 	return meta_data;
 }
-
