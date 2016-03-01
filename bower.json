@@ -11,6 +11,7 @@
 		"angular-location-update": "latest",
 		"lincs-direct-access-tools": "https://github.com/skoplev/lincs-direct-access-tools.git",
 		"meta-marked": "https://github.com/j201/meta-marked.git",
-		"js-yaml": "latest"
+		"js-yaml": "latest",
+		"ngtweet": "latest"
 	}
 }

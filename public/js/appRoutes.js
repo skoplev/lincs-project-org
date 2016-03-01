@@ -4,8 +4,8 @@ var mod = angular.module("appRoutes", ["ngRoute"]);
 mod.config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider){
 	$routeProvider
 		.when("/", {
-			templateUrl: "/views/home.html"
-			// controller: "MainCtrl"
+			templateUrl: "/views/landing.html",
+			controller: "LandingCtrl"
 		})
 		.when("/data-releases", {
 			templateUrl: "/views/data-releases.html"

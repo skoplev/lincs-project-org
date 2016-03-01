@@ -32,11 +32,72 @@
 	</div>
 </div>
 
+<!-- Main content of page -->
 <div class="container">
 	<br><br>
 
 	<div class="row">
-		<div class="col-md-9 col-sm-12">
+
+	<!-- News -->
+		<div class="col-md-3 col-sm-6">
+			<div class="panel panel-default" ng-controller="NewsCtrl" ng-init="init('news', 2)">
+				<div class="panel-heading"><h3 class="panel-title">News</h3></div>
+				<div class="panel-body">
+					<div ng-repeat="article in articles" headline data="article">
+					</div>
+					<div class="text-right">
+						<a href="news">More...</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Recent data and software releases -->
+		<div class="col-sm-6 col-md-3">
+			<div class="panel panel-default" ng-controller="NewsCtrl" ng-init="init('release')">
+				<div class="panel-heading"><h3 class="panel-title">Recent releases</h3></div>
+				<div class="panel-body">
+					<div ng-repeat="article in articles" headline data="article">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Recent events -->
+		<div class="col-sm-6 col-md-3">
+			<div class="panel panel-default" ng-controller="NewsCtrl" ng-init="init('event', 2)">
+				<div class="panel-heading">
+					<h3 class="panel-title">Events</h3>
+				</div>
+				<div class="panel-body">
+					<div ng-repeat="article in articles" headline data="article">
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- Recent publications -->
+		<div class="col-sm-6 col-md-3">
+			<div class="panel panel-default">
+				<div class="panel-heading"><h3 class="panel-title">Recent publications</h3></div>
+				<div class="panel-body">I'm an announcement</div>
+			</div>
+		</div>
+
+		<div class="col-sm-6 col-md-3">
+			<twitter-widget>
+				<a class="twitter-timeline" href="https://twitter.com/BD2KLINCSDCIC" data-widget-id="704710331080249344">Tweets by @BD2KLINCSDCIC</a>
+			</twitter-widget>
+		</div>
+	</div>
+
+
+	<!--  -->
+	<div class="row">
+		<!-- Data releases window -->
+		<div class="col-sm-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<div class="row">
@@ -53,20 +114,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-3 col-sm-6">
-			<div class="panel panel-default" ng-controller="NewsCtrl" ng-init="init('news', 2)">
-				<div class="panel-heading"><h3 class="panel-title">News</h3></div>
-				<div class="panel-body">
-					<div ng-repeat="article in articles" headline data="article">
-					</div>
-					<div class="text-right">
-						<a href="news">More...</a>
-					</div>
-				</div>
-			</div>
-		</div>
 
-		<div class="col-sm-6">
+		<!-- LINCS consortium description -->
+
+		<!-- 	
+		<div class="col-sm-6 col-md-3">
 			<div class="panel panel-default">
 				<div class="panel-heading"><h3 class="panel-title">The LINCS Consortium</h3></div>
 				<div class="panel-body">
@@ -78,38 +130,11 @@
 					</p>
 				</div>
 			</div>
-
 		</div>
+ 		-->
 
-		<div class="col-sm-6">
-			<div class="panel panel-default" ng-controller="NewsCtrl" ng-init="init('release')">
-				<div class="panel-heading"><h3 class="panel-title">Recent releases</h3></div>
-				<div class="panel-body">
-					<div ng-repeat="article in articles" headline data="article">
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="col-sm-6">
-			<div class="panel panel-default" ng-controller="NewsCtrl" ng-init="init('event', 2)">
-				<div class="panel-heading">
-					<h3 class="panel-title">Events</h3>
-				</div>
-				<div class="panel-body">
-					<div ng-repeat="article in articles" headline data="article">
-					</div>
-
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-6">
-			<div class="panel panel-default">
-				<div class="panel-heading"><h3 class="panel-title">Recent publications</h3></div>
-				<div class="panel-body">I'm an announcement</div>
-			</div>
-		</div>
 	</div>
+
 </div>
 
 <script type="text/javascript">
@@ -120,3 +145,5 @@
 		});
 	}
 </script>
+
+

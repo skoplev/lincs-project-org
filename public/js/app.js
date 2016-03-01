@@ -3,6 +3,7 @@
 // Lincs Angular application
 var app = angular.module("LincsApp", [
 	"Main",  // main Angular module
+	"Landing",  // home/front/landing page module
 	"Header",  // Header and navigation bar module
 	"Footer",  // Footer module
 	"Publications",  // LINCS publication controller
@@ -13,6 +14,7 @@ var app = angular.module("LincsApp", [
 	"Reader",
 	"appRoutes",  // single page application routing
 	"ngLocationUpdate",  // update location path without refresh
+	"ngtweet",
 	"LincsDirectAccessTools",
 	"Docs"  // documentation page
 ]);
