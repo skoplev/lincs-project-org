@@ -174,8 +174,10 @@ var readMetaData = function(folder_path) {
 	// Loop over all files in stories folder
 	try {
 		fs.readdir("public/" + folder_path, function(error, files) {
-			if (error)
-				throw(error);
+			if (error) {
+				// throw(error);
+				console.log(error);
+			}
 			// 
 			files.forEach(function(file_name) {
 				// Read file
@@ -183,23 +185,30 @@ var readMetaData = function(folder_path) {
 					if (error) 
 						throw(error);
 					// Read article including metadata
-					var article = metaMarked(data);
+					try {
+						var article = metaMarked(data);
 
-					// Guess url if not provided
-					if (article.meta["url"] === undefined) {
-						article.meta.url = folder_path + file_name.split(".")[0];
+						// Guess url if not provided
+						if (article.meta["url"] === undefined) {
+							article.meta.url = folder_path + file_name.split(".")[0];
+						}
+
+						// Store meta data
+						meta_data.push(article.meta);
+
+						// Check if last element
+						if (file_name === files[files.length - 1]) {
+							// Sort metadata by recent date
+							meta_data = meta_data.sort(function(a, b) {
+								return new Date(b.date) - new Date(a.date);
+							});
+						}
+
+					}
+					catch (error) {
+						console.log("Error reading file: ", file_name, ". Error message: ", error);
 					}
 
-					// Store meta data
-					meta_data.push(article.meta);
-
-					// Check if last element
-					if (file_name === files[files.length - 1]) {
-						// Sort metadata by recent date
-						meta_data = meta_data.sort(function(a, b) {
-							return new Date(b.date) - new Date(a.date);
-						});
-					}
 				});
 			});
 		});

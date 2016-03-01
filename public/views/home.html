@@ -44,7 +44,7 @@
 							<h3 class="panel-title">Data releases</h3>
 						</div>
 						<div class="col-xs-6 text-right">
-							<a href="/data-releases">full screen</a>
+							<a href="/data-releases">Full screen</a>
 						</div>
 					</div>
 				</div>
@@ -54,17 +54,13 @@
 			</div>
 		</div>
 		<div class="col-md-3 col-sm-6">
-			<div class="panel panel-default" ng-controller="NewsCtrl" ng-init="init('news')">
-				<div class="panel-heading"><h3 class="panel-title">Announcements</h3></div>
+			<div class="panel panel-default" ng-controller="NewsCtrl" ng-init="init('news', 2)">
+				<div class="panel-heading"><h3 class="panel-title">News</h3></div>
 				<div class="panel-body">
-					<div ng-repeat="article in articles">
-						<!-- <div class="col-sm-6"></div> -->
-						<a href="{{ article.url }}">
-							<img src="{{ article.img }}" style="width: 100%; max-width: 200px;">
-							<h4>{{ article.title }}</h4>
-						</a>
-						<p>{{ article.summary }}</p>
-						<hr>
+					<div ng-repeat="article in articles" headline data="article">
+					</div>
+					<div class="text-right">
+						<a href="news">More...</a>
 					</div>
 				</div>
 			</div>
@@ -86,12 +82,27 @@
 		</div>
 
 		<div class="col-sm-6">
-			<div class="panel panel-default">
+			<div class="panel panel-default" ng-controller="NewsCtrl" ng-init="init('release')">
 				<div class="panel-heading"><h3 class="panel-title">Recent releases</h3></div>
-				<div class="panel-body">Panel content</div>
+				<div class="panel-body">
+					<div ng-repeat="article in articles" headline data="article">
+					</div>
+				</div>
 			</div>
 		</div>
 
+		<div class="col-sm-6">
+			<div class="panel panel-default" ng-controller="NewsCtrl" ng-init="init('event', 2)">
+				<div class="panel-heading">
+					<h3 class="panel-title">Events</h3>
+				</div>
+				<div class="panel-body">
+					<div ng-repeat="article in articles" headline data="article">
+					</div>
+
+				</div>
+			</div>
+		</div>
 		<div class="col-sm-6">
 			<div class="panel panel-default">
 				<div class="panel-heading"><h3 class="panel-title">Recent publications</h3></div>
@@ -99,13 +110,6 @@
 			</div>
 		</div>
 	</div>
-
-
-	<div class="row">
-		<div class="col-sm-6">
-		</div>
-	</div>
-
 </div>
 
 <script type="text/javascript">
@@ -116,4 +120,3 @@
 		});
 	}
 </script>
-

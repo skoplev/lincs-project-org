@@ -6,26 +6,35 @@ mod.controller("NewsCtrl", ["$scope", "$http", function($scope, $http) {
 	$scope.centers = [];
 	$scope.type = "";
 
+	// Initialization function specifying which type of articles are to be requested
+	$scope.init = function(type, n) {
+		$scope.type = type;
+		$scope.n = n;
 
-	$scope.init = function(type) {
-		console.log("NewsCtrl init");
+		var query = "/api/articles?";
+		if (type)
+			query += "type=" + type;
 
-		if (type) {
-			$http.get("/api/articles?type=" + type)
-				.success(function(data) {
-					$scope.articles = data;
-				})
-				.error(function(error) {
-					console.log("Error: ", data);
-				});
-		} else {
-			$http.get("/api/articles")
-				.success(function(data) {
-					$scope.articles = data;
-				})
-				.error(function(error) {
-					console.log("Error: ", data);
-				});
-		}
+		if (n)
+			query += "&n=" + n;
+
+		$http.get(query)
+			.success(function(data) {
+				$scope.articles = data;
+			})
+			.error(function(error) {
+				console.log("Error: ", data);
+			});
 	};
 }]);
+
+
+mod.directive("headline", function() {
+	return {
+		restrict: "A",
+		scope: {
+			data: "="
+		},
+		templateUrl: "templates/HeadlineTemp.html"
+	}
+})

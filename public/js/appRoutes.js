@@ -45,6 +45,10 @@ mod.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 			templateUrl: "/libs/lincs-direct-access-tools/partials/direct-access-tools.html",
 			controller: "DirectAccessToolsCtrl"
 		})
+		.when("/stories/:article", {
+			templateUrl: "views/story.html",
+			controller: "ReaderCtrl"
+		})
 		.when("/news", {
 			templateUrl: "/views/news.html"
 			// controller: "NewsCtrl",
