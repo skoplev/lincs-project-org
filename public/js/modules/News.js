@@ -28,12 +28,12 @@ mod.controller("NewsCtrl", ["$scope", "$http", function($scope, $http) {
 	};
 }]);
 
-
 mod.directive("headline", function() {
 	return {
 		restrict: "A",
 		scope: {
-			data: "="
+			data: "=",
+			last: "="  // last element, used for separator
 		},
 		templateUrl: "templates/HeadlineTemp.html"
 	}

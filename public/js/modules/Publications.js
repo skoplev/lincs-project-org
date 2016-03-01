@@ -22,12 +22,23 @@ mod.controller("PublicationsCtrl", ["$scope", "$http", function($scope, $http) {
 		"review": "Litterature review"
 	};
 
-	$http.get("/api/publications")
-		.success(function(data) {
-			$scope.publications = data;
-		})
-		.error(function(data) {
-			console.log("Error: ", data);
-		});
-	
+
+	// Init function loading the publication data
+	// n specifies the number of publications to load.
+	$scope.init = function(n) {
+		var url_query = "/api/publications?";
+
+		// Modfiry with the number
+		if (n !== undefined) {
+			url_query += "n=" + n;
+		}
+
+		$http.get(url_query)
+			.success(function(data) {
+				$scope.publications = data;
+			})
+			.error(function(data) {
+				console.log("Error: ", data);
+			});
+	}
 }]);

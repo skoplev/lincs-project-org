@@ -40,49 +40,66 @@
 
 	<!-- News -->
 		<div class="col-md-3 col-sm-6">
-			<div class="panel panel-default" ng-controller="NewsCtrl" ng-init="init('news', 2)">
-				<div class="panel-heading"><h3 class="panel-title">News</h3></div>
-				<div class="panel-body">
-					<div ng-repeat="article in articles" headline data="article">
-					</div>
-					<div class="text-right">
-						<a href="news">More...</a>
-					</div>
+			<div class="panel panel-default landing-panel" ng-controller="NewsCtrl" ng-init="init('news', 3)">
+				<div class="panel-heading">
+					<a href="news"><h3 class="panel-title">News</h3></a>
 				</div>
+
+				<table class="table">
+					<tr ng-repeat="article in articles" >
+						<td headline data="article"></td>
+					</tr>
+				</table>
 			</div>
 		</div>
 
 
 		<!-- Recent data and software releases -->
 		<div class="col-sm-6 col-md-3">
-			<div class="panel panel-default" ng-controller="NewsCtrl" ng-init="init('release')">
-				<div class="panel-heading"><h3 class="panel-title">Recent releases</h3></div>
-				<div class="panel-body">
-					<div ng-repeat="article in articles" headline data="article">
-					</div>
+			<div class="panel panel-default landing-panel" ng-controller="NewsCtrl" ng-init="init('release')">
+				<div class="panel-heading">
+					<a href="news"><h3 class="panel-title">Releases</h3></a>
 				</div>
+
+				<table class="table">
+					<tr ng-repeat="article in articles" >
+						<td headline data="article"></td>
+					</tr>
+				</table>
 			</div>
 		</div>
 
 		<!-- Recent events -->
 		<div class="col-sm-6 col-md-3">
-			<div class="panel panel-default" ng-controller="NewsCtrl" ng-init="init('event', 2)">
+			<div class="panel panel-default landing-panel" ng-controller="NewsCtrl" ng-init="init('event', 2)">
 				<div class="panel-heading">
-					<h3 class="panel-title">Events</h3>
+					<a href="news"><h3 class="panel-title">Events</h3></a>
 				</div>
-				<div class="panel-body">
-					<div ng-repeat="article in articles" headline data="article">
-					</div>
 
-				</div>
+				<table class="table">
+					<tr ng-repeat="article in articles" >
+						<td headline data="article"></td>
+					</tr>
+				</table>
+
 			</div>
 		</div>
 
 		<!-- Recent publications -->
 		<div class="col-sm-6 col-md-3">
-			<div class="panel panel-default">
-				<div class="panel-heading"><h3 class="panel-title">Recent publications</h3></div>
-				<div class="panel-body">I'm an announcement</div>
+			<div class="panel panel-default landing-panel" ng-controller="PublicationsCtrl" ng-init="init(4)">
+				<div class="panel-heading">
+					<a href="publications"><h3 class="panel-title">Publications</h3></a>
+				</div>
+				<table class="table">
+					<tr ng-repeat="pub in publications">
+						<td>
+							<a href="{{ pub.url }}" target="_blank">{{ pub.title }}</a>
+						</td>
+					</tr>
+
+				</table>
+
 			</div>
 		</div>
 

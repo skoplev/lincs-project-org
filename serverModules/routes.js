@@ -47,7 +47,7 @@ module.exports = function(app) {
 
 	// Training, safe to delete
 	api_router.post("/todos", function(request, response) {
-		console.log(request.body);
+		// console.log(request.body);
 
 		Todo.create({
 			text: request.body.text,
@@ -66,11 +66,22 @@ module.exports = function(app) {
 		});
 	});
 
+	// Get list of publications, assumed to be in most recent format.
+	// n: number of publication data to retrieve.
 	api_router.get("/publications", function(request, response) {
+		// Get url parameters
+		var url_request = url.parse(request.url, true);
 		// response.sendFile(path.join(__dirname, "../public/content/publications.json"));
-		response.json(publications);
+
+		if ("n" in url_request.query) {
+			response.json(publications.slice(0, url_request.query.n));
+		} else {
+			// assumes all publications
+			response.json(publications);
+		}
 	});
 
+	// Get list of center data
 	api_router.get("/centers", function(request, response) {
 		// response.sendFile(path.join(__dirname, "../public/content/centers.json"));
 		response.json(centers);

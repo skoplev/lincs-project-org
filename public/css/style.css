@@ -41,6 +41,13 @@ footer {
 
 }
 
+div.landing-panel {
+}
+
+.panel-default {
+
+}
+
 footer div.container-fluid {
 	border-top: 1px solid rgb(225, 225, 225);  /* same as bootstrap default for nav */
 
@@ -77,6 +84,11 @@ div.placard-text {
 	width: 300px;
 	margin-right: auto;
 	margin-left: auto;
+}
+
+img.headline-img {
+	width: 100%;
+	max-width: 400px;
 }
 
 img.logo {
