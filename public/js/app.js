@@ -12,6 +12,7 @@ var app = angular.module("LincsApp", [
 	"Docs",  // documentation renderer
 	"News",  // handles article metadata
 	"Reader",
+	"Auth",  // authenti
 	"appRoutes",  // single page application routing
 	"ngLocationUpdate",  // update location path without refresh
 	"ngtweet",

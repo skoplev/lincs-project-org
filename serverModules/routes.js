@@ -1,6 +1,6 @@
 
 // module.exports 
-module.exports = function(app) {
+module.exports = function(app, passport) {
 	var Todo = require("./models/todo");
 	var express = require("express");
 	var path = require("path");
@@ -18,7 +18,71 @@ module.exports = function(app) {
 	var publications = require(path.join(__dirname, "../public/content/publications.json"))
 	var centers = require(path.join(__dirname, "../public/content/centers.json"))
 
+	// app.get("/login", function(request, response) {
+	// 	console.log(request.flash("loginMessage"));
+	// 	response.sendFile(path.join(__dirname, "../public/views/login.html"));
+	// 	// response.sendFile(path.join(__dirname, "../public/index.html"));
+	// });
+
+
+
+	app.get("/signup", function(request, response) {
+		console.log(request.flash("signupMessage"));  // get flash message
+		response.sendFile(path.join(__dirname, "../public/views/signup.html"));
+	});
+
+	// Middle ware checks for login
+	app.get("/profile", isLoggedIn, function(request, response) {
+		response.sendFile(path.join(__dirname, "../public/views/profile.html"))
+	});
+
+
+	// Express authentication router handling user sensitive requests
+	// ------------------------------------------------------------------
+	var auth_router = express.Router();
+
+	auth_router.use(function(request, response, next) {
+		next();
+	});
+
+	app.use("/auth", auth_router);
+
+	// /auth base returns boolean for whether user is logged in
+	auth_router.get("/", function(request, response) {
+		response.send(request.isAuthenticated());
+	})
+
+	// Returns user data if logged in
+	auth_router.get("/who", function(request, response) {
+		console.log("who request");
+		// response.send(request.isAuthenticated() ? "logged in": 0);
+		response.send(request.isAuthenticated() ? request.user : false);
+	});
+
+	auth_router.post("/login", passport.authenticate("local-login", {
+		successRedirect: "/",
+		failureRedirect: "/login",  // redirect to signup page
+		failureFlash: true  // enable falsh messages
+	}));
+
+	// Logout request by destroying session.
+	auth_router.get("/logout", function(request, response) {
+		// Destroy session and redirect 
+		request.session.destroy(function(error) {
+			// response.redirect("/");
+			response.send(200);  // OK
+		});
+	});
+
+	auth_router.post("/register", passport.authenticate("local-signup", {
+		successRedirect: "/",
+		failureRedirect: "/signup",
+		failureFlash: true  // flash message enabled
+	}));
+
+
 	// Express router (a sub Express application handling the HTTP API).
+	// ---------------------------------------------------------------
 	var api_router = express.Router();
 
 	// Middleware for all API requests
@@ -34,6 +98,7 @@ module.exports = function(app) {
 	api_router.get("/", function(request, response) {
 		response.json({message: "hruray!"});
 	});
+
 
 	// Training, safe to delete
 	// Get requests for all todo items
@@ -168,11 +233,28 @@ module.exports = function(app) {
 	// 	response.redirect("#/data-releases");
 	// })
 
+	// app.get("/", function(reqest, response) {
+		// response.redirect("/login");
+	// });
+
 	// Load single page application.
 	// Wild card only applies after the above routes (order matters).
 	app.get("*", function(request, response) {
+		// response.redirect("/login");
 		response.sendFile(path.join(__dirname, "../public/index.html"));
 	});
+}
+
+// Route middleware checking if user is logged in.
+// Based on session.
+function isLoggedIn(request, response, next) {
+	if (!request.isAuthenticated()) {
+		// response.status(401).redirect("/login");  // unauthorized code
+		response.sendStatus(401);
+	} else {
+		next();
+	}
+	// response.redirect("/login");
 }
 
 // Read metadata from folder of md files with YAML metadata specification.

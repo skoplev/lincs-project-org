@@ -1,11 +1,22 @@
 // Routes for main Angular application
-var mod = angular.module("appRoutes", ["ngRoute"]);
+var mod = angular.module("appRoutes", ["ngRoute", "Auth"]);
 
-mod.config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider){
+// mod.controller("TestCtrl", ["$scope", "messages", function($scope, messages) {
+// }]);
+
+mod.config(
+	["$routeProvider", "$locationProvider", "authenticProvider",
+	function($routeProvider, $locationProvider, authenticProvider)
+{
+	console.log(authenticProvider);
 	$routeProvider
 		.when("/", {
 			templateUrl: "/views/landing.html",
 			controller: "LandingCtrl"
+		})
+		.when("/login", {
+			templateUrl: "views/login.html",
+			controller: "LoginCtrl"
 		})
 		.when("/data-releases", {
 			templateUrl: "/views/data-releases.html"
@@ -15,30 +26,32 @@ mod.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
 			templateUrl: "/views/publications.html",
 			controller: "PublicationsCtrl"
 		})
-		// .when("/docs", {
-		// 	templateUrl: "/views/docs.html",
-		// 	controller: "DocsCtrl"
-		// })
 		.when("/centers", {
 			templateUrl: "/views/centers.html",
 			controller: "CentersCtrl"
 		})
-		// Wiki route with variable entry
-		// .when("/wiki/:entry", {
-		// 	templateUrl: "views/wiki.html",
-		// 	controller: "WikiCtrl"
-		// })
 		.when("/docs/:entry/:article?", {
 			templateUrl: "/views/docs.html",
 			controller: "DocsCtrl"
 		})
-		// .when("/wiki", {
-		// 	templateUrl: "views/wiki.html",
-		// 	controller: "WikiCtrl"
-		// })
 		.when("/docs", {
 			templateUrl: "/views/DocsIndex.html",
-			controller: "DocsIndexCtrl"
+			controller: "DocsIndexCtrl",
+			resolve: {
+				// auth: function() {
+				// 	console.log(authenticProvider);
+				// 	authenticProvider.resolver();
+				// 	console.log("resolve function");
+				// 	return "all is good"
+				// },
+
+				// authentic service dependency,
+				// which is managed by the authenticProvider. The provider
+				// can be accessed in the .config
+				auth: ["authentic", function(authentic) {
+					return authentic.isLoggedIn();
+				}]
+			}
 		})
 		.when("/tools", {
 			// templateUrl: "views/tools.html",

@@ -19,12 +19,12 @@
 				<tr>
 					<!-- Main publication view: title, authors, ... -->
 					<td>
-						<p>{{ pub.title }}</p>
+						<a href="{{ pub.url}}" target="_blank"><p>{{ pub.title }}</p></a>
 						<p class="text-muted">
 							{{ pub.authors.join(", ") }}.
 							{{ pub.journal }}
 							({{ pub.year }})
-							<a ng-href="{{pub.url}}" target="_blank">...</a>
+							<!-- <a ng-href="{{pub.url}}" target="_blank">...</a> -->
 						</p>
 					</td>
 
