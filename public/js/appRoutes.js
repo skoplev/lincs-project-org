@@ -75,13 +75,16 @@ mod.config(
 		})
 		.when("/tools", {
 			// templateUrl: "views/tools.html",
-			templateUrl: "/libs/lincs-direct-access-tools/partials/direct-access-tools.html",
+			templateUrl: "/libs/lincs-direct-access-tools/views/direct-access-tools.html",
 			controller: "DirectAccessToolsCtrl",
 			resolve: {
 				auth: ["authentic", function(authentic) {
 					return authentic.isLoggedIn();
 				}]
 			}
+		})
+		.when("/concierge", {
+			templateUrl: "/views/concierge.html"
 		})
 		.when("/stories/:article", {
 			templateUrl: "views/story.html",

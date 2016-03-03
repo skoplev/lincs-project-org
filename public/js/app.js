@@ -17,6 +17,7 @@ var app = angular.module("LincsApp", [
 	"ngLocationUpdate",  // update location path without refresh
 	"ngtweet",
 	"LincsDirectAccessTools",
+	"Concierge",
 	// "ngFlash",  // flash messages
 	"Docs"  // documentation page
 ]);

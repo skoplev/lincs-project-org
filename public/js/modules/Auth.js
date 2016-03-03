@@ -26,7 +26,7 @@ mod.controller("LoginCtrl",
 	}
 
 	$scope.alert = function(message) {
-		var id = flash.create("danger", message, 20000);
+		var id = flash.create("danger", message, 8000);
 	};
 }]);
 
@@ -103,101 +103,3 @@ mod.provider("authentic", function () {
 		}  // end of return object
 	}];
 });
-
-
-// // Provider
-// mod.provider("messages", function() {
-// 	// var messages = {};
-// 	// messages.list = ["hi", "today"];
-
-// 	var message = "hello";
-
-// 	// messages
-// 	// return messages;
-
-// 	this.$get = ["$q", function($q) {
-// 		return {};
-// 	}];
-// });
-
-// function Message(text) {
-//     this.text = text;
-// }
-
-// mod.provider("message", [function () {
-//     var text = null;
-
-//     this.setText = function (textString) {
-//         text = textString;
-//     };
-
-//     this.$get = [function () {
-//         return new Message(text);
-//     }];
-// }]);
-
-// Provider example
-
-// mod.provider("message", function() {
-// 	return false;
-// });
-
-// // Constructor function
-// function AuthenticConstructor() {
-// 	// console.log("AuthConstructer()");
-// 	// this.name = name;
-
-// 	this.count = 0;
-
-// 	this.increase = function() {
-// 		this.count++;
-// 	};
-// };
-
-// // Authentication provider, which can be used in .config of routes.
-// mod.provider("authentic2", function authentic2Provider() {
-// 	// console.log("inside provider");
-// 	var message = "hi";
-
-// 	// init
-// 	this.setMessage = function(value) {
-// 		message = value;
-// 	};
-
-// 	this.getMessage = function() {
-// 		return message;
-// 	};
-
-// 	this.isLoggedIn = function() {
-// 		console.log("isLoggedIn called");
-// 		return true;
-
-// 		// var deffered = $q.defer();
-
-// 		// // if (user) {
-// 		// // 	return true;
-// 		// // } else {
-// 		// // 	return false;
-// 		// // }
-
-// 		// $http.get("/auth")
-// 		// 	.success(function(logged_on) {
-// 		// 		if (logged_on) {
-// 		// 			deferred.resolve();
-// 		// 		} else {
-// 		// 			console.log("must log in");
-// 		// 			deferred.reject();
-// 		// 			$location.url("/login");  // redirect
-// 		// 		}
-// 		// 	});
-// 		// return deferred.promise;
-// 	};
-
-// 	this.$get = ["$q", function($q) {
-// 		return {
-// 			isLoggedIn: isLoggedIn
-// 		};
-// 		// return {test: "test"};
-// 	}];
-// });
-
