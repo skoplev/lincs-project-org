@@ -60,24 +60,24 @@ module.exports = function(passport) {
 		)
 	);
 
-	// Local login
+	// Local login stategy
 	passport.use("local-login", new LocalStrategy({
 		usernameField: "email",
 		passwordField: "password",
 		passReqToCallback: true  // allows passing back request
 	},
 		function(req, email, password, done) {
+			// console.log("user login");
 			// Find user with the provided email
-
-			User.findOne({ "local.email": email}, function(err, user) {
+			User.findOne({ "local.email": email }, function(err, user) {
 				if (err)
 					return done(err);
 
 				if (!user)
-					return done(null, false, req.flash("loginMessage", "User not found."));
+					return done(null, false, {message: "User not found."});
 
 				if (!user.validPassword(password))
-					return done(null, false, req.flash("loginMessage", "Invalid password."));
+					return done(null, false, {message: "Invalid password."});
 
 				return done(null, user);
 			});

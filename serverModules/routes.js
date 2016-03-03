@@ -18,14 +18,6 @@ module.exports = function(app, passport) {
 	var publications = require(path.join(__dirname, "../public/content/publications.json"))
 	var centers = require(path.join(__dirname, "../public/content/centers.json"))
 
-	// app.get("/login", function(request, response) {
-	// 	console.log(request.flash("loginMessage"));
-	// 	response.sendFile(path.join(__dirname, "../public/views/login.html"));
-	// 	// response.sendFile(path.join(__dirname, "../public/index.html"));
-	// });
-
-
-
 	app.get("/signup", function(request, response) {
 		console.log(request.flash("signupMessage"));  // get flash message
 		response.sendFile(path.join(__dirname, "../public/views/signup.html"));
@@ -37,12 +29,21 @@ module.exports = function(app, passport) {
 	});
 
 
-	// Express authentication router handling user sensitive requests
+	// Express authentication router handling user sensitive requests.
 	// ------------------------------------------------------------------
 	var auth_router = express.Router();
 
+	// Middleware 
 	auth_router.use(function(request, response, next) {
 		next();
+	});
+
+	// General error handling for the authentication router.
+	// Error handling is specified by having 4 input arguments.
+	auth_router.use(function(error, request, response, next) {
+		console.error(error.stack);
+		response.status(500).send("Internal server error");
+		// terminates stack
 	});
 
 	app.use("/auth", auth_router);
@@ -59,11 +60,37 @@ module.exports = function(app, passport) {
 		response.send(request.isAuthenticated() ? request.user : false);
 	});
 
-	auth_router.post("/login", passport.authenticate("local-login", {
-		successRedirect: "/",
-		failureRedirect: "/login",  // redirect to signup page
-		failureFlash: true  // enable falsh messages
-	}));
+	// auth_router.post("/login", passport.authenticate("local-login", {
+	// 	successRedirect: "/",
+	// 	// failureRedirect: "/login",  // redirect to signup page
+	// 	failureFlash: true  // enable flash messages
+	// }));
+
+	// Custom handling of passport authentication request
+	auth_router.post("/login", function(request, response, next) {
+		passport.authenticate("local-login", function(err, user, message) {
+			// passport callback function which are called bound to the specied passport authentication strategy
+			if (err) {
+				// authentication error
+				return next(err);  // assumes that error handler is next
+			};
+
+			if (!user) {
+				// not correct
+				// console.log(message);
+				return response.status(400).send(message);
+			};
+
+			request.logIn(user, function(err) {
+				if (err) {
+					return next(err);
+				}
+				return response.status(200).send(message);
+			});
+
+			// console.log(err, user, password);
+		})(request, response, next);
+	});
 
 	// Logout request by destroying session.
 	auth_router.get("/logout", function(request, response) {
@@ -228,14 +255,6 @@ module.exports = function(app, passport) {
  			}
  		});
 	});
-
-	// app.get("/data-releases", function(request, response) {
-	// 	response.redirect("#/data-releases");
-	// })
-
-	// app.get("/", function(reqest, response) {
-		// response.redirect("/login");
-	// });
 
 	// Load single page application.
 	// Wild card only applies after the above routes (order matters).

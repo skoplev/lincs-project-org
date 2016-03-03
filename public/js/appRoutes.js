@@ -8,43 +8,63 @@ mod.config(
 	["$routeProvider", "$locationProvider", "authenticProvider",
 	function($routeProvider, $locationProvider, authenticProvider)
 {
-	console.log(authenticProvider);
+	// console.log(authenticProvider);
 	$routeProvider
 		.when("/", {
 			templateUrl: "/views/landing.html",
-			controller: "LandingCtrl"
+			controller: "LandingCtrl",
+			resolve: {
+				// authentic service dependency,
+				// which is managed by the authenticProvider. The provider
+				// can be accessed in the .config
+				auth: ["authentic", function(authentic) {
+					return authentic.isLoggedIn();
+				}]
+			}
 		})
 		.when("/login", {
 			templateUrl: "views/login.html",
 			controller: "LoginCtrl"
 		})
 		.when("/data-releases", {
-			templateUrl: "/views/data-releases.html"
-			// controller: "MainCtrl"
+			templateUrl: "/views/data-releases.html",
+			resolve: {
+				auth: ["authentic", function(authentic) {
+					return authentic.isLoggedIn();
+				}]
+			}
 		})
 		.when("/publications", {
 			templateUrl: "/views/publications.html",
-			controller: "PublicationsCtrl"
+			controller: "PublicationsCtrl",
+			resolve: {
+				auth: ["authentic", function(authentic) {
+					return authentic.isLoggedIn();
+				}]
+			}
 		})
 		.when("/centers", {
 			templateUrl: "/views/centers.html",
-			controller: "CentersCtrl"
+			controller: "CentersCtrl",
+			resolve: {
+				auth: ["authentic", function(authentic) {
+					return authentic.isLoggedIn();
+				}]
+			}
 		})
 		.when("/docs/:entry/:article?", {
 			templateUrl: "/views/docs.html",
-			controller: "DocsCtrl"
+			controller: "DocsCtrl",
+			resolve: {
+				auth: ["authentic", function(authentic) {
+					return authentic.isLoggedIn();
+				}]
+			}
 		})
 		.when("/docs", {
 			templateUrl: "/views/DocsIndex.html",
 			controller: "DocsIndexCtrl",
 			resolve: {
-				// auth: function() {
-				// 	console.log(authenticProvider);
-				// 	authenticProvider.resolver();
-				// 	console.log("resolve function");
-				// 	return "all is good"
-				// },
-
 				// authentic service dependency,
 				// which is managed by the authenticProvider. The provider
 				// can be accessed in the .config
@@ -56,14 +76,29 @@ mod.config(
 		.when("/tools", {
 			// templateUrl: "views/tools.html",
 			templateUrl: "/libs/lincs-direct-access-tools/partials/direct-access-tools.html",
-			controller: "DirectAccessToolsCtrl"
+			controller: "DirectAccessToolsCtrl",
+			resolve: {
+				auth: ["authentic", function(authentic) {
+					return authentic.isLoggedIn();
+				}]
+			}
 		})
 		.when("/stories/:article", {
 			templateUrl: "views/story.html",
-			controller: "ReaderCtrl"
+			controller: "ReaderCtrl",
+			resolve: {
+				auth: ["authentic", function(authentic) {
+					return authentic.isLoggedIn();
+				}]
+			}
 		})
 		.when("/news", {
-			templateUrl: "/views/news.html"
+			templateUrl: "/views/news.html",
+			resolve: {
+				auth: ["authentic", function(authentic) {
+					return authentic.isLoggedIn();
+				}]
+			}
 			// controller: "NewsCtrl",
 			// ngInit: "init('news')"
 		});

@@ -1,9 +1,9 @@
 // Login, logout etc
-var mod = angular.module("Auth", []);
+var mod = angular.module("Auth", ["ngFlash"]);
 
 mod.controller("LoginCtrl",
-	["$scope", "authentic",
-	function($scope, authentic) {
+	["$scope", "authentic", "Flash",
+	function($scope, authentic, flash) {
 	console.log("auth controller");
 	// console.log(authentic);
 
@@ -15,14 +15,19 @@ mod.controller("LoginCtrl",
 		// promise if wrong user information are tried.
 		authentic.login($scope.loginForm.email, $scope.loginForm.password)
 			// handle successful promise
-			.then(function() {
-				console.log("login post request was successful. But could have rejected credentials.");
+			.then(function(result) {
+				console.log("logged in: ", result);
 			})
 			// handle error
-			.catch(function() {
-				console.log("some error");
+			.catch(function(result) {
+				console.log("Login error: ", result);
+				$scope.alert(result.message);
 			});
 	}
+
+	$scope.alert = function(message) {
+		var id = flash.create("danger", message, 20000);
+	};
 }]);
 
 // Authentication provider, which can be used in .config of routes.
@@ -62,7 +67,7 @@ mod.provider("authentic", function () {
 							// unauthorized
 							console.log("must log in");
 							deferred.reject();
-							$location.url("/login");  // redirect
+							$location.url("/login");  // redirect to login page
 						}
 					});
 				// console.log(deferred.promise);
@@ -70,28 +75,27 @@ mod.provider("authentic", function () {
 			},
 			// login() requests the server for login with the provided email and password
 			login: function(email, password) {
-				console.log("login(), email: ", email, " pw: ", password);
+				// console.log("login(), email: ", email, " pw: ", password);
 				var deferred = $q.defer();  // contais promise to be returned
 
+				// login request
 				$http.post("/auth/login", {email: email, password: password})
 					.success(function(data, status) {
-						// console.log(data);
-						// console.log("data.status: ", data.status);
 
 						if (status === 200) {
-							// user = true;
-							deferred.resolve();
+							// console.log(data);
+							deferred.resolve(data);  // resolve promise and send data from POST request
+							$location.url("/");  // go to landing page
 						} else {
-							console.log("not successfully logged in");
-							// user = false;
-							deferred.reject();
+							// console.log("not successfully logged in");
+							console.log(data);
+							deferred.reject(data);
 						}
 					})
-
 					// error handling
-					.error(function(data) {
-						user = false;
-						deferred.reject();
+					.error(function(err) {
+						console.log(err);
+						deferred.reject(err);
 					});
 
 				return deferred.promise;

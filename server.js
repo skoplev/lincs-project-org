@@ -11,7 +11,7 @@ var passport = require("passport");
 var session = require("express-session");
 var cookierParser = require("cookie-parser");
 
-var flash = require("connect-flash");
+var flash = require("connect-flash");  // flash messaging
 
 
 // Express configuration

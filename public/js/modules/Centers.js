@@ -21,7 +21,7 @@ mod.directive("center", function() {
 			data: "="
 		},
 		controller: ["$scope", function($scope) {
-			console.log("center controller");
+			// console.log("center controller");
 		}],
 		templateUrl: "templates/CenterTemp.html"
 	}
