@@ -84,7 +84,12 @@ mod.config(
 			}
 		})
 		.when("/concierge", {
-			templateUrl: "/views/concierge.html"
+			templateUrl: "/views/concierge.html",
+			resolve: {
+				auth: ["authentic", function(authentic) {
+					return authentic.isLoggedIn();
+				}]
+			}
 		})
 		.when("/stories/:article", {
 			templateUrl: "views/story.html",

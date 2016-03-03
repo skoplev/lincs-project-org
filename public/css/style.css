@@ -1,14 +1,3 @@
-/*html {
-	position: relative;
-	min-height: 100%;
-}
-body {
-	background-color: rgb(252, 252, 252);
-	margin-bottom: 60px;
-}
-*/
-
-
 html,body {
 	/* height and weight required for responsibe footer */
 	height: 100%;
@@ -34,11 +23,8 @@ div.wiki-page {
 footer {
 	display: table-row;  /* required for responsive footer*/
 	height: 1px;  /* required for responsive footer */
-
 	background-color: rgb(246, 246, 246);
-
 	/*border-collapse: collapse;*/
-
 }
 
 div.landing-panel {
@@ -50,7 +36,6 @@ div.landing-panel {
 
 footer div.container-fluid {
 	border-top: 1px solid rgb(225, 225, 225);  /* same as bootstrap default for nav */
-
 }
 
 
@@ -71,7 +56,6 @@ div.placard {
 	text-align: center;
 	padding-top: 40px;
 	padding-bottom: 40px;
-
 	position: relative;
 }
 
@@ -98,9 +82,7 @@ img.logo {
 
 img.contact-icon {
 	width: 30px;
-
 	/*border-radius: 50%;*/
-
 	-webkit-transition: -webkit-transform .8s ease-in-out;
 	transition: transform .8s ease-in-out;
 }
@@ -179,14 +161,6 @@ div.icon.review {
   max-width: 140px;
 }
 
-/* bootstrip fix. Words for .col-sm-6 classes only.*/
-div.clearfloat.col-sm-6:nth-child(2n+1){
-    clear: left;
-}
-
-div.clearfloat.col-sm-4:nth-child(3n+1){
-    clear: left;
-}
 
 #sidebar.affix-top {
 	position: static;

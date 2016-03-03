@@ -8,9 +8,15 @@
 	</div>
 
 	<div class="row">
-		<div class="col-sm-6 clearfloat" ng-repeat="center in centers.generation">
-			<div class="panel panel-default">
-				<div class="panel-body" center data="center"></div>
+		<div ng-repeat="center in centers.generation">
+			<!-- Bootstrap clearfix -->
+			<div ng-if="$index % 2 == 0" class="clearfix visible-sm"></div>
+			<div ng-if="$index % 3 == 0" class="clearfix visible-md visible-lg"></div>
+
+			<div class="col-md-4 col-sm-6">
+				<div class="panel panel-default">
+					<div class="panel-body" center data="center"></div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -22,10 +28,19 @@
 		</div>
 
 	<div class="row">
-		<div class="col-sm-6 clearfloat" ng-repeat="center in centers.coordination">
-			<div class="panel panel-default">
-				<div class="panel-body" center data="center"></div>
+		<div ng-repeat="center in centers.coordination">
+			<!-- <div class="clearfix visible-sm"></div> -->
+			<!-- Bootstrap clearfix -->
+			<div ng-if="$index % 2 == 0" class="clearfix visible-sm visible-md visible-lg"></div>
+
+			<div class="col-sm-6" >
+				<div class="panel panel-default">
+					<div class="panel-body" center data="center"></div>
+				</div>
 			</div>
+
 		</div>
+
+
 	</div>
 </div>
