@@ -1,37 +1,73 @@
-<div class="container-fluid" data-ng-init="init()">
+<div class="container-fluid">
+
+	<!-- Tab aligned to content-->
 	<div class="row">
+		<br>
 		<div class="col-sm-3">
-			<ul class="nav" id="sidebar">
-				<li id="nav-index" class="top"><a href="" ng-click="loadContent('index.md')">{{ title }}</a></li>
-				<ul class="nav">
-					<li class="lvl0" id="nav-{{ item.split('.')[0] }}" ng-repeat="item in entries">
-						<!-- <a href="" ng-click="loadContent(item); resetUrl();"> {{ item.split('.')[0] }}</a> -->
-						<a href="" ng-click="loadContent(item); resetUrl();"> {{ item.split('.')[0] }}</a>
-					</li>
-					<!-- <li ng-repeat="item in entries"><a href="" ng-click="loadContent(item)"> {{ item.split('.')[0] }}</a></li> -->
-					<!-- <li ng-repeat="item in entries"><a href="/wiki/{{ title }}/{{ item.split('.')[0]}}" ng-click="loadContent(item); resetUrl();"> {{ item.split('.')[0] }}</a></li> -->
-					<!-- <li ng-repeat="item in entries"><a ng-href="/wiki/{{ title }}/{{ item.split('.')[0] }}"> {{ item.split('.')[0] }}</a></li> -->
-				</ul>
-				<!-- <li><a href="#" ng-click="gotoAnchor('data-standards')">goto</a></li> -->
-				<!-- <li><button ng-click="gotoHash()">goto</button></li> -->
-				<!-- <li><a href="#" ng-click="updateScrollSpy()">scrollspy</a></li> -->
+		</div>
+		<div class="col-sm-9">
+			<ul class="nav nav-tabs" role="tablist">
+				<li role="presentation" class="active"><a data-target="#documents" aria-controls="documents" role="tab" data-toggle="tab">Documents</a></li>
+				<li role="presentation"><a data-target="#files" aria-controls="files" role="tab" data-toggle="tab">Files</a></li>
 			</ul>
 		</div>
 
-		<div id="documentation" class="container">
-			<div class="col-sm-9 panel panel-default docs-page" ng-bind-html="documentation" ng-init="loadContent(mdfile)"></div>
-		</div>
-		<!-- <div class="col-sm-10 panel panel-default" data-content="{{getContent(mdfile)}}"></div> -->
-		<!-- <div class="col-sm-10 panel panel-default" ng-bind-html="documentation"></div> -->
 	</div>
+
+	<div class="tab-content">
+
+		<!-- Documents tab content -->
+		<div role="tabpanel" id="documents" class="tab-pane active" data-ng-init="init()">
+
+			<div class="row">
+				<!-- Sidebar -->
+				<div class="col-sm-3">
+					<ul class="nav" id="sidebar">
+						<li id="nav-index" class="top"><a href="" ng-click="loadContent('index.md')">{{ title }}</a></li>
+						<ul class="nav">
+							<li class="lvl0" id="nav-{{ item.split('.')[0] }}" ng-repeat="item in entries">
+								<a href="" ng-click="loadContent(item); resetUrl();"> {{ item.split('.')[0] }}</a>
+							</li>
+						</ul>
+					</ul>
+				</div>
+
+				<div class="col-sm-9" >
+
+					<div class="panel panel-default no-top-border">
+						<!-- Master edit button -->
+						<div class="text-right">
+							<a id="edit-button" href="https://github.com/skoplev/lincs-project-org/edit/master/public/docs/LINCS/articles/About.md" target="_blank" class="btn btn-success">
+								<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+								Edit
+							</a>
+						</div>
+
+						<!-- Document content -->
+						<div id="documentation" class="docs-page" ng-bind-html="documentation" ng-init="loadContent(mdfile)"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Files tab content -->
+		<div role="tabpanel" id="files" class="tab-pane">
+			<div class="row">
+				<div class="col-sm-3">
+					<h4>Files nav</h4>
+				</div>
+				<div>
+					<h3>files content coming soon...</h3>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
 </div>
 
+
 <script type="text/javascript">
-	$('#sidebar').affix({
-	      offset: {
-	        top: 50
-	      }
-	});
 </script>
 
 <!-- try &nbsp for white space indentation of menus -->

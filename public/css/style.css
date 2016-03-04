@@ -35,6 +35,12 @@ footer {
 div.landing-panel {
 }
 
+div.panel.no-top-border {
+	border-top: 0;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
 .panel-default {
 
 }
@@ -189,6 +195,8 @@ button.close-div {
 	top: 4px;
 	right: 4px;
 
+	z-index: 1;
+
 	background-color: rgba(0,0,0,0.0);
 
 	width: 20px;
@@ -200,6 +208,12 @@ button.close-div {
 }
 
 /* Docs navigation */
+
+/* Tabs */
+ul.nav.nav-tabs a:hover {
+	/*color: purple;*/
+	cursor: pointer;
+}
 
 /* subnav */
 #subnav li a {
@@ -247,7 +261,7 @@ button.close-div {
 /* The title of the sidepanel */
 ul#sidebar > li.top > a {
 	padding: 10px 0px;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: bold;
 }
 
@@ -259,25 +273,25 @@ ul#sidebar > li.top > a {
 	 /*0px;*/
 	/*margin-top: 12px;*/
 	/*margin-top: 5px;*/
-	font-size: 18px;
+	font-size: 16px;
 
 }
 
 #sidebar ul.nav > li.lvl1 > a {
 	margin-left: 20px;
 	margin-top: 8px;
-	font-size: 16px;
+	font-size: 14px;
 }
 
 #sidebar ul.nav > li.lvl2 > a {
 	margin-left: 40px;
-	font-size: 14px;
+	font-size: 12px;
 	margin-top: 4px;
 }
 
 #sidebar ul.nav > li.lvl3 > a {
 	margin-left: 60px;
-	font-size: 12px;
+	font-size: 11px;
 	margin-top: 2px;
 }
 

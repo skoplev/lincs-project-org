@@ -13,6 +13,16 @@ mod.controller("DocsCtrl",
 
 	$scope.focus = {id: null};  // the current focus of the reader. Based on html ids of sections and corresponding ids in the nav bar.
 
+	// Sidebar dynamic positioning, TODO: it currently breaks on resize
+	if ($(window).width() > 768) {
+		// not small
+		$('#sidebar').affix({
+		      offset: {
+		        top: 50
+		      }
+		});
+	}
+
 	// $http.get("/api/docs/" + $routeParams.entry + "/articleDir")
 	$http.get("/api/docs/articleDir/" + $routeParams.entry)
 		.success(function(data) {
@@ -60,6 +70,7 @@ mod.controller("DocsCtrl",
 		}
 
 		// $http.get($scope.base_path + "/articles/" + $scope.mdfile)
+		// Get .md file content from server and render content in the body of the documentation.
 		$http.get(api_request)
 			.success(function(data) {
 				// update documentation html variable
@@ -72,6 +83,7 @@ mod.controller("DocsCtrl",
 					// $location.setFocus(); 
 				}
 
+				// Handle url requests with hash section referencing.
 				// Go to hash, timeout places the anchorscroll in the execution queue after the update of the view (due to documentaion beeing bound to the main view).
 				if ($location.hash()) {
 					$timeout(function() {
@@ -79,6 +91,7 @@ mod.controller("DocsCtrl",
 					}, 0);
 				}
 
+				// Update document sub navigation tree based on the table of content data.
 				$scope.openSubnavigation(mdfile.split(".")[0], data.toc);
 
 				// Update scrolling behaviour after compilation
@@ -87,11 +100,44 @@ mod.controller("DocsCtrl",
 					$scope.updateScrollSpy();
 					$scope.setFocus(mdfile.split(".")[0]);
 				}, 0);
+
+				// Update the main edit button link
+				if (mdfile === "index.md") {
+					$scope.setEditButtonHref("https://github.com/skoplev/lincs-project-org/edit/master/public" + $scope.base_path + "/index.md");
+				} else {
+					$scope.setEditButtonHref("https://github.com/skoplev/lincs-project-org/edit/master/public" + $scope.base_path + "/articles/" + mdfile);
+				}
+
+				// Update title callback functions that spawns a share button tho get the hashed url for a header.
+				// The timeout call ensures that the callback configuration is only initiated after the content
+				// is rendered.
+				$timeout(function() {
+					// select all elements with ids that are headers
+					$("#documentation :header")
+						.on("mouseenter", function(event) {
+							// test if the entered element does not contain a share button
+							if (!$(this).find("#share-button").length) {
+								// remove previous share button (singleton).
+								$("#documentation #share-button").fadeOut(400, function() {
+									$(this).remove();
+								});
+
+								// create new share button on entered element
+								var share_button_html = "<a id='share-button' class='btn btn-default pull-right glyphicon glyphicon-share bs-tooltip' data-title='Copy to clipboard' data-trigger='hover' data-placement='bottom'>url</a>";
+								var share_button = $compile(share_button_html)($scope);  // compile for Angular hover
+								$(event.toElement).append(share_button);
+							}
+						});
+				}, 0);  
 			})
 			.error(function(data) {
 				console.log("Error: ", data);
 			});
-		// TODO: update navigation
+	};
+
+	// Set the edit button reference
+	$scope.setEditButtonHref = function(href) {
+		$("#edit-button").attr("href", href);
 	};
 
 	// Function for generating a HTML string for subnavigation with an anchor call.
@@ -142,23 +188,19 @@ mod.controller("DocsCtrl",
 			if (elem.lvl > cur_lvl) {
 				// move down navigation tree
 				// new sublist, update pivot pointer
-				// parent = nav_pointer;  // update the parent nav
 				nav_parent = nav;  // store parent nav
 
 				// new sub navigation list, which is updated to current nav
 				nav = $("<ul>").attr("class", "nav");
 
 				// add new navigation to pivot <li>
-				// parent.append(nav_pointer);  
 				current.append(nav);  
-				// parent.append($("<li>").append(nav_pointer));  
-				// parent.append($("<li>").append(nav_pointer));  
 
 				// add the navigation element
 				nav.append(new_ng_li);
 
 				current = new_ng_li;  // new pivot <li>
-				// console.log()
+
 				// update tree level
 				cur_lvl = elem.lvl; 
 			} else if (elem.lvl < cur_lvl) {
@@ -174,7 +216,6 @@ mod.controller("DocsCtrl",
 				current = new_ng_li;
 			}
 		};
-
 	};
 
 	// Updates the scroll callback function looking for the closest 
