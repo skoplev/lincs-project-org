@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-sm-3">
 			<ul class="nav" id="sidebar">
-				<li class="top"><a href="" ng-click="loadContent('index.md')">{{ title }}</a></li>
+				<li id="nav-index" class="top"><a href="" ng-click="loadContent('index.md')">{{ title }}</a></li>
 				<ul class="nav">
 					<li class="lvl0" id="nav-{{ item.split('.')[0] }}" ng-repeat="item in entries">
 						<!-- <a href="" ng-click="loadContent(item); resetUrl();"> {{ item.split('.')[0] }}</a> -->

@@ -51,6 +51,7 @@ mod.controller("DocsCtrl",
 	// index.md treated as a special case.
 	// Uses the /api/parsemd to retrieve parsed html, metadata, and the table of content
 	$scope.loadContent = function(mdfile) {
+		console.log("loadContent()", mdfile);
 		var api_request = "";
 		if (mdfile === "index.md") {
 			api_request = "/api/parsemd" + $scope.base_path + "/index.md";
@@ -66,14 +67,17 @@ mod.controller("DocsCtrl",
 				// update url without refresh unless at root
 				if (mdfile !== "index.md") {
 					$location.update_path($scope.base_path + "/" + mdfile.split(".")[0]);
-				};
+				} else {
+					$location.update_path($scope.base_path);
+					// $location.setFocus(); 
+				}
 
 				// Go to hash, timeout places the anchorscroll in the execution queue after the update of the view (due to documentaion beeing bound to the main view).
 				if ($location.hash()) {
 					$timeout(function() {
 						$anchorScroll();
 					}, 0);
-				};
+				}
 
 				$scope.openSubnavigation(mdfile.split(".")[0], data.toc);
 
