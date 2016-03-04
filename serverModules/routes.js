@@ -7,7 +7,8 @@ module.exports = function(app, passport) {
 	var fs = require("fs");  // file operations
 	var validator = require("validator");
 	var metaMarked = require("meta-marked");
-	var toc = require("marked-toc");
+	// var toc = require("marked-toc");
+	var toc = require("markdown-toc");
 	var url = require("url");  // parsing url requests
 
 	// Load story metadata into memory
@@ -249,7 +250,8 @@ module.exports = function(app, passport) {
  			} else {
  				// var article = metaMarked(data, {sanitize: true});  // parse markdown for YAML metadata
  				var article = metaMarked(data);  // parse markdown for YAML metadata
- 				article.toc = toc.raw(article.markdown, {allowedChars: "'"});  // generate table of content
+ 				// article.toc = toc.raw(article.markdown, {allowedChars: "'"});  // generate table of content
+ 				article.toc = toc(article.markdown);  // generate table of content
  				delete article.markdown;  // remove markdown so as not to send it
  				response.json(article);  // containing fields meta, html, and toc
  			}

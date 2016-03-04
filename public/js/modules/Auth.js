@@ -52,8 +52,6 @@ mod.provider("authentic", function () {
 		return {
 			// isLoggedIn() checks whether the user is authorized by submitting a GET request
 			isLoggedIn: function() {
-				console.log("isLoggedIn()");
-
 				// Promise assessing whether the user is logged in
 				var deferred = $q.defer();
 
