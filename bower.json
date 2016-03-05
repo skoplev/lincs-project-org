@@ -14,5 +14,6 @@
 		"js-yaml": "latest",
 		"ngtweet": "latest",
 		"angular-flash-alert": "latest"
+		// "angular-clipboard": "latest"
 	}
 }

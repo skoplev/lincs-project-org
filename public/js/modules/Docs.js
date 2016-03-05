@@ -3,6 +3,8 @@ var mod = angular.module("Docs", []);
 mod.controller("DocsCtrl",
 	["$scope", "$http", "$sce", "$routeParams", "$location", "$anchorScroll", "$timeout", "$compile",
 	function($scope, $http, $sce, $routeParams, $location, $anchorScroll, $timeout, $compile) {
+	$scope.site_url = "localhost:8000";
+
 	$scope.title = $routeParams.entry;
 
 	$scope.entries = [];  // list of docs entries, Markdown file names
@@ -12,6 +14,7 @@ mod.controller("DocsCtrl",
 	$scope.mdfile = "index.md";  // currently selected .md file
 
 	$scope.focus = {id: null};  // the current focus of the reader. Based on html ids of sections and corresponding ids in the nav bar.
+
 
 	// Sidebar dynamic positioning, TODO: it currently breaks on resize
 	if ($(window).width() > 768) {
@@ -121,9 +124,19 @@ mod.controller("DocsCtrl",
 								$("#documentation #share-button").fadeOut(400, function() {
 									$(this).remove();
 								});
+								// ensure cleanup of hanging tooltips
+								$("#documentation div.popover.ng-scope").remove();
+
+								// window.prompt("Copy to clipboard: Ctrl+C, Enter", "toclip");
+
+								// get id 
+								var id = $(this).attr("id");
+
+								// reference url of section
+								var url = $scope.site_url + $scope.base_path + "/" + mdfile.split(".")[0] + "#" + id;
 
 								// create new share button on entered element
-								var share_button_html = "<a id='share-button' class='btn btn-default pull-right glyphicon glyphicon-share bs-tooltip' data-title='Copy to clipboard' data-trigger='hover' data-placement='bottom'>url</a>";
+								var share_button_html = "<a id='share-button' class='btn btn-default pull-right glyphicon glyphicon-share bs-popover' title='l' data-content='" + url + "' data-trigger='click' data-placement='bottom'>url</a>";
 								var share_button = $compile(share_button_html)($scope);  // compile for Angular hover
 								$(event.toElement).append(share_button);
 							}

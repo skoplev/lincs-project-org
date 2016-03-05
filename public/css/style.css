@@ -209,6 +209,15 @@ button.close-div {
 
 /* Docs navigation */
 
+/* popover style */
+#documentation .popover-title {
+	display: none;
+}
+
+#documentation .popover:focus {
+	outline: none;
+}
+
 /* Tabs */
 ul.nav.nav-tabs a:hover {
 	/*color: purple;*/
