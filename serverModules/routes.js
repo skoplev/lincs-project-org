@@ -19,6 +19,13 @@ module.exports = function(app, passport) {
 	var publications = require(path.join(__dirname, "../public/content/publications.json"))
 	var centers = require(path.join(__dirname, "../public/content/centers.json"))
 
+	// Download route relative to /public for docs files requests.
+	// Using this solution enables better markdown specifications of download paths
+	// without having to use <a href="file.pdf" target="_self"></a>
+	// app.get("/download/:file_path(*)", function(request, response) {
+	// 	response.sendFile(path.join(__dirname, "../public", request.params.file_path));
+	// });
+
 	app.get("/signup", function(request, response) {
 		console.log(request.flash("signupMessage"));  // get flash message
 		response.sendFile(path.join(__dirname, "../public/views/signup.html"));

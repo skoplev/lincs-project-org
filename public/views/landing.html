@@ -1,183 +1,212 @@
-<div id="placard" class="container-fluid placard">
-	<div class="row">
-		<button class="close-div inverted" onclick="closePlacard()" placement="bottom" bs-tooltip data-title="Dismiss panel"></button>
-		<div class="clearfix"></div>
-		<div class="col-sm-4">
-			<div class="visible-sm visible-md visible-lg" style="height: 60px;"></div>
+<div  class="container-fluid">
+	<div id="banner" class="row">
+		<button class="close-div inverted" onclick="closeId('banner')" placement="bottom" bs-tooltip data-title="Hide panel"></button>
+		<!-- <button class="inverted" onclick="closeId('banner')" placement="bottom" bs-tooltip data-title="Dismiss panel"></button> -->
 
-			<a class="primary-link" href="/data-releases">
-				<!-- Void alignment filler -->
-				<!-- Icon -->
-				<img class="center inverted" src="icons/rack-servers.svg" style="height: 40px;">
-				<!-- Icon description -->
-				<h4>LINCS data releases</h4>
-				<p>Data is continously and openly being releases by the LINCS data generation centers and are available for analysis.</p>
-			</a>
-		</div>
-		<div class="col-sm-4">
-			<a class="primary-link" href="/docs/LINCS/About">
-				<div class="panel fit-to-content" >
-					<img class="center" src="img/LINCS_cube.svg" style="height: 100px;">
-				</div>
-
-				<h4>LINCS consortium overview</h4>
-				<p>LINCS aims to create a network-based understanding of biology by cataloging changes in gene expression and other cellular processes that occur when cells are exposed to a variety of perturbing agents.</p>
-			</a>
-		</div>
-
-		<div class="col-sm-4">
-			<div class="visible-sm visible-md visible-lg" style="height: 60px;"></div>
-
-			<a class="primary-link" href="/docs">
-				<img class="center inverted" src="icons/book.svg" style="height: 40px;">
-
-				<h4>LINCS documentation</h4>
-				<p>More information can be found in the documentation section, which is collaboratively maintained by the LINCS consortium.</p>
-			</a>
-		</div>
+		<!-- <img class="visible-sm visible-md visible-lg" src="img/NIH-banner-sm.jpg" width="100%"> -->
+		<img class="visible-sm" src="img/NIH-banner-sm.jpg" width="100%">
+		<img class="visible-lg visible-md" src="img/NIH-banner.jpg" width="100%">
 	</div>
 </div>
 
+
 <!-- Main content of page -->
+
 <div class="container">
 	<br>
 
 	<div class="row">
-		<div class=col-xs-12>
-			<div class="panel panel-default">
-				<div class="panel-body">
-					<div ng-include src="'/libs/lincs-direct-access-tools/views/concierge.html'"></div>
-					<!-- <div concierge></div> -->
-				</div>
-			</div>
-		</div>
-	</div>
+		<!-- Main content with Concierge and news section-->
+		<div class="col-md-9 col-sm-9 col-xs-12">
 
-	<div class="row">
-
-	<!-- News -->
-		<div class="col-md-3 col-sm-6">
-			<div class="panel panel-default landing-panel" ng-controller="NewsCtrl" ng-init="init('news', 3)">
-				<div class="panel-heading">
-					<a href="news"><h3 class="panel-title">News</h3></a>
-				</div>
-
-				<table class="table">
-					<tr ng-repeat="article in articles" >
-						<td headline data="article"></td>
-					</tr>
-				</table>
-			</div>
-		</div>
-
-
-		<!-- Recent data and software releases -->
-		<div class="col-sm-6 col-md-3">
-			<div class="panel panel-default landing-panel" ng-controller="NewsCtrl" ng-init="init('release', 3)">
-				<div class="panel-heading">
-					<a href="news"><h3 class="panel-title">Releases</h3></a>
-				</div>
-
-				<table class="table">
-					<tr ng-repeat="article in articles" >
-						<td headline data="article"></td>
-					</tr>
-				</table>
-			</div>
-		</div>
-
-		<!-- Recent events -->
-		<div class="col-sm-6 col-md-3">
-			<div class="panel panel-default landing-panel" ng-controller="NewsCtrl" ng-init="init('event', 3)">
-				<div class="panel-heading">
-					<a href="news"><h3 class="panel-title">Events</h3></a>
-				</div>
-
-				<table class="table">
-					<tr ng-repeat="article in articles" >
-						<td headline data="article"></td>
-					</tr>
-				</table>
-
-			</div>
-		</div>
-
-		<!-- Recent publications -->
-		<div class="col-sm-6 col-md-3">
-			<div class="panel panel-default landing-panel" ng-controller="PublicationsCtrl" ng-init="init(4)">
-				<div class="panel-heading">
-					<a href="publications"><h3 class="panel-title">Publications</h3></a>
-				</div>
-				<table class="table">
-					<tr ng-repeat="pub in publications">
-						<td>
-							<a href="{{ pub.url }}" target="_blank">{{ pub.title }}</a>
-						</td>
-					</tr>
-
-				</table>
-
-			</div>
-		</div>
-
-		<div class="col-sm-6 col-md-3">
-			<twitter-widget>
-				<a class="twitter-timeline" href="https://twitter.com/BD2KLINCSDCIC" data-widget-id="704710331080249344">Tweets by @BD2KLINCSDCIC</a>
-			</twitter-widget>
-		</div>
-	</div>
-
-
-	<!--  -->
-	<div class="row">
-		<!-- Data releases window -->
-		<div class="col-sm-12">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<div class="row">
-						<div class="col-xs-6">
-							<h3 class="panel-title">Data releases</h3>
-						</div>
-						<div class="col-xs-6 text-right">
-							<a href="/data-releases">Full screen</a>
+			<!-- Concierge -->
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div ng-include src="'/libs/lincs-direct-access-tools/views/concierge.html'"></div>
 						</div>
 					</div>
 				</div>
-				<div class="panel-body">
-					<iframe src="http://amp.pharm.mssm.edu/milestones/grid.html" frameborder="0" height="500px"></iframe>
+			</div>
+
+			<!-- News -->
+			<div class="row">
+				<div class="col-md-4 col-sm-6">
+					<div class="panel panel-default landing-panel" ng-controller="NewsCtrl" ng-init="init('news', 2)">
+						<div class="panel-heading">
+							<a href="news"><h3 class="panel-title">News</h3></a>
+						</div>
+
+						<table class="table">
+							<tr ng-repeat="article in articles" >
+								<td headline data="article"></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+				<!-- Recent data and software releases -->
+				<div class="col-md-4 col-sm-6">
+					<div class="panel panel-default landing-panel" ng-controller="NewsCtrl" ng-init="init('release', 2)">
+						<div class="panel-heading">
+							<a href="news"><h3 class="panel-title">Data and Tools Releases</h3></a>
+						</div>
+
+						<table class="table">
+							<tr ng-repeat="article in articles" >
+								<td headline data="article"></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+				<!-- Recent events -->
+				<div class="clearfix visible-sm"></div>
+				<div class="col-md-4 col-sm-6">
+					<div class="panel panel-default landing-panel" ng-controller="NewsCtrl" ng-init="init('event', 2)">
+						<div class="panel-heading">
+							<a href="news"><h3 class="panel-title">Events</h3></a>
+						</div>
+
+						<table class="table">
+							<tr ng-repeat="article in articles" >
+								<td headline data="article"></td>
+							</tr>
+						</table>
+
+					</div>
 				</div>
 			</div>
+
+			<div class="row">
+				<!-- Data releases window -->
+				<div class="col-sm-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col-xs-6">
+									<h3 class="panel-title">Data releases</h3>
+								</div>
+								<div class="col-xs-6 text-right">
+									<a href="/data-releases">Full screen</a>
+								</div>
+							</div>
+						</div>
+						<div class="panel-body">
+							<iframe src="http://amp.pharm.mssm.edu/milestones/grid.html" frameborder="0" height="500px"></iframe>
+						</div>
+					</div>
+				</div>
+
+				<br><br>
+			</div>
+
 		</div>
 
+		<!-- Site navigation elements -->
+		<div class="col-md-3 col-sm-3 col-xs-12">
+			<!-- LINCS overview -->
+			<div class="row">
+				<div class="col-xs-12">
+					<a class="primary-link" href="/docs/LINCS">
+						<div class="panel fit-to-content" >
+							<!-- <img src="img/LINCS_cube.svg" style="height: 170px;"> -->
+							<img src="img/LINCS_cube.svg" style="width: 100%;">
+						</div>
 
-		<br><br>
-
-		<!-- LINCS consortium description -->
-
-		<!-- 	
-		<div class="col-sm-6 col-md-3">
-			<div class="panel panel-default">
-				<div class="panel-heading"><h3 class="panel-title">The LINCS Consortium</h3></div>
-				<div class="panel-body">
-					<p>
-						LINCS aims to create a network-based understanding of biology by cataloging changes in gene expression and other cellular processes that occur when cells are exposed to a variety of perturbing agents, and by using computational tools to integrate this diverse information into a comprehensive view of normal and disease states that can be applied for the development of new biomarkers and therapeutics. By generating and making public data that indicates how cells respond to various genetic and environmental stressors, the LINCS project will help us gain a more detailed understanding of cell pathways and aid efforts to develop therapies that might restore perturbed pathways and networks to their normal states.
-					</p>
-					<p>
-						The LINCS website is a source of information for the research community and general public about the LINCS project. The website contains details about the assays, cell types, and perturbagens currently part of the library, as well as links to participating sites, the data releases from the sites, and software that can be used for analyzing the data.
-					</p>
+						<h3>LINCS Overview</h3>
+					</a>
+					<hr>
 				</div>
 			</div>
-		</div>
- 		-->
 
+			<div class="row">
+
+				<!-- Tools and databases -->
+				<div class="col-sm-12 col-xs-6">
+					<a class="primary-link" href="/tools">
+						<img class="icon" src="icons/tools.svg">
+						<h4>Tools and Databases</h4>
+						<p>Computational tools developed to meet the analytical challenges of LINCS.</p>
+					</a>
+					<hr>
+				</div>
+
+				<!-- Data releases -->
+				<div class="col-sm-12 col-xs-6">
+					<a class="primary-link" href="/data-releases">
+						<img class="icon" src="icons/rack-servers.svg">
+						<h4>Data Releases</h4>
+						<p>Data is continously and openly released by the LINCS data and signatures generation centers (DSGCs) and are available for analysis.</p>
+					</a>
+					<hr>
+				</div>
+
+				<div class="clearfix visible-xs"></div>
+				<!-- Documentation -->
+				<div class="col-sm-12 col-xs-6">
+					<a class="primary-link" href="/docs">
+						<img class="icon" src="icons/book.svg">
+						<h4>Documentation</h4>
+						<p>More information can be found in the documentation section, which is collaboratively maintained by the LINCS consortium.</p>
+					</a>
+					<hr>
+				</div>
+
+				<!-- Centers -->
+				<div class="col-sm-12 col-xs-6">
+					<a class="primary-link" href="/centers">
+						<img class="icon" src="icons/greek-temple.svg">
+						<h4>Centers</h4>
+						<p>The LINCS project is a nation-wide collaboration spanning several academic institutions.</p>
+					</a>
+					<hr>
+				</div>
+			</div>
+
+			<!-- Recent publications -->
+			<div class="row">
+				<div class="col-sm-12 col-xs-6">
+					<div class="panel panel-default landing-panel" ng-controller="PublicationsCtrl" ng-init="init(4)">
+						<div class="panel-heading">
+							<a href="publications"><h3 class="panel-title">Publications</h3></a>
+						</div>
+						<table class="table">
+							<tr ng-repeat="pub in publications">
+								<td>
+									<a href="{{ pub.url }}" target="_blank">{{ pub.title }}</a>
+								</td>
+							</tr>
+
+						</table>
+
+					</div>
+				</div>
+			<!-- </div> -->
+
+			<!-- Twitter feed -->
+			<!-- <div class="row"> -->
+				<div class="col-sm-12 col-xs-6">
+					<twitter-widget class="panel panel-default">
+						<a class="twitter-timeline" href="https://twitter.com/BD2KLINCSDCIC" data-widget-id="704710331080249344">Tweets by @BD2KLINCSDCIC</a>
+					</twitter-widget>
+				</div>
+			</div>
+
+		</div>
 	</div>
+</div>
+
+
+<div class="container">
 
 </div>
 
 <script type="text/javascript">
-	var closePlacard = function() {
+	var closeId = function(id) {
 		console.log("closing");
-		$("#placard").fadeOut({
+		$("#" + id).fadeOut({
 			duration: 200
 		});
 	}

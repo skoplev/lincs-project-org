@@ -64,7 +64,6 @@ mod.controller("DocsCtrl",
 	// index.md treated as a special case.
 	// Uses the /api/parsemd to retrieve parsed html, metadata, and the table of content
 	$scope.loadContent = function(mdfile) {
-		console.log("loadContent()", mdfile);
 		var api_request = "";
 		if (mdfile === "index.md") {
 			api_request = "/api/parsemd" + $scope.base_path + "/index.md";
@@ -127,8 +126,6 @@ mod.controller("DocsCtrl",
 								// ensure cleanup of hanging tooltips
 								$("#documentation div.popover.ng-scope").remove();
 
-								// window.prompt("Copy to clipboard: Ctrl+C, Enter", "toclip");
-
 								// get id 
 								var id = $(this).attr("id");
 
@@ -141,7 +138,26 @@ mod.controller("DocsCtrl",
 								$(event.toElement).append(share_button);
 							}
 						});
-				}, 0);  
+				}, 0);
+
+				// Fix download links by adding target="_self" and prepending with file path.
+				$timeout(function() {
+					$("#documentation").find("a").map(function() {
+						// context of each <a> on loaded documentation view
+						// Detect if <a> links to a file for download and add target="_self" if so
+						// get the end string of the href url (separated by "/")
+						try {
+							var href_rear = ($(this).attr("href").split("/").pop());
+							if (isFileName(href_rear)) {
+								// set target specifying download on following the link
+								$(this).attr("target", "_self");
+							}
+						}
+						catch(err) {
+							console.warn(err);
+						}
+					});
+				}, 0);
 			})
 			.error(function(data) {
 				console.log("Error: ", data);
@@ -160,11 +176,41 @@ mod.controller("DocsCtrl",
 		return "<li id=\"nav-" + id + "\" class=\"lvl" + lvl + "\"><a href='#' ng-click=\"gotoAnchor('" + id + "')\">" + name + "</a></li>";
 	};
 
+	// Guess whether input string refers to a file for download.
+	// Warning: makes mistakes on web extensions...
+	function isFileName(name) {
+		illegal_first_chars = "!#$%&'@^`~+,.;=";
+		web_extensions = [
+			"html", "htm", "do", "jsp", "cgi", "fcgi", "php",  // file names
+			"com", "net", "org", "edu", "uk"  // catch most common extensions
+		];
+		// Does the name contain a '.'?
+		if (name.indexOf(".") === -1) {
+			return false;
+		}
+
+		if (illegal_first_chars.indexOf(name[0]) > -1) {
+			// first char of name is on banned list
+			return false;
+		}
+
+		// Test if extension after "." is on the banned list. Warning: not comprehensive
+		var extensions = name.split(".").pop();
+		if(web_extensions.indexOf(extensions) !== -1) {
+			return false;
+		}
+
+		return true;
+	}
+
 	// Opens a new subnavigation selection in the sidebar beneath the specified entry.
 	// Deletes previous subnavigation elements.
 	// toc is a table of content object.
 	// id is the id for the navigation target under which to create the subnav (also the filename of the associated .md file.)
 	$scope.openSubnavigation = function(id, toc) {
+		// console.log(toc.json);
+		// console.log(toc.json[14]);
+		// console.log(id);
 		// close previous subnavigation
 		$("#subnav").remove();
 
@@ -174,17 +220,19 @@ mod.controller("DocsCtrl",
 		var parent = $("#nav-" + id);  // find li nav parent
 		var current = parent;
 
+		var nav = [];
+		var cur_lvl = 1  // current table of content depth level
+
 		// Make new navigation ul and store as pointer for the rendering.
-		var nav = $("<ul>")
+		nav[cur_lvl] = $("<ul>")
 			.attr("id", "subnav")
 			.attr("class", "nav")
 			.appendTo(parent);
 		// console.log(nav_pointer);
 
 		// var current = $("#" + id);  // current li element
-		var nav_parent = null;
+		// var nav_parent = null;
 
-		var cur_lvl = 1  // current table of content depth level
 
 		// Loop through table of content data. Array with depth specified by elem.lvl
 		// The algorithm maintains a pointer to current subnav and parent subnav. It loops
@@ -193,6 +241,9 @@ mod.controller("DocsCtrl",
 		for (var i in toc.json) {
 			var elem = toc.json[i];
 
+			// Fix to elem slug where " (" translages to double dashes "--"
+			elem.slug = elem.slug.replace(/--/g, "-");
+
 			// Compile new navigation element in the current scope.
 			// Contains a Angular function call to gotoAnchor().
 			// input: #id, name, level (for style configuration)
@@ -200,32 +251,34 @@ mod.controller("DocsCtrl",
 
 			if (elem.lvl > cur_lvl) {
 				// move down navigation tree
-				// new sublist, update pivot pointer
-				nav_parent = nav;  // store parent nav
 
-				// new sub navigation list, which is updated to current nav
-				nav = $("<ul>").attr("class", "nav");
+				// new sub navigation list
+				var new_nav = $("<ul>").attr("class", "nav");
 
 				// add new navigation to pivot <li>
-				current.append(nav);  
-
-				// add the navigation element
-				nav.append(new_ng_li);
+				current.append(new_nav);  
+				// add the navigation element to the new nav
+				new_nav.append(new_ng_li);
+				// add the new nav to the navigation stack
+				nav.push(new_nav);
 
 				current = new_ng_li;  // new pivot <li>
 
 				// update tree level
 				cur_lvl = elem.lvl; 
 			} else if (elem.lvl < cur_lvl) {
-				// move up tree
-				nav = nav_parent;  // backtrack nav
-				nav.append(new_ng_li);  // add to parent nav
+				// move up tree, backtrace
+				// remove n layers of nav stack ensuring that the appropriate ancestor is on top of nav stack.
+				for (var i = 0; i < cur_lvl - elem.lvl; i++) {
+					nav.pop();
+				}
+
+				peek(nav).append(new_ng_li);  // add to ancestor nav
 				current = new_ng_li;  // update <li> pivot
 				cur_lvl = elem.lvl;
 			} else {
 				// same tree level, add to current pointer
-				nav.append(new_ng_li);
-				// parent = new_ng_li;
+				peek(nav).append(new_ng_li);
 				current = new_ng_li;
 			}
 		};
@@ -345,6 +398,10 @@ mod.controller("DocsCtrl",
 		$location.hash([]);  // remove hash from url
 	};
 
-}]);
+	// Gets last element of an array
+	function peek(array) {
+		return array[array.length - 1];
+	}
 
+}]);
 

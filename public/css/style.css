@@ -32,23 +32,15 @@ footer {
 	/*border-collapse: collapse;*/
 }
 
-div.landing-panel {
-}
-
 div.panel.no-top-border {
 	border-top: 0;
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;
 }
 
-.panel-default {
-
-}
-
 footer div.container-fluid {
 	border-top: 1px solid rgb(225, 225, 225);  /* same as bootstrap default for nav */
 }
-
 
 .navbar {
 	margin-bottom: 0px;
@@ -70,6 +62,10 @@ div.placard {
 	position: relative;
 }
 
+div#banner {
+	position: relative;
+}
+
 div.placard p, h4 {
 	/*text-align: left;*/
 }
@@ -86,8 +82,18 @@ div.placard-text {
 }
 
 img.headline-img {
-	width: 100%;
-	max-width: 400px;
+	// width: 100%;
+	// max-width: 400px;
+
+	max-width: 100%;
+	max-height: 100px;
+	// max-width: 100%;
+	// max-height: 200px;
+	// max-width:
+}
+
+img.icon {
+	width: 32px;
 }
 
 img.logo {
@@ -133,7 +139,10 @@ a.primary-link {
 }
 
 a.primary-link:hover {
-	color: yellow;
+	// color: yellow;
+	color: orange;
+	// color: rgb(233, 127, 0);
+	// color: rgb(229, 207, 100);
 }
 
 div.icon {
@@ -192,8 +201,8 @@ div.icon.review {
 button.close-div {
 	border: none;
 	position: absolute;
-	top: 4px;
-	right: 4px;
+	bottom: 2px;
+	right: 12px;
 
 	z-index: 1;
 
@@ -204,7 +213,7 @@ button.close-div {
 
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-image: url(/icons/delete-button.svg);
+	background-image: url(/icons/hide-vertical.svg);
 }
 
 /* Docs navigation */
@@ -216,6 +225,10 @@ button.close-div {
 
 #documentation .popover:focus {
 	outline: none;
+}
+
+#documentation img {
+	// margin: 16px;
 }
 
 /* Tabs */
