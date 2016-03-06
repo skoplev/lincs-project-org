@@ -231,6 +231,11 @@ button.close-div {
 	// margin: 16px;
 }
 
+#documentation h1 {
+	padding-bottom: 12px;
+	border-bottom: 1px solid rgb(200,200,200);
+}
+
 /* Tabs */
 ul.nav.nav-tabs a:hover {
 	/*color: purple;*/

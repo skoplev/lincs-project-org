@@ -19,8 +19,56 @@ Access to and utilization of LINCS resources by the biomedical and data science 
 
 ### Supplements to Extend the Scope and Reach of LINCS Datasets
 
-# Webinars
+This notice ([NOT-RM-15-102](http://grants.nih.gov/grants/guide/notice-files/NOT-RM-15-012.html)) announces an opportunity to request administrative supplements to existing NIH research grants, to support generation of new data that will also advance the goals of the LINCS program.
 
+**Key Dates**
+
+* Release Date: February 20, 2015
+* Application Due Date: May 15, 2015
+* Earliest Start Date: July 2015
+
+# LINCS Consortium Meetings
+
+Each year a meeting is held by, and for, the [Library of Integrated Network-based Cellular Signatures (LINCS) Consortium](https://commonfund.nih.gov/LINCS/index). The purpose of these meetings is to gather members of the LINCS consortium to present research efforts and plans, and to work along with NIH program staff to continue to develop a successful LINCS program.
+
+## 2015 Consortium Meeting
+
+<img src="docs/LINCS/img/lincs_f2f_2015-300x182.png" style="float: right; margin: 16px;">
+
+The 2015 LINCS Consortium Meeting was held September 24-25, at the National Cancer Institute, Rockville, MD.
+
+**DAY 1, Thursday, September 24: Center Presentations and E-poster Session**
+
+Two of the primary goals of Day 1 were to (i) to enhance collaboration among LINCS Centers and ensure timely completion of the first “dense cube” projects and (ii) to identify data analysis challenges and data/metadata/database bottlenecks.
+
+* [BD2K-LINCS DCIC](docs/DCIC): Advancing the LINCS program through data integration, tool development, research projects and outreach
+* [DToxS](docs/DToxS): Integrated analysis of transcriptional signatures of cardiotoxicity resulting from kinase inhibition
+* [HMS LINCS](docs/HMS-LINCS): Fundamental principles of cellular response to perturbation
+* [LINCS Center for Transcriptomics](docs/LINCS-Transcriptomics)
+* [LINCS PCCSE](docs/LINCS-Proteomics): Proteomic connectivity maps of signaling and epigenetics
+* [MEP LINCS](docs/MEP): High-throughput image-based assessment of cellular phenotypes modulated by microenvironment perturbagens
+* [NeuroLINCS](docs/NeuroLINCS)
+
+**DAY 2, Friday, September 25: Joint Activities and Technologies**
+
+The goals of Day 2 were to (i) highlight joint activities of LINCS Data and Signature Generation Centers (DSGCs) and DCIC and (ii) to articulate suggestions for future improvement.
+
+<img src="docs/LINCS/img/LINCS_cover-236x300.png" class="pull-left" style="margin-right: 20px;">
+
+## Previous Years
+
+[2014 Consortium Meeting](docs/LINCS/files/meetings/LINCS-2014-Consortium-Meeting-Agenda.pdf). October 27, NCI, Rockville, MD.
+
+2013 Consortium Meeting. November 18-19, Broad Institute, Cambridge, MA.
+
+[LINCS Data Forum 2013](docs/LINCS/files/meetings/LINCSDataForum2013_web.pdf). March 20-21, Harvard Medical School, Boston, MA.
+
+[2012 Consortium Meeting](docs/LINCS/files/meetings/LINCS-November-Consortium-Meeting-Agenda.pdf). November 15-16, NIH, Bethesda, MD.
+
+[2011 Consortium Meeting](docs/LINCS/files/meetings/LINCS Fall Consortia Meeting Agenda final.pdf). October 27-28, Rockville, MD.
+
+<div class="clearfix"></div>
+# Webinars
 
 ## LINCS Data Science Research (DSR) Webinars
 
@@ -41,3 +89,66 @@ For detailed information including the Discussion Group, please visit the wiki a
 
 ## Past Webinars
 
+# Workshops
+
+**Clustergrammer: A Web-based Visualization Tool for Making and Sharing Interactive Clustered Heatmaps**
+
+Postdoctoral fellow from the [BD2K-LINCS DCIC](http://lincs-dcic.org/#/), Nicolas Fernandez PhD (Ma’ayan Lab) will host a workshop on Clustergrammer, which is a web-based web-based matrix visualization tool, built using D3, that enables users to easily generate highly-interactive (zooming, reordering, searching, and filtering) and shareable clustergram-heatmap visualizations. Clustergrammer can be found at http://amp.pharm.mssm.edu/clustergrammer/ and is an open source project available on GitHub.
+
+*February 22, 2016, Pivotal Labs, New York, NY*
+
+**UHack**
+
+The BD2K-LINCS DCIC is one of the sponsors for the [UHack hackathon]((http://coe.miami.edu/uhack2016/index.html) at the University of Miami. Members of the DCIC will participate in this 24-hour hackathon for app development.
+
+*February 20-21, 2016, University of Miami, Miami, FL*
+
+**SAMSI Innovation Workshop: Interdisciplinary Approaches to Biomedical Data Science Challenges**
+
+Stephan Schurer PhD, [BD2K-LINCS Data Coordination and Integration Center](http://lincs-dcic.org/#/), served as a mentor in this [workshop](https://www.youtube.com/watch?v=eAIKbz4AWXY&list=PL0Bwuj8819U8vZYpXObOMtmpOZmujLOXb&index=1) to guide scientists in the formation of interdisciplinary projects aimed at developing models, methods, and approaches to overcome biomedical data science challenges. During the course of the workshop, participants were exposed to LINCS resources.
+
+*July 20-24, 2015, Research Triangle Park, NC*
+
+**NIAAA Workshop: Genomic and Computational Approaches for Biomarker and Drug Discovery**
+
+Session Leaders: Avi Ma’ayan PhD, BD2K-LINCS Data Coordination and Integration Center and Aravind Subramanian PhD, LINCS Center for Transcriptomics
+
+The purpose of this workshop was to bring together (Library of Integrated Network-based Cellular Signatures) LINCS scientists and scientists from the alcohol research community to explore how LINCS resources can facilitate identification of druggable targets and novel and/or repurposed compounds for the treatment of alcohol dependence.
+
+*June 19, 2015, San Antonio, TX*
+
+**Connectivity Map and LINCS Workshop at the EMBL-EBI**
+
+Workshop presented by the LINCS Center for Transcriptomics and the LINCS Proteomic Characterization Center for Signaling and Epigenetics
+
+*March 18-19, 2015, Cambridge, UK*
+
+# Symposia
+
+**LINCS Outreach Meeting 2016**
+
+March 10-11, 2016, University of California, Irvine, CA
+
+**Molecular Medicine Tri-Conference 2016**
+
+As part of the BD2K-LINCS DCIC’s community outreach efforts, Avi Ma’ayan PhD and Stephan Schurer PhD will present in the Informatics channel at the Molecular Medicine Tri-Conference 2016.
+
+*March 8, 2016, San Francisco, CA*
+
+**BD2K-LINCS DCIC | Systems Biology Data Science Symposium**
+
+*January 19-20, 2016, Coral Gables, FL*
+
+**Turning Big Data to Knowledge: An Introduction to the BD2K and LINCS Projects | BD2K-LINCS DCIC Outreach Session at the Society of Toxicology’s Annual Meeting**
+
+Poster session: Big Data to Knowledge (BD2K) – A Graphical Approach for Data Coordination and Integration presented by John Reichard PhD, Mario Medvedovic PhD, Siva Sivaganesan PhD.
+
+*March 23, 2015, San Diego, CA*
+
+**BD2K-LINCS Data Coordination and Integration Center’s Mini-Symposium: Big Data Applications for Drug and Target Discovery**
+
+*January 7, 2015, Icahn School of Medicine at Mount Sinai, New York, NY*
+
+**LINCS Data Forum 2013**
+
+*March 20-21, 2013, Harvard Medical School, Boston, MA*

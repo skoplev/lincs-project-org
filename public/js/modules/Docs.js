@@ -1,8 +1,8 @@
 // Documentation module.
 var mod = angular.module("Docs", []);
 mod.controller("DocsCtrl",
-	["$scope", "$http", "$sce", "$routeParams", "$location", "$anchorScroll", "$timeout", "$compile",
-	function($scope, $http, $sce, $routeParams, $location, $anchorScroll, $timeout, $compile) {
+	["$scope", "$http", "$sce", "$routeParams", "$location", "$anchorScroll", "$timeout", "$compile", "$window",
+	function($scope, $http, $sce, $routeParams, $location, $anchorScroll, $timeout, $compile, $window) {
 	$scope.site_url = "localhost:8000";
 
 	$scope.title = $routeParams.entry;
@@ -91,6 +91,8 @@ mod.controller("DocsCtrl",
 					$timeout(function() {
 						$anchorScroll();
 					}, 0);
+				} else {
+					$window.scrollTo(0, 0);  // to top
 				}
 
 				// Update document sub navigation tree based on the table of content data.
@@ -133,7 +135,7 @@ mod.controller("DocsCtrl",
 								var url = $scope.site_url + $scope.base_path + "/" + mdfile.split(".")[0] + "#" + id;
 
 								// create new share button on entered element
-								var share_button_html = "<a id='share-button' class='btn btn-default pull-right glyphicon glyphicon-share bs-popover' title='l' data-content='" + url + "' data-trigger='click' data-placement='bottom'>url</a>";
+								var share_button_html = "<a id='share-button' class='btn btn-default pull-right glyphicon glyphicon-share bs-popover' data-content='" + url + "' data-trigger='click' data-placement='bottom'>url</a>";
 								var share_button = $compile(share_button_html)($scope);  // compile for Angular hover
 								$(event.toElement).append(share_button);
 							}
