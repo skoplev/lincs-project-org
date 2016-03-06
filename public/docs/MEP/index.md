@@ -24,6 +24,7 @@ Our workflow is as follows:
 3. RPPA and transcriptional profiling of all 20 cancer cell lines following treatment with 30 validated MEPs
 
 <img src="docs/MEP/img/fig2.png" width="100%">
+
 ## Description of each unique study
 
 The biological behaviors of normal and diseased cells and their responses to therapeutic agents are strongly influenced by the regulatory signals they receive from the microenvironments (ME) in which they reside. These signals come from direct interactions with insoluble extracellular matrix and cellular proteins as well as soluble proteins, peptides, or glycoproteins. The behavior of cells receiving these signals ultimately is determined by the interaction of multiple signals received with the regulatory networks intrinsic to the target cell. However, the mechanisms by which combinatorial ME signals influence intrinsic regulatory networks and the cellular phenotypes they control are not well established. We posit that these can be inferred from measurements of cellular and molecular responses to growth on a wide range of soluble and insoluble substrates. 
@@ -34,6 +35,7 @@ The MEP-LINCS will use a novel microenvironment microarray (MEMA) based platform
 Associations between quantitative response phenotype features extracted from multi-color cell images, as well as RNA and protein profiles, will be established using both statistical and pathway mapping algorithms. This complement of signatures will provide an integrated understanding of the cellular phenotypes and regulatory networks affected by ME perturbagens. Once identified, we will use both supervised and unsupervised analysis approaches to identify regulatory networks common to subsets of the ME or phenotypic molecular signatures. Our expectation is that some subnetworks will be relatively universal for mediating response to ME perturbations, while others will be specific to subsets of them.
 
 <img src="docs/MEP/img/fig1.png" width="100%">
+
 ## QA/QC
 
 ### Cell line identity

@@ -6,7 +6,8 @@ tags: event
 author: Sherry Jenkins
 email: sherry.jenkins@mssm.edu
 img: http://www.lincsproject.org/wp-content/uploads/2016/02/neuro_outreach-218x300.jpg
-date: 2016-02-04
+# date: 2016-02-04
+date: 2016-02-06
 ---
 
 <img class="pull-right" src="http://www.lincsproject.org/wp-content/uploads/2016/02/neuro_outreach-218x300.jpg">

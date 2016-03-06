@@ -101,8 +101,21 @@ mod.controller("DocsCtrl",
 				// Update scrolling behaviour after compilation
 				// $timeout ensures that updateScrollSpy() is executed after the DOM has been updated.
 				$timeout(function() {
+
 					$scope.updateScrollSpy();
 					$scope.setFocus(mdfile.split(".")[0]);
+
+					// Update scroll spy on image load to account for final size of images and hence of id positions on the page.
+					$("#documentation").find("img").one("load", function() {
+						$scope.updateScrollSpy();
+					})
+
+					// Set the resize behaviour
+
+					$(window).resize(function() {
+						$scope.updateScrollSpy();
+					})
+
 				}, 0);
 
 				// Update the main edit button link
@@ -288,7 +301,8 @@ mod.controller("DocsCtrl",
 
 	// Updates the scroll callback function looking for the closest 
 	$scope.updateScrollSpy = function() {
-		var offset = 100;  // in pixels, the point from the top where the scroll point is considered
+		// var offset = 100;  // in pixels, the point from the top where the scroll point is considered
+		var offset = 20;
 
 		var header_height = $("#header").outerHeight();
 
@@ -342,20 +356,6 @@ mod.controller("DocsCtrl",
 		});
 	};
 
-	// $scope.loadIndex = function() {
-	// 	// Get index markdown file
-	// 	$http.get("/docs/" + $routeParams.entry + "/index.md")
-	// 		.success(function(data) {
-	// 			$scope.documentation = $sce.trustAsHtml(marked(data));
-
-	// 			// Update url without refresh
-	// 			$location.update_path($scope.base_path);
-	// 		})
-	// 		.error(function(data) {
-	// 			console.log("Error: ", data);
-	// 		});
-	// };
-
 	// Initialization called, specified using data-ng-init="init()"
 	$scope.init = function() {
 		// if the optional article is provided as input.
@@ -390,10 +390,6 @@ mod.controller("DocsCtrl",
 			$scope.setFocus(anchor);
 	};
 
-	$scope.test = function() {
-		console.log("test");
-	};
-
 	$scope.resetUrl = function() {
 		// resetting url
 		$location.update_path($scope.base_path, true);  // true: remember when going back, from angular-location-update
@@ -406,4 +402,3 @@ mod.controller("DocsCtrl",
 	}
 
 }]);
-
