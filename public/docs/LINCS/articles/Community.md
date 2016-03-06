@@ -89,7 +89,9 @@ For detailed information including the Discussion Group, please visit the wiki a
 
 ## Past Webinars
 
-# Workshops
+# Workshops and Symposia
+
+## Workshops
 
 **Clustergrammer: A Web-based Visualization Tool for Making and Sharing Interactive Clustered Heatmaps**
 
@@ -123,7 +125,7 @@ Workshop presented by the LINCS Center for Transcriptomics and the LINCS Proteom
 
 *March 18-19, 2015, Cambridge, UK*
 
-# Symposia
+## Symposia
 
 **LINCS Outreach Meeting 2016**
 

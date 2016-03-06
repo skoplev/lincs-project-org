@@ -1,16 +1,20 @@
 <div class="container">
 	<!-- <br> -->
-	<h2>Documentations</h2>
-	<div class="row panel panel-default">
-		<table class="table">
-			<tbody>
-				<tr class="hover-highlight" ng-repeat="doc in docs">
-					<td>
-						<a ng-href="{{ doc.url }}"><h4>{{ doc.title }}</h4></a>
-						<p class="text-muted">{{ doc.description }}</p>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+	<h2>Documentation</h2>
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="panel panel-default">
+				<table class="table">
+					<tbody>
+						<tr class="hover-highlight" ng-repeat="doc in docs">
+							<td>
+								<a ng-href="{{ doc.url }}"><h4>{{ doc.title }}</h4></a>
+								<p class="text-muted">{{ doc.description }}</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
 	</div>
 </div>
