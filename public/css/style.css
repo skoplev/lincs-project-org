@@ -42,6 +42,15 @@ footer div.container-fluid {
 	border-top: 1px solid rgb(225, 225, 225);  /* same as bootstrap default for nav */
 }
 
+/* Genertic highlight on color */
+.hover-highlight {
+	transition: background-color 0.5s ease;
+}
+.hover-highlight:hover {
+	background-color: rgb(255, 247, 236);
+}
+
+
 .navbar {
 	margin-bottom: 0px;
 }

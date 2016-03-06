@@ -1,7 +1,16 @@
 <div class="container">
-	<div ng-repeat="wiki in wikis">
-		<a ng-href="{{ wiki.url }}"><h4>{{ wiki.title }}</h4></a>
-		<p class="text-muted">{{ wiki.description }}</p>
-		<hr>
+	<!-- <br> -->
+	<h2>Documentations</h2>
+	<div class="row panel panel-default">
+		<table class="table">
+			<tbody>
+				<tr class="hover-highlight" ng-repeat="doc in docs">
+					<td>
+						<a ng-href="{{ doc.url }}"><h4>{{ doc.title }}</h4></a>
+						<p class="text-muted">{{ doc.description }}</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 </div>

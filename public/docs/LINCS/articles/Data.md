@@ -16,6 +16,7 @@ The L1000 data-levels definitions can be found at: http://www.lincscloud.org/l10
 
 The TCGA data-level definitions can be found here: https://tcga-data.nci.nih.gov/tcga/tcgaDataType.jsp
 
+<div class="clearfix"></div>
 # Data release policy
 
 ## General principles
