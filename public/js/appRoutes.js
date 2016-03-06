@@ -43,6 +43,15 @@ mod.config(
 				}]
 			}
 		})
+		.when("/webinars", {
+			templateUrl: "/views/webinars.html",
+			controller: "WebinarsCtrl",
+			resolve: {
+				auth: ["authentic", function(authentic) {
+					return authentic.isLoggedIn();
+				}]
+			}
+		})
 		.when("/centers", {
 			templateUrl: "/views/centers.html",
 			controller: "CentersCtrl",

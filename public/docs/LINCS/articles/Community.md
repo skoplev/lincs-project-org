@@ -70,6 +70,8 @@ The goals of Day 2 were to (i) highlight joint activities of LINCS Data and Sign
 <div class="clearfix"></div>
 # Webinars
 
+For an overview of current and past webinars go to [webinars](/webinars).
+
 ## LINCS Data Science Research (DSR) Webinars
 
 The LINCS Data Science Research Webinars serve as a general forum to engage data scientists within and outside of the LINCS project to work on problems related to LINCS data analysis and integration.
@@ -86,8 +88,6 @@ The LINCS Data Science Research Webinars serve as a general forum to engage data
 For the summary information about LINCS Data Science Webinars, please visit http://lincs-dcic.org/#/webinars | [BD2K-LINCS DCIC YouTube channel](https://www.youtube.com/channel/UC88h_MIO1LP7Jv52VQ4qKkg)
 
 For detailed information including the Discussion Group, please visit the wiki at https://sites.google.com/site/bd2klincsdatascience
-
-## Past Webinars
 
 # Workshops and Symposia
 

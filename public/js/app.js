@@ -10,6 +10,7 @@ var app = angular.module("LincsApp", [
 	"Centers",  // LINCS center controller
 	"DocsIndex",  // index controller for all wiki entries
 	"Docs",  // documentation renderer
+	"Webinars",
 	"News",  // handles article metadata
 	"Reader",
 	"Auth",  // authenti

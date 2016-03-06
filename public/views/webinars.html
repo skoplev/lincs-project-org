@@ -1,0 +1,52 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+
+			<h2>Webinars</h2>
+			<p>New webinar events are regularly held. To join <a href="/docs/LINCS/Community#webinars">refer to</a>.</p>
+			<div class="panel panel-default">
+				<table class="table">
+					<tbody>
+						<tr ng-repeat="webinar in webinars">
+							<td>
+								<a href="{{ webinar.url }}">
+									<!-- <img width="300" src="http://img.youtube.com/vi/{{ webinar.embed }}/0.jpg"> -->
+									<img width="300" src="http://img.youtube.com/vi/{{ webinar.embed }}/hqdefault.jpg">
+								</a>
+								<!-- <iframe ng-src="{{ webinar.embed }}" frameborder="0" allowfullscreen></iframe> -->
+							</td>
+							<td>
+								<h4>{{ webinar.title }}</h4>
+								<p class="text-muted small">
+									<span ng-repeat="author in webinar.presenters">
+										{{author}}
+										<!-- bullet point -->
+										<span ng-if="!$last">&#8226</span>
+									</span>
+									&#8226
+									{{webinar.date | date:"mediumDate"}}
+								</p>
+								<p class="text-muted small">
+									<span ng-repeat="keyword in webinar.keywords">
+										{{ keyword}}
+										<!-- diamonds -->
+										<span ng-if="!$last">&#9830</span>  
+									</span>
+								</p>
+
+								<!-- Abstracts -->
+								<button class="btn btn-sm btn-default" ng-click="toggle('abstract' + $index)">Toggle abstract</button>
+								<div id="abstract{{ $index }}" class="hide">
+									<hr>
+									<p ng-bind-html="webinar.abstract"></p>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+
+		</div>
+	</div>
+</div>

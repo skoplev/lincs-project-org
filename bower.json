@@ -7,6 +7,7 @@
 		"jquery": "latest",
 		"angular-route": "latest",
 		"angular-strap": "latest",
+		"angular-youtube-embed": "latest",
 		"marked": "latest",
 		"angular-location-update": "latest",
 		"lincs-direct-access-tools": "https://github.com/skoplev/lincs-direct-access-tools.git",
@@ -14,6 +15,5 @@
 		"js-yaml": "latest",
 		"ngtweet": "latest",
 		"angular-flash-alert": "latest"
-		// "angular-clipboard": "latest"
 	}
 }
