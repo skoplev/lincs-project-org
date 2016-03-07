@@ -1,0 +1,33 @@
+<td>
+	<a href="{{ data.url }}">
+		<!-- <img width="300" src="http://img.youtube.com/vi/{{ data.youtube_id }}/0.jpg"> -->
+		<img width="200" src="http://img.youtube.com/vi/{{ data.youtube_id }}/hqdefault.jpg">
+	</a>
+	<!-- <iframe ng-src="{{ data.embed }}" frameborder="0" allowfullscreen></iframe> -->
+</td>
+<td>
+	<h4>{{ data.title }}</h4>
+	<p class="text-muted small">
+		<span ng-repeat="author in data.presenters">
+			{{author}}
+			<!-- bullet point -->
+			<span ng-if="!$last">&#8226</span>
+		</span>
+		&#8226
+		{{data.date | date:"mediumDate"}}
+	</p>
+	<p class="text-muted small">
+		<span ng-repeat="keyword in data.keywords">
+			{{ keyword}}
+			<!-- diamonds -->
+			<span ng-if="!$last">&#9830</span>  
+		</span>
+	</p>
+
+	<!-- Abstracts -->
+	<button class="btn btn-sm btn-default" ng-click="toggleAbstract()">Toggle abstract</button>
+	<div id="abstract" class="hide">
+		<hr>
+		<p ng-bind-html="data.abstract"></p>
+	</div>
+</td>

@@ -1,232 +1,237 @@
-[
-	{
-		"title": "Mutations and Drugs Portal (MDP): a database linking drug response data and genomic information",
-		"date": "2016-03-01",
-		"url": "https://www.youtube.com/watch?v=MwrN3hbTnVc",
-		"embed": "MwrN3hbTnVc",
-		"presenters": ["Silvio Bicciato PhD, University of Modena and Reggio Emilia"],
-		"abstract": "Genetic alterations arising in cancer cells often generate cancer-specific dependencies that can be exploited as targets of targeted therapies. Indeed, several evidences demonstrate that the integration of large-scale genomic and pharmacological data from cancer cell lines is a successful approach to discover genetic markers of drug sensitivity and to re-purpose known drugs and compounds to new indications in oncology. However, the lack of direct connections between genomic and pharmacological information still makes inherently difficult to query pharmacogenomics databases and extract novel connections. In an attempt to overcome this limit, we designed Mutations and Drug Portal (MDP), a web accessible database that combines the cell-based NCI60 pharmacological screening with genomic data extracted from the Cancer Cell Line Encyclopedia (CCLE). MDP currently contains drug sensitivity data for more than 50,800 compounds, describing response to drugs across 115 cancer cell lines. To identify genomic features associated to drug response, drug sensitivity data are integrated with information on somatic mutations and transcriptional data of cancer cell lines. MDP can be queried for drugs active in cancer cell lines carrying mutations or transcriptional alterations in specific cancer genes and signaling pathways or for genetic and transcriptional profiles associated to sensitivity or resistance to a given compound. Results are returned using graphical and interactive representations. As proof of performance, MDP identified both known and novel pharmacogenomics associations and unveiled an unpredicted combination of two FDA-approved compounds, namely statins and Dasatinib, as an effective strategy to potently inhibit YAP/TAZ in cancer cells.",
-		"datasets": ["NCI60", "CCLE"],
-		"keywords": ["data Integration", "drug re-positioning", "mutations", "gene expression"]
-	},
-	{
-		"title": "Combining phenotypic and biochemical screening to identify drug targets",
-		"date": "2015-11-10",
-		"url": "https://www.youtube.com/watch?v=Yg3g895lSBM",
-		"embed": "Yg3g895lSBM",
-		"presenters": ["Hassan Al-Ali, PhD, University of Miami Miller School of Medicine"],
-		"abstract": "Despite explosive growth in biological data, drug discovery success rates have not increased, and may be decreasing. Comprehensive systems biology models should ultimately enable exact predictions of drug targets, or combinations of targets, that need to be engaged in order to effectively induce therapeutic responses. Given the robustness of biological networks, engaging multiple targets may be a critical requirement for successful therapies. Indeed, approved drugs are constantly being revealed to exert their effects through targets in addition to those previously recognized. While systems biology approaches are improving steadily, their ability to accurately predict effective targets remains a work in progress. To bypass the need for complete network understanding, we used information theory and machine learning to parse and relate data from cellular and biochemical assays. This enabled us to quickly identify drug targets (proteins that should be engaged to produce therapeutic effect) as well as anti-targets (proteins that must not be engaged to avoid counteracting therapeutic effects). Consequently, we were able to identify compounds with beneficial poly-pharmacology; i.e., compounds that engage several targets and do not engage anti-targets. This poly-pharmacology correlated with high efficacy in cell-based models and also in vivo. Thus the approach can help bridge the gap between classical drug discovery and systems biology, accelerate the discovery of new and effective drugs, and assist in the re-positioning of pre-approved drugs.",
-		"datasets": [],
-		"keywords": ["Poly-pharmacology", "Phenotypic screening", "Biochemical screening", "Drug targets", "Drug discover", "Drug re-positioning"]
-	},
-	{
-		"title": "Imputing New LINCS L1000 Drug Signatures",
-		"date": "2015-11-03",
-		"url": "https://www.youtube.com/watch?v=jS-6fSYErKA",
-		"embed": "jS-6fSYErKA",
-		"presenters": ["Rachel Hodos, Icahn School of Medicine at Mount Sinai"],
-		"abstract": "",
-		"datasets": [],
-		"keywords": []
-	},
-	{
-		"title": "Using Machine Learning to Identify Aberrant Pathway Activity",
-		"date": "2015-09-08",
-		"url": "https://www.youtube.com/watch?v=baJOSU6Yino",
-		"embed": "baJOSU6Yino",
-		"presenters": ["Stephen Piccolo, PhD, Brigham Young University, Provo UT"],
-		"abstract": "Although in some cases individual genes or proteins may operate in isolation to influence a biological phenomenon, genes and proteins typically operate in the context of biological pathways. Researchers have access to curated pathway databases, which help to characterize which genes and proteins play a role in a given pathway. Molecular-level data can be mapped to these curated databases to gain a better understanding of the role that the pathways play in a given phenomenon of interest. However, most such methods can only be applied to a single type of molecular data (typically, gene-expression profiles), and few methods explicitly account for interdependencies among variables. We developed a method, Gene Set Omic Analysis, which uses machine-learning algorithms to identify patterns that differ between two sets of biological samples and ranks pathways accordingly to the robustness of these patterns. This method can be applied to any type of omic data that can be mapped to curated pathway databases. This includes gene-expression data, copy-number variations, DNA variants, DNA methylation profiles, etc. It can also be applied to multiple types of omic data simultaneously. In the second part of my talk, I will explain an alternative approach, which uses machine learning to identify patterns in perturbational data and derives predictions of pathway activity for individual samples.",
-		"datasets": [],
-		"keywords": ["Pathway predictions", "Gene Set Omic Analysis", "Machine Learning", "Machine-learning algorithms"]
-	},
-	{
-		"title": "Drug repositioning by integrating target information through a heterogeneous network model",
-		"date": "2015-08-25",
-		"url": "https://www.youtube.com/watch?v=4fL8c9EtNsE",
-		"embed": "4fL8c9EtNsE",
-		"presenters": ["Jing Li, PhD, Case Western Reserve University, Cleveland, OH"],
-		"abstract": "The emergence of network medicine not only offers more opportunities for better and more complete understanding of the molecular complexities of diseases, but also serves as a promising tool for identifying new drug targets and establishing new relationships among diseases that enable drug repositioning. Computational approaches for drug repositioning by integrating information from multiple sources and multiple levels have the potential to provide great insights to the complex relationships among drugs, targets, disease genes and diseases at a system level. In this talk, I will present a computational framework based on a heterogeneous network model for drug repositioning by using existing omics data about diseases, drugs and drug targets. The novelty of the framework lies in the fact that the strength between a disease–drug pair is calculated through an iterative algorithm on the heterogeneous graph that also incorporates drug-target information. Comprehensive experimental results show that the approach significantly outperforms several recent approaches. Case studies further illustrate its practical usefulness.",
-		"datasets": [],
-		"keywords": ["Drug re-positioning", "Drug targets", "Computational Approaches", "Network Medicine"]
-	},
-	{
-		"title": "Biomedical data integration toward quality healthcare delivery",
-		"date": "2015-08-11",
-		"url": "https://www.youtube.com/watch?v=U81g3BQhAe0",
-		"embed": "U81g3BQhAe0",
-		"presenters": ["Qian Zhu, PhD, Assistant Professor in Health IT, Department of Information Systems, University of Maryland Baltimore County (UMBC), Baltimore, Maryland, USA"],
-		"abstract": "Traditionally, scientists spend a great deal of time on sifting through large amounts of raw data to find useful information for their research. With the recent advance in computational technologies, computational approaches are being increasingly applied in biomedical, even clinical domain to support biomedical related research and clinical decision making, further improve the quality and efficacy of healthcare. In my talk, I will present the effort made by my group on developing computational medical and clinical applications based on integrative biomedical and clinical data. Specifically, I will primarily describe our effort made on 1) drug discovery and 2) precision medicine.",
-		"datasets": [],
-		"keywords": ["Data Integration", "Clinical Application", "Biomedical Data", "Precision Medicine", "Drug Discovery"]
-	},
-	{
-		"title": "The Construction of a Cluster Stack based on Open Source Technologies",
-		"date": "2015-06-23",
-		"url": "https://www.youtube.com/watch?v=1VMEC4VL5qA",
-		"embed": "1VMEC4VL5qA",
-		"presenters": ["Matthew Jones PhD, Icahn School of Medicine at Mount Sinai"],
-		"abstract": "Deploying applications and services across multiple computers can quickly become a complex operation. In addition, running distributed computing frameworks such as MPI, Hadoop or Spark on those same computers makes it even more challenging. To solve this problem we have combined a number of technologies to produce an operational cluster stack. Our stack is based on the Mesosphere Datacenter Operating System and provides a unified interface for interacting with many machines. In this webinar, Matthew Jones PhD, presents a stack built on Apache Mesos that uses Marathon for deploying web apps and other long running services; Docker for packaging dependencies and environments; Hadoop HDFS for storage; Spark for distributed data processing; Cassandra as a big data database; and Chronos for scheduled repetitive jobs. An overview of these technologies is presented and why they are needed. Brief demonstration about how to use them is also discussed.",
-		"datasets": [],
-		"keywords": ["Cluster Stack", "Apache Mesos", "Marathon", "Docker", "Dockerhub", "HAProxy", "Spark", "Hadoop", "Chronos"]
-	},
-	{
-		"title": "L1K++: a fast pipeline that increases the accuracy of L1000 gene expression data",
-		"date": "2015-06-16",
-		"url": "https://www.youtube.com/watch?v=jcpEagg1iaQ",
-		"embed": "jcpEagg1iaQ",
-		"presenters": ["Ling-Hong Hung PhD, University of Washington"],
-		"abstract": "We have developed an alternative data processing pipeline called L1K++ for LINCS L1000 gene expression.  Our key idea in L1K++ is to combine the data from replicates before deconvoluting the two gene expression signals. This increases the accuracy of this step, and of all downstream inferences. Quantile normalization before deconvolution makes this possible. The gene expression signals are then robustly separated by fitting a gaussian mixture model. The pipeline is implemented entirely in C++ and uses linear and constant time algorithms. As a result, it is more than 1000x faster than current pipelines and can generate a complete set of Level 3 data from raw Level 1 data in a matter of hours. We expect that the L1K++ pipeline will result in the generation of more accurate drug signatures and gene networks.",
-		"datasets": [],
-		"keywords": ["L1000", "Gene Expression", "L1K++ Pipeline"]
-	},
-	{
-		"title": "Drug Toxicity Signature Generation Center",
-		"date": "2015-06-09",
-		"url": "https://www.youtube.com/watch?v=85xfd9YS3vQ",
-		"embed": "85xfd9YS3vQ",
-		"presenters": ["Eric Sobie PhD, Icahn School of Medicine at Mount Sinai"],
-		"abstract": "",
-		"datasets": [],
-		"keywords": ["Cardiotoxicity", "Drug-induced Toxicity", "Combination Therapy", "Therapeutic index"]
-	},
-	{
-		"title": "Integrative Analysis of Proteomics Data of Multi-Layered Post Translational Modifications Collected from Human Lung Cancer Cell Lines",
-		"date": "2015-05-26",
-		"url": "https://www.youtube.com/watch?v=HQxincOIqNM",
-		"embed": "HQxincOIqNM",
-		"presenters": ["Peter Hornbeck PhD", "Klarisa Rikova", "Mark Grimes PhD", "Neil Clark PhD", "Nicolas F. Fernandez PhD"],
-		"abstract": "",
-		"datasets": [],
-		"keywords": ["post-translational modifications", "proteomics", "LINCS", "L1000", "integrative analysis"]
-	},
-	{
-		"title": "Assessing the Global Dimensionality of LINCS Signatures",
-		"date": "2015-05-05",
-		"url": "https://www.youtube.com/watch?v=8s3HYdVlEoM",
-		"embed": "8s3HYdVlEoM",
-		"presenters": ["Neil Clark PhD, BD2K-LINCS Data Coordination and Integration Center, Icahn School of Medicine at Mount Sinai"],
-		"abstract": "With the advent of Big Data, the scalability of statistical methods has come to the forefront. By reducing large high-dimensional data sets to their intrinsic dimension many practical problems of data storage and handling, and computational expense of large-scale analysis are greatly alleviated. An example of one approach to this is to find a regularized, low-rank approximation to the data matrix; we show, as an example, that such a representation leads to faster computation time and higher accuracy when building a logistic regression classifier to predict the perturbing drug in L1000 LINCS data. This suggests that the low-rank approximation leads to cleaner perturbation signatures.  We provide further examples using LINCS Post Translational modification data from Cell Signaling. Furthermore, we describe a sample-size scaling approach to estimating the intrinsic dimensionality of high-dimensional data, and demonstrate the principal with an example from TCGA breast cancer gene expression profiles. This approach would not only allow optimal dimensionality reduction, but could also be used to extrapolate the sample size required to explore the space of perturbations.",
-		"datasets": [],
-		"keywords": ["dimensionality reduction", "low-rank approximation"]
-	},
-	{
-		"title": "Target Predictions using LINCS Perturbation Data",
-		"date": "2015-04-21",
-		"url": "https://www.youtube.com/watch?v=afz36W6G7iE",
-		"embed": "afz36W6G7iE",
-		"presenters": ["Yan Xia, Bar-Joseph Group, Carnegie Mellon University, BD2K-LINCS DCIC External Data Science Research Project"],
-		"abstract": "",
-		"datasets": [],
-		"keywords": ["LINCS", "L1000"]
-	},
-	{
-		"title": "Prediction of Adverse Events for LINCS Drugs using L1000 Gene Expression Data, Cell Morphology Profiles and Chemical Structure Features",
-		"date": "2015-04-14",
-		"url": "https://www.youtube.com/watch?v=EHUAU05O0kQ",
-		"embed": "EHUAU05O0kQ",
-		"presenters": ["Zichen Wang, BD2K-LINCS Data Coordination and Integration Center, Icahn School of Medicine at Mount Sinai"],
-		"abstract": "Adverse-events are unintended and undesirable therapeutic response to drugs. Adverse-events are a major public health concern as well as a significant barrier in the drug development process. Failure to detect adverse-events for drugs before they are marketed can lead to substantial patient morbidity. Many efforts have been made to predict adverse-events using chemical and biological features of drugs, whereas the integration of features from chemical and biological origin has proven to improve adverse-events predictability. However, until recently, biological features about the properties of drugs are often limited to the known therapeutic targets of the drugs, or data from specific low-content assays. In contrast, for this study, we used gene expression responses and cell-morphology profiles measured in cell lines upon drug treatment. To predict adverse event we utilized the LINCS L1000 dataset and the Molecular Libraries Probe Production Centers Network (MLPCN) dataset as features to predict side adverse events. Additionally, we extracted features from the chemical structure of the drugs and combined these features with the expression and imaging features to better predict adverse events. First, we converted the LINCS L1000 gene expression profiles of drug treatments to Characteristic Directions in gene expression space to train a k-Nearest Neighbor classifier to predict adverse events. This method alone is already highly predictive (AUROC=0.892). We then combined the matrix derived from processing the gene expression L1000 data, with cell-morphology profiling data, and features extracted from the chemical structure of the drugs to train a multi-label classifier to predict drug adverse events. We found that combining multiple features using ensemble methods is able to achieve even better predictability. The predictive model was applied to all (~20,000) LINCS small molecule compounds profiled in by both L1000 LINCS and MLPCN projects and the results are delivered in an interactive freely available web-site at: http://www.maayanlab.net/SEP-L1000.",
-		"datasets": ["L1000", "DrugBank", "SIDER", "FAERS", "MLPCN"],
-		"keywords": ["side effect prediction", "adverse events", "multi-label classifier"]
-	},
-	{
-		"title": "Transcriptional landscape of drug response guides the design of specific and potent drug combinations",
-		"date": "2015-03-10",
-		"url": "https://www.youtube.com/watch?v=kdKk3jHUR9c",
-		"embed": "kdKk3jHUR9c",
-		"presenters": ["Marc Hafner, LINCS Data and Signature Generation Center, Harvard Medical School"],
-		"abstract": "Characterizing the molecular effects of targeted therapies is an important step towards understanding and predicting drug efficacy in cancer. In this work, we used the L1000 assay to measure the transcriptional response of six breast cancer cell lines to more than 100 different targeted drugs. We focused on inhibitors targeting the most important signaling kinases such as PI3K, AKT or MAPK, as well as receptor tyrosine kinases (RTKs) and cyclin-dependent kinases (CDKs). With two time points and six doses, the dataset contains more than 8000 unique perturbations.<br><br>We clustered the perturbations that elicited a significant response based on their characteristic direction. Clusters were generally time point specific with some clusters contained perturbations from multiple cell lines whereas others were cell line specific. In particular, responses to CDK inhibitors were similar across most cell lines and showed a down-regulation of genes related to the cell cycle. On the other hand, cell lines responded differently to PI3K/AKT and MAPK inhibitors as illustrated by clusters specific to each cell line and pathway. Interestingly, the perturbations induced by RTK (e.g. EGFR, MET, ALK) and non-RTK (e.g. SRC, ABL, BTK) inhibitors, clustered with either the PI3K/AKT or the MAPK inhibitors depending on the cell line. Thus the transcriptional response allowed us to identify differences in pathway connectivity between cell lines, in particular which RTK connects to the PI3K/AKT pathway or the MAPK one.",
-		"datasets": ["L1000 Data", "http://LincsCloud.org"],
-		"keywords": ["kinase inhibitors", "breast cancer cell lines", "drug synergies", "signaling networks"]
-	},
-	{
-		"title": "Leveraging experimental models to advance our understanding of cancer",
-		"date": "2015-02-24",
-		"url": "https://www.youtube.com/watch?v=9KM7inVCLoc",
-		"embed": "9KM7inVCLoc",
-		"presenters": ["Laura Heiser, LINCS Data and Signature Generation Center, Oregon Health and Science University"],
-		"abstract": "We and others have suggested the use of in vitro cell line panels to study the biological underpinnings of cancer and to test hypotheses that arise from studies of primary data. Specifically, we have used a collection of ~70 well characterized breast cancer cell lines to assess gene function and to identify mechanisms of response and resistance to therapeutic compounds. This set of molecular profiling data constitutes one of the most complete ‘omics’ resources available in the public domain and includes assessments of gene expression, copy number, mutations, protein abundance, and response to therapy. Comparison of the genomic and epigenomic features of the cell lines with those measured for primary tumors by The Cancer Genome Atlas (TCGA) and others showed that the cell lines mirror many aspects of 'omic' diversity in primary tumors. Cell line and tumor similarities include: (a) recurrent copy number changes and mutations (b) basal, claudin-low and luminal breast cancer subtypes, and (c) pathway activity. Analysis of correlations between drug sensitivity to 77 therapeutic compounds revealed that approximately 30% are associated with subtype or genome copy number aberration. Finally, we have used various statistical and machine learning approaches to identify integrated predictive signatures of sensitivity for ~50% of compounds in our cell line panel. These data and observations were the basis for a community-wide effort to identify biomarkers of drug sensitivity in the NCI-DREAM Drug Sensitivity Challenge that culminated in the robust identification of a novel machine learning algorithm for predicting drug response from molecular profiling data. This body of work has demonstrated the utility of in vitro model systems, identified biomarkers of drug sensitivity for clinically relevant compounds, and identified concrete approaches and considerations for advancing work in this domain.",
-		"datasets": ["https://www.synapse.org/#!Synapse:syn2346643"],
-		"keywords": ["Breast cancer", "gene expression", "copy number", "drug sensitivity", "signature", "DREAM challenge", "microenvironment"]
-	},
-	{
-		"title": "Discussion of causes for some artifacts observed in L1000 data",
-		"date": "2015-02-17",
-		"url": "https://www.youtube.com/watch?v=d-E_siojRg4",
-		"embed": "d-E_siojRg4",
-		"presenters": ["Chad Young, University of Washington, DCIC External Data Science Research"],
-		"abstract": "Chad Young examines the relationships between Level 3 expression level measurements for pairs of genes probed by the 'same color' beads. He shows that in some situations the deconvolution algorithm produces misleading expression levels, In some situations, plate-level normalization helps in some it does not. Possibility that observed patterns represent underlying biology was suggested by audience and discussed, as well as alternative strategies for systematically identifying artifacts and benchmarking of such alternative strategies.",
-		"datasets": ["L1000 Data", "http://LincsCloud.org"],
-		"keywords": ["L1000", "Statistical Analysis", "Gene Expression", "Transcriptomics", "Quality Control"]
-	},
-	{
-		"title": "Large-scale integration of small molecule-induced reponses in diverse LINCS datasets",
-		"date": "2014-12-16",
-		"url": "https://www.youtube.com/watch?v=TKPSqRrtd6I",
-		"embed": "TKPSqRrtd6I",
-		"presenters": ["Dusica Vidovic, University of MIAMI"],
-		"abstract": "",
-		"datasets": [],
-		"keywords": []
-	},
-	{
-		"title": "Analysis of Lung Cancers Across Multiple Signaling Spaces to Identify New Disease Drivers and Network Connectivity",
-		"date": "2014-12-09",
-		"url": "https://www.youtube.com/watch?v=mgud2LcCdVY",
-		"embed": "mgud2LcCdVY",
-		"presenters": ["Peter Hornbeck, Cell Signaling Technology"],
-		"abstract": "",
-		"datasets": [],
-		"keywords": []
-	},
-	{
-		"title": "L1000 Assay and Signature Benchmarking",
-		"date": "2014-12-2",
-		"url": "https://www.youtube.com/watch?v=eEIXm5rpo-E",
-		"embed": "eEIXm5rpo-E",
-		"presenters": ["Mario Medvedovic"],
-		"abstract": "",
-		"datasets": [],
-		"keywords": []
-	},
-	{
-		"title": "Issues in Level 3 L1000 data; Accessing and processing ENCODE data",
-		"date": "2014-11-18",
-		"url": "https://www.youtube.com/watch?v=-tActS2zkEU",
-		"embed": "-tActS2zkEU",
-		"presenters": ["Chad Young", "Yan Kou"],
-		"abstract": "",
-		"datasets": [],
-		"keywords": []
-	},
-	{
-		"title": "The Characteristic Direction Method",
-		"date": "2014-10-28",
-		"url": "https://www.youtube.com/watch?v=fXYNYUTLmDY",
-		"embed": "fXYNYUTLmDY",
-		"presenters": ["Qiaonan Duan"],
-		"abstract": "",
-		"datasets": [],
-		"keywords": []
-	},
-	{
-		"title": "L1000 Indexing Process",
-		"date": "2014-10-21",
-		"url": "https://www.youtube.com/watch?v=ncaSK0y36ck",
-		"embed": "ncaSK0y36ck",
-		"presenters": ["Amar Koleti"],
-		"abstract": "",
-		"datasets": [],
-		"keywords": []
-	},
-	{
-		"title": "L1000 Data Access and Processing",
-		"date": "2014-10-14",
-		"url": "https://www.youtube.com/watch?v=3ww9Bnhv1c4",
-		"embed": "3ww9Bnhv1c4",
-		"presenters": ["Mario Medvedovic"],
-		"abstract": "",
-		"datasets": [],
-		"keywords": []
-	}
-]
+{
+	"upcoming": [
+	],
+	"past": [
+		{
+			"title": "Mutations and Drugs Portal (MDP): a database linking drug response data and genomic information",
+			"date": "2016-03-01",
+			"url": "https://www.youtube.com/watch?v=MwrN3hbTnVc",
+			"youtube_id": "MwrN3hbTnVc",
+			"presenters": ["Silvio Bicciato PhD, University of Modena and Reggio Emilia"],
+			"abstract": "Genetic alterations arising in cancer cells often generate cancer-specific dependencies that can be exploited as targets of targeted therapies. Indeed, several evidences demonstrate that the integration of large-scale genomic and pharmacological data from cancer cell lines is a successful approach to discover genetic markers of drug sensitivity and to re-purpose known drugs and compounds to new indications in oncology. However, the lack of direct connections between genomic and pharmacological information still makes inherently difficult to query pharmacogenomics databases and extract novel connections. In an attempt to overcome this limit, we designed Mutations and Drug Portal (MDP), a web accessible database that combines the cell-based NCI60 pharmacological screening with genomic data extracted from the Cancer Cell Line Encyclopedia (CCLE). MDP currently contains drug sensitivity data for more than 50,800 compounds, describing response to drugs across 115 cancer cell lines. To identify genomic features associated to drug response, drug sensitivity data are integrated with information on somatic mutations and transcriptional data of cancer cell lines. MDP can be queried for drugs active in cancer cell lines carrying mutations or transcriptional alterations in specific cancer genes and signaling pathways or for genetic and transcriptional profiles associated to sensitivity or resistance to a given compound. Results are returned using graphical and interactive representations. As proof of performance, MDP identified both known and novel pharmacogenomics associations and unveiled an unpredicted combination of two FDA-approved compounds, namely statins and Dasatinib, as an effective strategy to potently inhibit YAP/TAZ in cancer cells.",
+			"datasets": ["NCI60", "CCLE"],
+			"keywords": ["data Integration", "drug re-positioning", "mutations", "gene expression"]
+		},
+		{
+			"title": "Combining phenotypic and biochemical screening to identify drug targets",
+			"date": "2015-11-10",
+			"url": "https://www.youtube.com/watch?v=Yg3g895lSBM",
+			"youtube_id": "Yg3g895lSBM",
+			"presenters": ["Hassan Al-Ali, PhD, University of Miami Miller School of Medicine"],
+			"abstract": "Despite explosive growth in biological data, drug discovery success rates have not increased, and may be decreasing. Comprehensive systems biology models should ultimately enable exact predictions of drug targets, or combinations of targets, that need to be engaged in order to effectively induce therapeutic responses. Given the robustness of biological networks, engaging multiple targets may be a critical requirement for successful therapies. Indeed, approved drugs are constantly being revealed to exert their effects through targets in addition to those previously recognized. While systems biology approaches are improving steadily, their ability to accurately predict effective targets remains a work in progress. To bypass the need for complete network understanding, we used information theory and machine learning to parse and relate data from cellular and biochemical assays. This enabled us to quickly identify drug targets (proteins that should be engaged to produce therapeutic effect) as well as anti-targets (proteins that must not be engaged to avoid counteracting therapeutic effects). Consequently, we were able to identify compounds with beneficial poly-pharmacology; i.e., compounds that engage several targets and do not engage anti-targets. This poly-pharmacology correlated with high efficacy in cell-based models and also in vivo. Thus the approach can help bridge the gap between classical drug discovery and systems biology, accelerate the discovery of new and effective drugs, and assist in the re-positioning of pre-approved drugs.",
+			"datasets": [],
+			"keywords": ["Poly-pharmacology", "Phenotypic screening", "Biochemical screening", "Drug targets", "Drug discover", "Drug re-positioning"]
+		},
+		{
+			"title": "Imputing New LINCS L1000 Drug Signatures",
+			"date": "2015-11-03",
+			"url": "https://www.youtube.com/watch?v=jS-6fSYErKA",
+			"youtube_id": "jS-6fSYErKA",
+			"presenters": ["Rachel Hodos, Icahn School of Medicine at Mount Sinai"],
+			"abstract": "",
+			"datasets": [],
+			"keywords": []
+		},
+		{
+			"title": "Using Machine Learning to Identify Aberrant Pathway Activity",
+			"date": "2015-09-08",
+			"url": "https://www.youtube.com/watch?v=baJOSU6Yino",
+			"youtube_id": "baJOSU6Yino",
+			"presenters": ["Stephen Piccolo, PhD, Brigham Young University, Provo UT"],
+			"abstract": "Although in some cases individual genes or proteins may operate in isolation to influence a biological phenomenon, genes and proteins typically operate in the context of biological pathways. Researchers have access to curated pathway databases, which help to characterize which genes and proteins play a role in a given pathway. Molecular-level data can be mapped to these curated databases to gain a better understanding of the role that the pathways play in a given phenomenon of interest. However, most such methods can only be applied to a single type of molecular data (typically, gene-expression profiles), and few methods explicitly account for interdependencies among variables. We developed a method, Gene Set Omic Analysis, which uses machine-learning algorithms to identify patterns that differ between two sets of biological samples and ranks pathways accordingly to the robustness of these patterns. This method can be applied to any type of omic data that can be mapped to curated pathway databases. This includes gene-expression data, copy-number variations, DNA variants, DNA methylation profiles, etc. It can also be applied to multiple types of omic data simultaneously. In the second part of my talk, I will explain an alternative approach, which uses machine learning to identify patterns in perturbational data and derives predictions of pathway activity for individual samples.",
+			"datasets": [],
+			"keywords": ["Pathway predictions", "Gene Set Omic Analysis", "Machine Learning", "Machine-learning algorithms"]
+		},
+		{
+			"title": "Drug repositioning by integrating target information through a heterogeneous network model",
+			"date": "2015-08-25",
+			"url": "https://www.youtube.com/watch?v=4fL8c9EtNsE",
+			"youtube_id": "4fL8c9EtNsE",
+			"presenters": ["Jing Li, PhD, Case Western Reserve University, Cleveland, OH"],
+			"abstract": "The emergence of network medicine not only offers more opportunities for better and more complete understanding of the molecular complexities of diseases, but also serves as a promising tool for identifying new drug targets and establishing new relationships among diseases that enable drug repositioning. Computational approaches for drug repositioning by integrating information from multiple sources and multiple levels have the potential to provide great insights to the complex relationships among drugs, targets, disease genes and diseases at a system level. In this talk, I will present a computational framework based on a heterogeneous network model for drug repositioning by using existing omics data about diseases, drugs and drug targets. The novelty of the framework lies in the fact that the strength between a disease–drug pair is calculated through an iterative algorithm on the heterogeneous graph that also incorporates drug-target information. Comprehensive experimental results show that the approach significantly outperforms several recent approaches. Case studies further illustrate its practical usefulness.",
+			"datasets": [],
+			"keywords": ["Drug re-positioning", "Drug targets", "Computational Approaches", "Network Medicine"]
+		},
+		{
+			"title": "Biomedical data integration toward quality healthcare delivery",
+			"date": "2015-08-11",
+			"url": "https://www.youtube.com/watch?v=U81g3BQhAe0",
+			"youtube_id": "U81g3BQhAe0",
+			"presenters": ["Qian Zhu, PhD, Assistant Professor in Health IT, Department of Information Systems, University of Maryland Baltimore County (UMBC), Baltimore, Maryland, USA"],
+			"abstract": "Traditionally, scientists spend a great deal of time on sifting through large amounts of raw data to find useful information for their research. With the recent advance in computational technologies, computational approaches are being increasingly applied in biomedical, even clinical domain to support biomedical related research and clinical decision making, further improve the quality and efficacy of healthcare. In my talk, I will present the effort made by my group on developing computational medical and clinical applications based on integrative biomedical and clinical data. Specifically, I will primarily describe our effort made on 1) drug discovery and 2) precision medicine.",
+			"datasets": [],
+			"keywords": ["Data Integration", "Clinical Application", "Biomedical Data", "Precision Medicine", "Drug Discovery"]
+		},
+		{
+			"title": "The Construction of a Cluster Stack based on Open Source Technologies",
+			"date": "2015-06-23",
+			"url": "https://www.youtube.com/watch?v=1VMEC4VL5qA",
+			"youtube_id": "1VMEC4VL5qA",
+			"presenters": ["Matthew Jones PhD, Icahn School of Medicine at Mount Sinai"],
+			"abstract": "Deploying applications and services across multiple computers can quickly become a complex operation. In addition, running distributed computing frameworks such as MPI, Hadoop or Spark on those same computers makes it even more challenging. To solve this problem we have combined a number of technologies to produce an operational cluster stack. Our stack is based on the Mesosphere Datacenter Operating System and provides a unified interface for interacting with many machines. In this webinar, Matthew Jones PhD, presents a stack built on Apache Mesos that uses Marathon for deploying web apps and other long running services; Docker for packaging dependencies and environments; Hadoop HDFS for storage; Spark for distributed data processing; Cassandra as a big data database; and Chronos for scheduled repetitive jobs. An overview of these technologies is presented and why they are needed. Brief demonstration about how to use them is also discussed.",
+			"datasets": [],
+			"keywords": ["Cluster Stack", "Apache Mesos", "Marathon", "Docker", "Dockerhub", "HAProxy", "Spark", "Hadoop", "Chronos"]
+		},
+		{
+			"title": "L1K++: a fast pipeline that increases the accuracy of L1000 gene expression data",
+			"date": "2015-06-16",
+			"url": "https://www.youtube.com/watch?v=jcpEagg1iaQ",
+			"youtube_id": "jcpEagg1iaQ",
+			"presenters": ["Ling-Hong Hung PhD, University of Washington"],
+			"abstract": "We have developed an alternative data processing pipeline called L1K++ for LINCS L1000 gene expression.  Our key idea in L1K++ is to combine the data from replicates before deconvoluting the two gene expression signals. This increases the accuracy of this step, and of all downstream inferences. Quantile normalization before deconvolution makes this possible. The gene expression signals are then robustly separated by fitting a gaussian mixture model. The pipeline is implemented entirely in C++ and uses linear and constant time algorithms. As a result, it is more than 1000x faster than current pipelines and can generate a complete set of Level 3 data from raw Level 1 data in a matter of hours. We expect that the L1K++ pipeline will result in the generation of more accurate drug signatures and gene networks.",
+			"datasets": [],
+			"keywords": ["L1000", "Gene Expression", "L1K++ Pipeline"]
+		},
+		{
+			"title": "Drug Toxicity Signature Generation Center",
+			"date": "2015-06-09",
+			"url": "https://www.youtube.com/watch?v=85xfd9YS3vQ",
+			"youtube_id": "85xfd9YS3vQ",
+			"presenters": ["Eric Sobie PhD, Icahn School of Medicine at Mount Sinai"],
+			"abstract": "",
+			"datasets": [],
+			"keywords": ["Cardiotoxicity", "Drug-induced Toxicity", "Combination Therapy", "Therapeutic index"]
+		},
+		{
+			"title": "Integrative Analysis of Proteomics Data of Multi-Layered Post Translational Modifications Collected from Human Lung Cancer Cell Lines",
+			"date": "2015-05-26",
+			"url": "https://www.youtube.com/watch?v=HQxincOIqNM",
+			"youtube_id": "HQxincOIqNM",
+			"presenters": ["Peter Hornbeck PhD", "Klarisa Rikova", "Mark Grimes PhD", "Neil Clark PhD", "Nicolas F. Fernandez PhD"],
+			"abstract": "",
+			"datasets": [],
+			"keywords": ["post-translational modifications", "proteomics", "LINCS", "L1000", "integrative analysis"]
+		},
+		{
+			"title": "Assessing the Global Dimensionality of LINCS Signatures",
+			"date": "2015-05-05",
+			"url": "https://www.youtube.com/watch?v=8s3HYdVlEoM",
+			"youtube_id": "8s3HYdVlEoM",
+			"presenters": ["Neil Clark PhD, BD2K-LINCS Data Coordination and Integration Center, Icahn School of Medicine at Mount Sinai"],
+			"abstract": "With the advent of Big Data, the scalability of statistical methods has come to the forefront. By reducing large high-dimensional data sets to their intrinsic dimension many practical problems of data storage and handling, and computational expense of large-scale analysis are greatly alleviated. An example of one approach to this is to find a regularized, low-rank approximation to the data matrix; we show, as an example, that such a representation leads to faster computation time and higher accuracy when building a logistic regression classifier to predict the perturbing drug in L1000 LINCS data. This suggests that the low-rank approximation leads to cleaner perturbation signatures.  We provide further examples using LINCS Post Translational modification data from Cell Signaling. Furthermore, we describe a sample-size scaling approach to estimating the intrinsic dimensionality of high-dimensional data, and demonstrate the principal with an example from TCGA breast cancer gene expression profiles. This approach would not only allow optimal dimensionality reduction, but could also be used to extrapolate the sample size required to explore the space of perturbations.",
+			"datasets": [],
+			"keywords": ["dimensionality reduction", "low-rank approximation"]
+		},
+		{
+			"title": "Target Predictions using LINCS Perturbation Data",
+			"date": "2015-04-21",
+			"url": "https://www.youtube.com/watch?v=afz36W6G7iE",
+			"youtube_id": "afz36W6G7iE",
+			"presenters": ["Yan Xia, Bar-Joseph Group, Carnegie Mellon University, BD2K-LINCS DCIC External Data Science Research Project"],
+			"abstract": "",
+			"datasets": [],
+			"keywords": ["LINCS", "L1000"]
+		},
+		{
+			"title": "Prediction of Adverse Events for LINCS Drugs using L1000 Gene Expression Data, Cell Morphology Profiles and Chemical Structure Features",
+			"date": "2015-04-14",
+			"url": "https://www.youtube.com/watch?v=EHUAU05O0kQ",
+			"youtube_id": "EHUAU05O0kQ",
+			"presenters": ["Zichen Wang, BD2K-LINCS Data Coordination and Integration Center, Icahn School of Medicine at Mount Sinai"],
+			"abstract": "Adverse-events are unintended and undesirable therapeutic response to drugs. Adverse-events are a major public health concern as well as a significant barrier in the drug development process. Failure to detect adverse-events for drugs before they are marketed can lead to substantial patient morbidity. Many efforts have been made to predict adverse-events using chemical and biological features of drugs, whereas the integration of features from chemical and biological origin has proven to improve adverse-events predictability. However, until recently, biological features about the properties of drugs are often limited to the known therapeutic targets of the drugs, or data from specific low-content assays. In contrast, for this study, we used gene expression responses and cell-morphology profiles measured in cell lines upon drug treatment. To predict adverse event we utilized the LINCS L1000 dataset and the Molecular Libraries Probe Production Centers Network (MLPCN) dataset as features to predict side adverse events. Additionally, we extracted features from the chemical structure of the drugs and combined these features with the expression and imaging features to better predict adverse events. First, we converted the LINCS L1000 gene expression profiles of drug treatments to Characteristic Directions in gene expression space to train a k-Nearest Neighbor classifier to predict adverse events. This method alone is already highly predictive (AUROC=0.892). We then combined the matrix derived from processing the gene expression L1000 data, with cell-morphology profiling data, and features extracted from the chemical structure of the drugs to train a multi-label classifier to predict drug adverse events. We found that combining multiple features using ensemble methods is able to achieve even better predictability. The predictive model was applied to all (~20,000) LINCS small molecule compounds profiled in by both L1000 LINCS and MLPCN projects and the results are delivered in an interactive freely available web-site at: http://www.maayanlab.net/SEP-L1000.",
+			"datasets": ["L1000", "DrugBank", "SIDER", "FAERS", "MLPCN"],
+			"keywords": ["side effect prediction", "adverse events", "multi-label classifier"]
+		},
+		{
+			"title": "Transcriptional landscape of drug response guides the design of specific and potent drug combinations",
+			"date": "2015-03-10",
+			"url": "https://www.youtube.com/watch?v=kdKk3jHUR9c",
+			"youtube_id": "kdKk3jHUR9c",
+			"presenters": ["Marc Hafner, LINCS Data and Signature Generation Center, Harvard Medical School"],
+			"abstract": "Characterizing the molecular effects of targeted therapies is an important step towards understanding and predicting drug efficacy in cancer. In this work, we used the L1000 assay to measure the transcriptional response of six breast cancer cell lines to more than 100 different targeted drugs. We focused on inhibitors targeting the most important signaling kinases such as PI3K, AKT or MAPK, as well as receptor tyrosine kinases (RTKs) and cyclin-dependent kinases (CDKs). With two time points and six doses, the dataset contains more than 8000 unique perturbations.<br><br>We clustered the perturbations that elicited a significant response based on their characteristic direction. Clusters were generally time point specific with some clusters contained perturbations from multiple cell lines whereas others were cell line specific. In particular, responses to CDK inhibitors were similar across most cell lines and showed a down-regulation of genes related to the cell cycle. On the other hand, cell lines responded differently to PI3K/AKT and MAPK inhibitors as illustrated by clusters specific to each cell line and pathway. Interestingly, the perturbations induced by RTK (e.g. EGFR, MET, ALK) and non-RTK (e.g. SRC, ABL, BTK) inhibitors, clustered with either the PI3K/AKT or the MAPK inhibitors depending on the cell line. Thus the transcriptional response allowed us to identify differences in pathway connectivity between cell lines, in particular which RTK connects to the PI3K/AKT pathway or the MAPK one.",
+			"datasets": ["L1000 Data", "http://LincsCloud.org"],
+			"keywords": ["kinase inhibitors", "breast cancer cell lines", "drug synergies", "signaling networks"]
+		},
+		{
+			"title": "Leveraging experimental models to advance our understanding of cancer",
+			"date": "2015-02-24",
+			"url": "https://www.youtube.com/watch?v=9KM7inVCLoc",
+			"youtube_id": "9KM7inVCLoc",
+			"presenters": ["Laura Heiser, LINCS Data and Signature Generation Center, Oregon Health and Science University"],
+			"abstract": "We and others have suggested the use of in vitro cell line panels to study the biological underpinnings of cancer and to test hypotheses that arise from studies of primary data. Specifically, we have used a collection of ~70 well characterized breast cancer cell lines to assess gene function and to identify mechanisms of response and resistance to therapeutic compounds. This set of molecular profiling data constitutes one of the most complete ‘omics’ resources available in the public domain and includes assessments of gene expression, copy number, mutations, protein abundance, and response to therapy. Comparison of the genomic and epigenomic features of the cell lines with those measured for primary tumors by The Cancer Genome Atlas (TCGA) and others showed that the cell lines mirror many aspects of 'omic' diversity in primary tumors. Cell line and tumor similarities include: (a) recurrent copy number changes and mutations (b) basal, claudin-low and luminal breast cancer subtypes, and (c) pathway activity. Analysis of correlations between drug sensitivity to 77 therapeutic compounds revealed that approximately 30% are associated with subtype or genome copy number aberration. Finally, we have used various statistical and machine learning approaches to identify integrated predictive signatures of sensitivity for ~50% of compounds in our cell line panel. These data and observations were the basis for a community-wide effort to identify biomarkers of drug sensitivity in the NCI-DREAM Drug Sensitivity Challenge that culminated in the robust identification of a novel machine learning algorithm for predicting drug response from molecular profiling data. This body of work has demonstrated the utility of in vitro model systems, identified biomarkers of drug sensitivity for clinically relevant compounds, and identified concrete approaches and considerations for advancing work in this domain.",
+			"datasets": ["https://www.synapse.org/#!Synapse:syn2346643"],
+			"keywords": ["Breast cancer", "gene expression", "copy number", "drug sensitivity", "signature", "DREAM challenge", "microenvironment"]
+		},
+		{
+			"title": "Discussion of causes for some artifacts observed in L1000 data",
+			"date": "2015-02-17",
+			"url": "https://www.youtube.com/watch?v=d-E_siojRg4",
+			"youtube_id": "d-E_siojRg4",
+			"presenters": ["Chad Young, University of Washington, DCIC External Data Science Research"],
+			"abstract": "Chad Young examines the relationships between Level 3 expression level measurements for pairs of genes probed by the 'same color' beads. He shows that in some situations the deconvolution algorithm produces misleading expression levels, In some situations, plate-level normalization helps in some it does not. Possibility that observed patterns represent underlying biology was suggested by audience and discussed, as well as alternative strategies for systematically identifying artifacts and benchmarking of such alternative strategies.",
+			"datasets": ["L1000 Data", "http://LincsCloud.org"],
+			"keywords": ["L1000", "Statistical Analysis", "Gene Expression", "Transcriptomics", "Quality Control"]
+		},
+		{
+			"title": "Large-scale integration of small molecule-induced reponses in diverse LINCS datasets",
+			"date": "2014-12-16",
+			"url": "https://www.youtube.com/watch?v=TKPSqRrtd6I",
+			"youtube_id": "TKPSqRrtd6I",
+			"presenters": ["Dusica Vidovic, University of MIAMI"],
+			"abstract": "",
+			"datasets": [],
+			"keywords": []
+		},
+		{
+			"title": "Analysis of Lung Cancers Across Multiple Signaling Spaces to Identify New Disease Drivers and Network Connectivity",
+			"date": "2014-12-09",
+			"url": "https://www.youtube.com/watch?v=mgud2LcCdVY",
+			"youtube_id": "mgud2LcCdVY",
+			"presenters": ["Peter Hornbeck, Cell Signaling Technology"],
+			"abstract": "",
+			"datasets": [],
+			"keywords": []
+		},
+		{
+			"title": "L1000 Assay and Signature Benchmarking",
+			"date": "2014-12-2",
+			"url": "https://www.youtube.com/watch?v=eEIXm5rpo-E",
+			"youtube_id": "eEIXm5rpo-E",
+			"presenters": ["Mario Medvedovic"],
+			"abstract": "",
+			"datasets": [],
+			"keywords": []
+		},
+		{
+			"title": "Issues in Level 3 L1000 data; Accessing and processing ENCODE data",
+			"date": "2014-11-18",
+			"url": "https://www.youtube.com/watch?v=-tActS2zkEU",
+			"youtube_id": "-tActS2zkEU",
+			"presenters": ["Chad Young", "Yan Kou"],
+			"abstract": "",
+			"datasets": [],
+			"keywords": []
+		},
+		{
+			"title": "The Characteristic Direction Method",
+			"date": "2014-10-28",
+			"url": "https://www.youtube.com/watch?v=fXYNYUTLmDY",
+			"youtube_id": "fXYNYUTLmDY",
+			"presenters": ["Qiaonan Duan"],
+			"abstract": "",
+			"datasets": [],
+			"keywords": []
+		},
+		{
+			"title": "L1000 Indexing Process",
+			"date": "2014-10-21",
+			"url": "https://www.youtube.com/watch?v=ncaSK0y36ck",
+			"youtube_id": "ncaSK0y36ck",
+			"presenters": ["Amar Koleti"],
+			"abstract": "",
+			"datasets": [],
+			"keywords": []
+		},
+		{
+			"title": "L1000 Data Access and Processing",
+			"date": "2014-10-14",
+			"url": "https://www.youtube.com/watch?v=3ww9Bnhv1c4",
+			"youtube_id": "3ww9Bnhv1c4",
+			"presenters": ["Mario Medvedovic"],
+			"abstract": "",
+			"datasets": [],
+			"keywords": []
+		}
+
+	]
+}
