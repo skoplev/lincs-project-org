@@ -2,7 +2,7 @@
 title: The BD2K-LINCS DCIC’s Systems Biology Data Science Symposium 2016
 summary: The first annual Systems Biology Data Science Symposium at the University of Miami brought together the BD2K-LINCS Data Coordination and Integration Center, local researchers, and outside experts.
 type: event
-tags: event
+tags: ["training"]
 author: Sherry Jenkins
 email: sherry.jenkins@mssm.edu
 img: http://www.lincsproject.org/wp-content/uploads/2015/02/Group_IMG_3948-1024x642.jpg

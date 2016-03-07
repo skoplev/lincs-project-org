@@ -3,9 +3,7 @@
 		<div class="col-xs-12">
 			<h2>News</h2>
 
-
 			<div class="panel panel-default">
-				<!-- <hr> -->
 				<table class="table">
 					<tbody>
 						<tr class="media" ng-repeat="article in articles">
@@ -14,9 +12,25 @@
 									<img src="{{ article.img }}" width="150px">
 								</span>
 								<div class="media-body">
+
+									<!-- Category button -->
+									<button class="btn btn-xs pull-right {{ buttonStyle(article.type) }}" ng-click="filterBy(article.type)">{{ article.type }}</button>
+
 									<a href="{{ article.url }}"><h4>{{ article.title }}</h4></a>
-									<p class="text-muted">By {{ article.author }} on {{ article.date | date:"mediumDate"}}</p>
+									<p class="text-muted small">By {{ article.author }} on {{ article.date | date:"mediumDate"}}</p>
+
+									<!-- Tags in array -->
+									
+									<p class="text-muted small">
+										<span ng-repeat="tag in article.tags">
+											{{ tag }}
+											<span ng-if="!$last">&#8226</span>
+										</span>
+									</p>
+
+									<!-- Article summary -->
 									<p>{{ article.summary }}</p>
+
 								</div>
 							</td>
 

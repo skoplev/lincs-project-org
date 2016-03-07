@@ -224,6 +224,13 @@ button.close-div {
 	background-image: url(/icons/hide-vertical.svg);
 }
 
+
+/* NEWS */
+
+button.btn.test {
+	background-color: green;
+}
+
 /* Docs navigation */
 
 /* popover style */

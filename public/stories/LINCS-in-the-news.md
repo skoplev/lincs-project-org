@@ -2,10 +2,10 @@
 title: LINCS In The News
 summary: "Genetics: Big Hopes for Big Data"
 type: news
-tags: 
+tags: []
 author: Sherry Jenkins
 email: sherry.jenkins@mssm.edu
-img: http://www.lincsproject.org/wp-content/uploads/2015/11/nature_outlook_cover-228x300.png
+img: img/stories/nature_outlook_cover.png
 date: 2015-11-19
 ---
 

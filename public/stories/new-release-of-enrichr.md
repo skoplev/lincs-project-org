@@ -1,8 +1,8 @@
 ---
 title: New Release Of Enrichr
 summary: Updated ChEA library, new LINCS L1000 libraries and Harmonizome Mobile App.
-type: release
-tags: event
+type: DCIC release
+tags: []
 author: Sherry Jenkins
 email: sherry.jenkins@mssm.edu
 img: http://www.lincsproject.org/wp-content/uploads/2015/11/enrichr-300x92.png

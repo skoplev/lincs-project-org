@@ -1,12 +1,11 @@
 ---
-title: BD2K-LINCS DCIC | Accepting Applications For 2016 Summer Research Training Program
+title: Apply For the DCIC 2016 Summer Research Training Program
 summary: The BD2K-LINCS DCIC Summer Research Training Program in Biomedical Big Data Science is a research intensive ten-week training program for undergraduate and graduate students.
 type: news
-tags: event
+tags: ["event"]
 author: Sherry Jenkins
 email: sherry.jenkins@mssm.edu
 img: img/stories/BD2K_summer_program2016.png
-
 date: 2015-11-05
 ---
 
