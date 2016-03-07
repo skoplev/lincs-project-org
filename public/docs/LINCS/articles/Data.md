@@ -1,10 +1,10 @@
-The LINCS [Data and Signature Generation Centers (DSGCs)](/centers) produce a variety of data for the library. For such data to be standardized, integrated, and coordinated in a manner that promotes consistency and allows comparison across different cell types, assays and conditions, the BD2K-LINCS DCIC together with the DSGCs develop and employ data standards.
+The LINCS [Data and Signature Generation Centers (DSGCs)](centers) produce a variety of data for the library. For such data to be standardized, integrated, and coordinated in a manner that promotes consistency and allows comparison across different cell types, assays and conditions, the BD2K-LINCS DCIC together with the DSGCs develop and employ data standards.
 
 Once collected, LINCS data is made available to the research community in various formats so that it can be used in different types of analyses.
 
 The [data standards](#data-standards) page describes the data structures that are being developed by the LINCS Data Working Group.
 
-The [data releases](/data-releases) page describes the collections of data released and planned to be released to the public by the LINCS consortia with instruction on how to access, download and cite it.
+The [data releases](data-releases) page describes the collections of data released and planned to be released to the public by the LINCS consortia with instruction on how to access, download and cite it.
 
 # Data Levels
 
@@ -33,7 +33,7 @@ The TCGA data-level definitions can be found here: https://tcga-data.nci.nih.gov
 
 ## Release of LINCS data
 
-* LINCS Centers will release primary and processed data on a quarterly basis as described on the [data release page](/data-releases). LINCS data will be released as soon as logistically possible after QA/QC has been completed but not later than 3 months after QA/QC and no more than 6 months after data generation. It is anticipated however, that for a subset of LINCS data with less well established QA/QC standards (e.g. live cell imaging experiments) the generation of level 2&3 data will be part of the QA/QC process; in these cases the delay between data generation and data release will be longer. Regardless, the principle will be the same: timely release of data of sufficient quality that it is useful to the community at large. The concept of [data levels](#data-levels) follows principles used in other projects like TCGA (The Cancer Genome Atlas).
+* LINCS Centers will release primary and processed data on a quarterly basis as described on the [data release page](data-releases). LINCS data will be released as soon as logistically possible after QA/QC has been completed but not later than 3 months after QA/QC and no more than 6 months after data generation. It is anticipated however, that for a subset of LINCS data with less well established QA/QC standards (e.g. live cell imaging experiments) the generation of level 2&3 data will be part of the QA/QC process; in these cases the delay between data generation and data release will be longer. Regardless, the principle will be the same: timely release of data of sufficient quality that it is useful to the community at large. The concept of [data levels](#data-levels) follows principles used in other projects like TCGA (The Cancer Genome Atlas).
 
 * For some LINCS data types (e.g. L1000), data levels have already been established and quality assessment metrics exist. LINCS Centers will therefore conform to these standards. This includes all data defined by the National Institutes of Health (NIH) Genomic Data Sharing (GDS) Policy (genome-wide association studies (GWAS), single nucleotide polymorphisms (SNP) arrays, and genome sequence, transcriptomic, metagenomic, epigenomic, and gene expression data). LINCS Centers will follow all of the guidelines in the [GDS policy](http://gds.nih.gov/03policy2.html) with respect to human data.
 

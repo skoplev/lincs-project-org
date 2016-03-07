@@ -9,7 +9,7 @@ mod.controller("ReaderCtrl",
 	$scope.text = "";
 	$scope.meta;
 	// Load article html
-	var api_request = "/api/parsemd/stories/" + $routeParams.article + ".md";
+	var api_request = "api/parsemd/stories/" + $routeParams.article + ".md";
 
 	$http.get(api_request)
 		.success(function(data) {

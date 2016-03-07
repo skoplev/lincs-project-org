@@ -11,7 +11,7 @@ mod.config(
 	// console.log(authenticProvider);
 	$routeProvider
 		.when("/", {
-			templateUrl: "/views/landing.html",
+			templateUrl: "views/landing.html",
 			controller: "LandingCtrl",
 			resolve: {
 				// authentic service dependency,
@@ -27,7 +27,7 @@ mod.config(
 			controller: "LoginCtrl"
 		})
 		.when("/data-releases", {
-			templateUrl: "/views/data-releases.html",
+			templateUrl: "views/data-releases.html",
 			resolve: {
 				auth: ["authentic", function(authentic) {
 					return authentic.isLoggedIn();
@@ -35,7 +35,7 @@ mod.config(
 			}
 		})
 		.when("/publications", {
-			templateUrl: "/views/publications.html",
+			templateUrl: "views/publications.html",
 			controller: "PublicationsCtrl",
 			resolve: {
 				auth: ["authentic", function(authentic) {
@@ -44,7 +44,7 @@ mod.config(
 			}
 		})
 		.when("/webinars", {
-			templateUrl: "/views/webinars.html",
+			templateUrl: "views/webinars.html",
 			controller: "WebinarsCtrl",
 			resolve: {
 				auth: ["authentic", function(authentic) {
@@ -53,7 +53,7 @@ mod.config(
 			}
 		})
 		.when("/centers", {
-			templateUrl: "/views/centers.html",
+			templateUrl: "views/centers.html",
 			controller: "CentersCtrl",
 			resolve: {
 				auth: ["authentic", function(authentic) {
@@ -62,7 +62,7 @@ mod.config(
 			}
 		})
 		.when("/docs/:entry/:article?", {
-			templateUrl: "/views/docs.html",
+			templateUrl: "views/docs.html",
 			controller: "DocsCtrl",
 			resolve: {
 				auth: ["authentic", function(authentic) {
@@ -71,7 +71,7 @@ mod.config(
 			}
 		})
 		.when("/docs", {
-			templateUrl: "/views/DocsIndex.html",
+			templateUrl: "views/DocsIndex.html",
 			controller: "DocsIndexCtrl",
 			resolve: {
 				// authentic service dependency,
@@ -84,7 +84,7 @@ mod.config(
 		})
 		.when("/tools", {
 			// templateUrl: "views/tools.html",
-			templateUrl: "/libs/lincs-direct-access-tools/views/direct-access-tools.html",
+			templateUrl: "libs/lincs-direct-access-tools/views/direct-access-tools.html",
 			controller: "DirectAccessToolsCtrl",
 			resolve: {
 				auth: ["authentic", function(authentic) {
@@ -93,7 +93,7 @@ mod.config(
 			}
 		})
 		.when("/concierge", {
-			templateUrl: "/views/concierge.html",
+			templateUrl: "views/concierge.html",
 			resolve: {
 				auth: ["authentic", function(authentic) {
 					return authentic.isLoggedIn();
@@ -110,7 +110,7 @@ mod.config(
 			}
 		})
 		.when("/news", {
-			templateUrl: "/views/news.html",
+			templateUrl: "views/news.html",
 			resolve: {
 				auth: ["authentic", function(authentic) {
 					return authentic.isLoggedIn();

@@ -26,7 +26,7 @@ mod.controller("PublicationsCtrl", ["$scope", "$http", function($scope, $http) {
 	// Init function loading the publication data
 	// n specifies the number of publications to load.
 	$scope.init = function(n) {
-		var url_query = "/api/publications?";
+		var url_query = "api/publications?";
 
 		// Modfiry with the number
 		if (n !== undefined) {

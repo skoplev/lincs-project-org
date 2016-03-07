@@ -6,7 +6,7 @@ The LINCS program is implemented in two parts: pilot phase 1 (FY 2010) and the c
 
 Building on a successful pilot project, the National Institutes of Health has awarded grants to six research institutions to establish centers, collectively called the Data and Signature Generation Centers. The National Human Genome Research Institute (NHGRI) and the National Heart, Lung, and Blood Institute (NHLBI), both part of NIH, administer the program on behalf of the [NIH Common Fund](https://commonfund.nih.gov/).
 
-The [LINCS Data and Signature Generation Centers](/centers) are six research centers focused on high-throughput experiments that examine the changes that occur when a variety of different cell lines are exposed to perturbations.
+The [LINCS Data and Signature Generation Centers](centers) are six research centers focused on high-throughput experiments that examine the changes that occur when a variety of different cell lines are exposed to perturbations.
 
 ## BD2K-LINCS Data Coordination and Integration Center
 

@@ -147,10 +147,7 @@ a.primary-link {
 }
 
 a.primary-link:hover {
-	// color: yellow;
 	color: orange;
-	// color: rgb(233, 127, 0);
-	// color: rgb(229, 207, 100);
 }
 
 div.icon {
@@ -163,29 +160,30 @@ div.icon {
 	height: 20px;
 }
 
+/* url are relative to css file path */
 div.icon.assay-development {
-	background-image: url(/icons/assays.svg);
+	background-image: url(../icons/assays.svg);
 }
 div.icon.data-analysis {
-	background-image: url(/icons/analysis.svg);
+	background-image: url(../icons/analysis.svg);
 }
 div.icon.data-generation {
-	background-image: url(/icons/microscope.svg);
+	background-image: url(../icons/microscope.svg);
 }
 div.icon.data-integration {
-	background-image: url(/icons/integration.svg);
+	background-image: url(../icons/integration.svg);
 }
 div.icon.data-standards {
-	background-image: url(/icons/ruler.svg);
+	background-image: url(../icons/ruler.svg);
 }
 div.icon.signature-generation {
-	background-image: url(/icons/stack.svg);
+	background-image: url(../icons/stack.svg);
 }
 div.icon.software-development {
-	background-image: url(/icons/code.svg);
+	background-image: url(../icons/code.svg);
 }
 div.icon.review {
-	background-image: url(/icons/text.svg);
+	background-image: url(../icons/text.svg);
 }
 
 .center-logo {
@@ -221,7 +219,7 @@ button.close-div {
 
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-image: url(/icons/hide-vertical.svg);
+	background-image: url(icons/hide-vertical.svg);
 }
 
 

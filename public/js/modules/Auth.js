@@ -56,7 +56,7 @@ mod.provider("authentic", function () {
 				var deferred = $q.defer();
 
 				// Request authentication status through GET request
-				$http.get("/auth")
+				$http.get("auth")
 					.success(function(logged_on) {
 						if (logged_on) {
 							// the user is authorized
@@ -65,7 +65,7 @@ mod.provider("authentic", function () {
 							// unauthorized
 							console.log("must log in");
 							deferred.reject();
-							$location.url("/login");  // redirect to login page
+							$location.url("login");  // redirect to login page
 						}
 					});
 				// console.log(deferred.promise);
@@ -77,7 +77,7 @@ mod.provider("authentic", function () {
 				var deferred = $q.defer();  // contais promise to be returned
 
 				// login request
-				$http.post("/auth/login", {email: email, password: password})
+				$http.post("auth/login", {email: email, password: password})
 					.success(function(data, status) {
 
 						if (status === 200) {

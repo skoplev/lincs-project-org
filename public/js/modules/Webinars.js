@@ -5,7 +5,7 @@ mod.controller("WebinarsCtrl", ["$scope", "$http", "$sce", "$timeout", function(
 
 	$scope.id_counter = 0;
 
-	$http.get("/content/webinars.json")
+	$http.get("content/webinars.json")
 		.success(function(data) {
 			// Trust abstracts as html.
 			for (var i in data.past) {

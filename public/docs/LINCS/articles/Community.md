@@ -1,4 +1,4 @@
-Access to and utilization of LINCS resources by the biomedical and data science research communities is one of the major aims of the LINCS program. The [BD2K-LINCS Data Coordination and Integration Center](http://lincs-dcic.org/#/), together with the [data and signature generation centers](/centers), use approaches like webinars, courses, training seminars, challenges, workshops and symposia to create an active LINCS community.
+Access to and utilization of LINCS resources by the biomedical and data science research communities is one of the major aims of the LINCS program. The [BD2K-LINCS Data Coordination and Integration Center](http://lincs-dcic.org/#/), together with the [data and signature generation centers](centers), use approaches like webinars, courses, training seminars, challenges, workshops and symposia to create an active LINCS community.
 
 # Funding Opportunities
 
@@ -70,7 +70,7 @@ The goals of Day 2 were to (i) highlight joint activities of LINCS Data and Sign
 <div class="clearfix"></div>
 # Webinars
 
-For an overview of current and past webinars go to [webinars](/webinars).
+For an overview of current and past webinars go to [webinars](webinars).
 
 ## LINCS Data Science Research (DSR) Webinars
 

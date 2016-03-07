@@ -1,6 +1,6 @@
 
 // module.exports 
-module.exports = function(app, passport) {
+module.exports = function(app, passport, app_name) {
 	var Todo = require("./models/todo");
 	var express = require("express");
 	var path = require("path");
@@ -25,6 +25,15 @@ module.exports = function(app, passport) {
 	// app.get("/download/:file_path(*)", function(request, response) {
 	// 	response.sendFile(path.join(__dirname, "../public", request.params.file_path));
 	// });
+
+	// Middleware hack for the /lincsprogram domain. TODO: change to express middleware.
+	var old_app = app;
+	app = express.Router();
+	app.use(function(request, response, next) {
+		next();
+	})
+	old_app.use("/" + app_name, app);
+
 
 	app.get("/signup", function(request, response) {
 		console.log(request.flash("signupMessage"));  // get flash message

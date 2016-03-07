@@ -26,8 +26,7 @@ mod.controller("DocsCtrl",
 		});
 	}
 
-	// $http.get("/api/docs/" + $routeParams.entry + "/articleDir")
-	$http.get("/api/docs/articleDir/" + $routeParams.entry)
+	$http.get("api/docs/articleDir/" + $routeParams.entry)
 		.success(function(data) {
 			$scope.entries = data;
 		})
@@ -66,9 +65,9 @@ mod.controller("DocsCtrl",
 	$scope.loadContent = function(mdfile) {
 		var api_request = "";
 		if (mdfile === "index.md") {
-			api_request = "/api/parsemd" + $scope.base_path + "/index.md";
+			api_request = "api/parsemd" + $scope.base_path + "/index.md";
 		} else {
-			api_request = "/api/parsemd" + $scope.base_path + "/articles/" + mdfile;
+			api_request = "api/parsemd" + $scope.base_path + "/articles/" + mdfile;
 		}
 
 		// $http.get($scope.base_path + "/articles/" + $scope.mdfile)

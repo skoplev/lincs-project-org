@@ -12,7 +12,7 @@ mod.controller("NewsCtrl", ["$scope", "$http", function($scope, $http) {
 		$scope.type = type;
 		$scope.n = n;
 
-		var query = "/api/articles?";
+		var query = "api/articles?";
 		if (type)
 			query += "type=" + type;
 

@@ -5,7 +5,7 @@ mod.controller("CentersCtrl", ["$scope", "$http", function($scope, $http) {
 	// Load center data
 	$scope.centers = [];
 
-	$http.get("/api/centers")
+	$http.get("api/centers")
 		.success(function(data) {
 			$scope.centers = data;
 		})
