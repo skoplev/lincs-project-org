@@ -13,15 +13,16 @@
 		"express-session": "latest",
 		"cookie-parser": "latest",
 		"mongoose": "4.4.5",
+		"mockgoose": "latest",
 		"body-parser": "1.15.0",
 		"validator": "5.0.0",
 		"feedparser": "1.1.4",
 		"meta-marked": "*",
-		// "marked-toc": "*",
 		"markdown-toc": "*",
 		"passport": "0.3.2",
 		"passport-local": "latest",
 		"bcrypt-nodejs": "latest",
-		"connect-flash": "latest"
+		"connect-flash": "latest",
+		"request": "latest"
 	}
 }

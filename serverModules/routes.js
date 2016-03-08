@@ -26,7 +26,7 @@ module.exports = function(app, passport, app_name) {
 	// 	response.sendFile(path.join(__dirname, "../public", request.params.file_path));
 	// });
 
-	// Middleware hack for the /lincsprogram domain. TODO: change to express middleware.
+	// Middleware for the /lincsprogram domain.
 	var old_app = app;
 	app = express.Router();
 	app.use(function(request, response, next) {
@@ -94,7 +94,6 @@ module.exports = function(app, passport, app_name) {
 
 			if (!user) {
 				// not correct
-				// console.log(message);
 				return response.status(400).send(message);
 			};
 

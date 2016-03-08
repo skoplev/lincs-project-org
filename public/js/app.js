@@ -19,8 +19,6 @@ var app = angular.module("LincsApp", [
 	"ngtweet",
 	// "angular-clipboard",
 	"LincsDirectAccessTools",
-	"Concierge",
+	"Concierge"
 	// "ngFlash",  // flash messages
-	"Docs"  // documentation page
 ]);
-

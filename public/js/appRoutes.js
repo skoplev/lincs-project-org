@@ -71,7 +71,7 @@ mod.config(
 			}
 		})
 		.when("/docs", {
-			templateUrl: "views/DocsIndex.html",
+			templateUrl: "views/docsIndex.html",
 			controller: "DocsIndexCtrl",
 			resolve: {
 				// authentic service dependency,

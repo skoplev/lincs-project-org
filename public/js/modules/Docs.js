@@ -3,12 +3,12 @@ var mod = angular.module("Docs", []);
 mod.controller("DocsCtrl",
 	["$scope", "$http", "$sce", "$routeParams", "$location", "$anchorScroll", "$timeout", "$compile", "$window",
 	function($scope, $http, $sce, $routeParams, $location, $anchorScroll, $timeout, $compile, $window) {
-	$scope.site_url = "localhost:8000";
+	$scope.site_url = "amp.pharm.mssm.edu/lincsprogram";
 
 	$scope.title = $routeParams.entry;
 
 	$scope.entries = [];  // list of docs entries, Markdown file names
-	$scope.base_path = "/docs/" + $routeParams.entry;
+	$scope.base_path = "docs/" + $routeParams.entry;
 
 	$scope.documentation = "";  // current documentation, loaded and parsed dynamically
 	$scope.mdfile = "index.md";  // currently selected .md file
@@ -65,9 +65,9 @@ mod.controller("DocsCtrl",
 	$scope.loadContent = function(mdfile) {
 		var api_request = "";
 		if (mdfile === "index.md") {
-			api_request = "api/parsemd" + $scope.base_path + "/index.md";
+			api_request = "api/parsemd/" + $scope.base_path + "/index.md";
 		} else {
-			api_request = "api/parsemd" + $scope.base_path + "/articles/" + mdfile;
+			api_request = "api/parsemd/" + $scope.base_path + "/articles/" + mdfile;
 		}
 
 		// $http.get($scope.base_path + "/articles/" + $scope.mdfile)
@@ -119,9 +119,9 @@ mod.controller("DocsCtrl",
 
 				// Update the main edit button link
 				if (mdfile === "index.md") {
-					$scope.setEditButtonHref("https://github.com/skoplev/lincs-project-org/edit/master/public" + $scope.base_path + "/index.md");
+					$scope.setEditButtonHref("https://github.com/skoplev/lincs-project-org/edit/master/public/" + $scope.base_path + "/index.md");
 				} else {
-					$scope.setEditButtonHref("https://github.com/skoplev/lincs-project-org/edit/master/public" + $scope.base_path + "/articles/" + mdfile);
+					$scope.setEditButtonHref("https://github.com/skoplev/lincs-project-org/edit/master/public/" + $scope.base_path + "/articles/" + mdfile);
 				}
 
 				// Update title callback functions that spawns a share button tho get the hashed url for a header.
@@ -144,7 +144,7 @@ mod.controller("DocsCtrl",
 								var id = $(this).attr("id");
 
 								// reference url of section
-								var url = $scope.site_url + $scope.base_path + "/" + mdfile.split(".")[0] + "#" + id;
+								var url = $scope.site_url + "/" + $scope.base_path + "/" + mdfile.split(".")[0] + "#" + id;
 
 								// create new share button on entered element
 								var share_button_html = "<a id='share-button' class='btn btn-default pull-right glyphicon glyphicon-share bs-popover' data-content='" + url + "' data-trigger='click' data-placement='bottom'>url</a>";
@@ -222,9 +222,6 @@ mod.controller("DocsCtrl",
 	// toc is a table of content object.
 	// id is the id for the navigation target under which to create the subnav (also the filename of the associated .md file.)
 	$scope.openSubnavigation = function(id, toc) {
-		// console.log(toc.json);
-		// console.log(toc.json[14]);
-		// console.log(id);
 		// close previous subnavigation
 		$("#subnav").remove();
 

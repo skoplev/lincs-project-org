@@ -7,7 +7,6 @@ mod.controller("DocsIndexCtrl", ["$scope", "$http", function($scope, $http) {
 	$http.get("content/docs.json")
 		.success(function(data) {
 			$scope.docs = data;
-			// console.log(data);
 		})
 		.error(function(data) {
 			console.log(data);
