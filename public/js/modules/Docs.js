@@ -78,10 +78,9 @@ mod.controller("DocsCtrl",
 				$scope.documentation = $sce.trustAsHtml(data.html);
 				// update url without refresh unless at root
 				if (mdfile !== "index.md") {
-					$location.update_path($scope.base_path + "/" + mdfile.split(".")[0]);
+					$location.update_path("/" + $scope.base_path + "/" + mdfile.split(".")[0]);
 				} else {
-					$location.update_path($scope.base_path);
-					// $location.setFocus(); 
+					$location.update_path("/" + $scope.base_path);
 				}
 
 				// Handle url requests with hash section referencing.
@@ -360,33 +359,18 @@ mod.controller("DocsCtrl",
 		}
 	};
 
-	// $scope.gotoHash = function() {
-	// 	if ($location.hash()) {
-	// 		var old = $location.hash();
-	// 		$anchorScroll();
-	// 		$location.hash(old);
-	// 	}
-	// };
-
 	$scope.gotoAnchor = function(anchor) {
-		console.log("gotoAnchor()", anchor);
-		// if ($location.hash()) {
-			// var old = $location.hash();
-			// console.log("anchor scroll: ", $location.hash());
-			// console.log("anchor scroll: ", $location.hash);
-			// console.log(old);
-			// $anchorScroll("data-standards");
-			// $location.hash(old);
+		console.log("gotoAnchor()");
+		$location.hash(anchor);
+		$anchorScroll();
+		$location.hash("");
 
-			$location.hash(anchor);
-			$anchorScroll();
-			$location.hash("");
-
-			// update focus
-			$scope.setFocus(anchor);
+		// update focus
+		$scope.setFocus(anchor);
 	};
 
 	$scope.resetUrl = function() {
+		console.log("resetUrl()");
 		// resetting url
 		$location.update_path($scope.base_path, true);  // true: remember when going back, from angular-location-update
 		$location.hash([]);  // remove hash from url
