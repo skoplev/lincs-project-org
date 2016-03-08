@@ -89,15 +89,15 @@ div.placard-text {
 	margin-left: auto;
 }
 
-img.headline-img {
-	// width: 100%;
-	// max-width: 400px;
+/* fixed table layout for single column tables on the landing page */
+table.fixed {
+	table-layout: fixed;
+}
 
-	max-width: 100%;
+img.headline-img {
 	max-height: 100px;
-	// max-width: 100%;
-	// max-height: 200px;
-	// max-width:
+	max-width: 100%;
+	// width: 100%;
 }
 
 img.icon {

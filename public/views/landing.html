@@ -38,7 +38,8 @@
 							<a href="news"><h3 class="panel-title">News</h3></a>
 						</div>
 
-						<table class="table">
+						<!-- The fixed class allows single column tables images to have both width:100% and max-height: 100px properties in Firefox -->
+						<table class="table fixed">
 							<tr ng-repeat="article in articles" >
 								<td headline data="article"></td>
 							</tr>
@@ -53,7 +54,7 @@
 							<a href="news"><h3 class="panel-title">Data and Tools Releases</h3></a>
 						</div>
 
-						<table class="table">
+						<table class="table fixed" style="">
 							<tr ng-repeat="article in articles" >
 								<td headline data="article"></td>
 							</tr>
@@ -69,7 +70,7 @@
 							<a href="news"><h3 class="panel-title">Events</h3></a>
 						</div>
 
-						<table class="table">
+						<table class="table fixed">
 							<tr ng-repeat="article in articles" >
 								<td headline data="article"></td>
 							</tr>
