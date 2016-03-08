@@ -15,6 +15,7 @@ mod.controller("DocsCtrl",
 
 	$scope.focus = {id: null};  // the current focus of the reader. Based on html ids of sections and corresponding ids in the nav bar.
 
+	$scope.scrollHandler = function() {};  // the scroll callback function
 
 	// Sidebar dynamic positioning, TODO: it currently breaks on resize
 	if ($(window).width() > 768) {
@@ -40,7 +41,7 @@ mod.controller("DocsCtrl",
 
 	// Changes the focus of the navigation bar
 	$scope.setFocus = function(new_focus) {
-		// test if the suggested focus can be found
+		// test if the suggested focus can be found in sidebar
 		if ($("#sidebar #nav-" + new_focus).length === 0) {
 			console.warn("setFocus() called with invalid id: ", new_focus);
 			return;
@@ -109,7 +110,6 @@ mod.controller("DocsCtrl",
 					})
 
 					// Set the resize behaviour
-
 					$(window).resize(function() {
 						$scope.updateScrollSpy();
 					})
@@ -318,9 +318,12 @@ mod.controller("DocsCtrl",
 		});
 		var heights_arr = $.makeArray(heights);
 
-		// Scroll callback function
-		$(window).scroll(function() {
+		// Remove previous scroll callback stored in $scope.scrollHandler.
+		// Cleans up the scroll callbacks when navigating in a particular docs entry.
+		$(window).off("scroll", $scope.scrollHandler);
 
+		// Update the scroll handler with closure on the all_ids, heights, heights_arr
+		$scope.scrollHandler = function() {
 			// find scroll position on page
 			var top = $(this).scrollTop();
 
@@ -348,7 +351,10 @@ mod.controller("DocsCtrl",
 			if (new_focus !== undefined && $scope.focus.id !== new_focus) {
 				$scope.setFocus(new_focus);
 			}
-		});
+		}
+
+		// Add the new scroll handler callback 
+		$(window).on("scroll", $scope.scrollHandler);
 	};
 
 	// Initialization called, specified using data-ng-init="init()"
@@ -359,8 +365,15 @@ mod.controller("DocsCtrl",
 		}
 	};
 
+	// Cleaup called after docs is destroyed, which for example happens on navigating to another page on the site.
+	$scope.$on("$destroy", function() {
+		// console.log("destroy cleanup");
+
+		// Delete scroll handler registered with JQuery.
+		$(window).off("scroll", $scope.scrollHandler);
+	});
+
 	$scope.gotoAnchor = function(anchor) {
-		console.log("gotoAnchor()");
 		$location.hash(anchor);
 		$anchorScroll();
 		$location.hash("");
@@ -370,7 +383,6 @@ mod.controller("DocsCtrl",
 	};
 
 	$scope.resetUrl = function() {
-		console.log("resetUrl()");
 		// resetting url
 		$location.update_path($scope.base_path, true);  // true: remember when going back, from angular-location-update
 		$location.hash([]);  // remove hash from url
