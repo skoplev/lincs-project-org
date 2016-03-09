@@ -1,23 +1,20 @@
 // Documentation module.
 var mod = angular.module("Docs", []);
 mod.controller("DocsCtrl",
-	["$scope", "$http", "$sce", "$routeParams", "$location", "$anchorScroll", "$timeout", "$compile", "$window",
-	function($scope, $http, $sce, $routeParams, $location, $anchorScroll, $timeout, $compile, $window) {
+	["$scope", "$http", "$sce", "$routeParams", "$location", "$anchorScroll", "$timeout", "$compile", "$window", "$route",
+	function($scope, $http, $sce, $routeParams, $location, $anchorScroll, $timeout, $compile, $window, $route) {
+
 	$scope.site_url = "amp.pharm.mssm.edu/lincsprogram";
-
 	$scope.title = $routeParams.entry;
-
-	$scope.entries = [];  // list of docs entries, Markdown file names
+	$scope.nav_entries = [];  // list of docs entries, Markdown file names. If empty indicates that nav is not loaded
 	$scope.base_path = "docs/" + $routeParams.entry;
-
 	$scope.documentation = "";  // current documentation, loaded and parsed dynamically
 	$scope.mdfile = "index.md";  // currently selected .md file
-
 	$scope.focus = {id: null};  // the current focus of the reader. Based on html ids of sections and corresponding ids in the nav bar.
 
 	$scope.scrollHandler = function() {};  // the scroll callback function
 
-	// Sidebar dynamic positioning, TODO: it currently breaks on resize
+	// Sidebar dynamic positioning
 	if ($(window).width() > 768) {
 		// not small
 		$('#sidebar').affix({
@@ -27,38 +24,38 @@ mod.controller("DocsCtrl",
 		});
 	}
 
-	$http.get("api/docs/articleDir/" + $routeParams.entry)
-		.success(function(data) {
-			$scope.entries = data;
-		})
-		.error(function(data) {
-			console.log(data);
-		});
+	// Particular entry specified in url
+	if (typeof $routeParams.article !== "undefined") {
+		// $scope.setContentFile($routeParams.article + ".md");
+		$scope.mdfile = $routeParams.article + ".md";
+	}
 
-	$scope.setContentFile = function(mdfile) {
-		$scope.mdfile = mdfile;
-	};
+	// FUNCTIONS
+	// ------------------------------------------------------------
 
-	// Changes the focus of the navigation bar
-	$scope.setFocus = function(new_focus) {
-		// test if the suggested focus can be found in sidebar
-		if ($("#sidebar #nav-" + new_focus).length === 0) {
-			console.warn("setFocus() called with invalid id: ", new_focus);
-			return;
-		}
+	$scope.init = function(mdfile) {
+		// Get the list of all .md file entries in the documentation.
+		$http.get("api/docs/articleDir/" + $routeParams.entry)
+			.success(function(data) {
 
-		// Set the focus variable 
-		$scope.focus.id = new_focus;
+				// Timeout for debugging timing-related issues
+				// $timeout(function() {
+				$scope.nav_entries = data;
+				// }, 100);
 
-		// Remove previously selected
-		$("#sidebar li.selected").removeClass("selected");
+				// Load content of file and process
+				$scope.loadContent(mdfile);
+			})
+			.error(function(data) {
+				console.log(data);
+			});
+	}
 
-		// Add selected class to id
-		$("#sidebar #nav-" + new_focus).addClass("selected");
-
-		// Add selected class to all list parents of found focus
-		$("#sidebar #nav-" + new_focus).parents("li").addClass("selected");
-	};
+	// Cleaup called after docs is destroyed, which for example happens on navigating to another page on the site.
+	$scope.$on("$destroy", function() {
+		// Delete scroll handler registered with JQuery.
+		$(window).off("scroll", $scope.scrollHandler);
+	});
 
 	// Loads content in mdfile.
 	// index.md treated as a special case.
@@ -71,12 +68,12 @@ mod.controller("DocsCtrl",
 			api_request = "api/parsemd/" + $scope.base_path + "/articles/" + mdfile;
 		}
 
-		// $http.get($scope.base_path + "/articles/" + $scope.mdfile)
 		// Get .md file content from server and render content in the body of the documentation.
 		$http.get(api_request)
 			.success(function(data) {
-				// update documentation html variable
+				// update documentation html variable which updates the main content.
 				$scope.documentation = $sce.trustAsHtml(data.html);
+
 				// update url without refresh unless at root
 				if (mdfile !== "index.md") {
 					$location.update_path("/" + $scope.base_path + "/" + mdfile.split(".")[0]);
@@ -84,92 +81,79 @@ mod.controller("DocsCtrl",
 					$location.update_path("/" + $scope.base_path);
 				}
 
-				// Handle url requests with hash section referencing.
-				// Go to hash, timeout places the anchorscroll in the execution queue after the update of the view (due to documentaion beeing bound to the main view).
-				if ($location.hash()) {
-					$timeout(function() {
-						$anchorScroll();
-					}, 0);
+				// Update document sub navigation element based on toc (table of content) data.
+				// First detect whether main navigation is loaded.
+				if ($scope.nav_entries.length > 0) {
+					// main navigation is already loaded
+					openSubnavigation(mdfile.split(".")[0], data.toc);
+
+					if ($location.hash()) {
+						setFocus($location.hash());
+					} else {
+						setFocus(mdfile.split(".")[0]);
+					}
+
 				} else {
-					$window.scrollTo(0, 0);  // to top
+					// main nav is not yet loaded, setup callback function for when main nav loads.
+					$scope.$watch("nav_entries", function() {
+						// $timeout() ensures that the following is called after the rendering of the navigation elements, which are used by
+						$timeout(function() {
+							openSubnavigation(mdfile.split(".")[0], data.toc);
+
+							if ($location.hash()) {
+								setFocus($location.hash());
+							} else {
+								setFocus(mdfile.split(".")[0]);
+							}
+						}, 0);
+					});
 				}
 
-				// Update document sub navigation tree based on the table of content data.
-				$scope.openSubnavigation(mdfile.split(".")[0], data.toc);
-
-				// Update scrolling behaviour after compilation
-				// $timeout ensures that updateScrollSpy() is executed after the DOM has been updated.
+				// Update scrolling (scollspy) behaviour after rendering of main document content.
 				$timeout(function() {
+					updateScrollSpy();
 
-					$scope.updateScrollSpy();
-					$scope.setFocus(mdfile.split(".")[0]);
-
-					// Update scroll spy on image load to account for final size of images and hence of id positions on the page.
+					// Update scroll spy on image load to account for final size of images and hence
+					// of id positions on the page.
 					$("#documentation").find("img").one("load", function() {
-						$scope.updateScrollSpy();
-					})
+						updateScrollSpy();
 
-					// Set the resize behaviour
+						// anchor scroll from hash entries on image rendering
+						if ($location.hash()) {
+							$anchorScroll();
+						}
+					});
+
+					// Update scrollspy on resize to account for new header positions.
 					$(window).resize(function() {
 						$scope.updateScrollSpy();
 					})
 
 				}, 0);
 
-				// Update the main edit button link
-				if (mdfile === "index.md") {
-					$scope.setEditButtonHref("https://github.com/skoplev/lincs-project-org/edit/master/public/" + $scope.base_path + "/index.md");
+				// Handle url requests containing hash for section referencing.
+				if ($location.hash()) {
+					// Go to hash, timeout places the anchorscroll in the execution queue
+					// after the update of the main view.
+					$timeout(function() {
+						$anchorScroll();  // goto hash
+						setFocus($location.hash());
+					}, 0);
 				} else {
-					$scope.setEditButtonHref("https://github.com/skoplev/lincs-project-org/edit/master/public/" + $scope.base_path + "/articles/" + mdfile);
+					$window.scrollTo(0, 0);  // to top
 				}
 
-				// Update title callback functions that spawns a share button tho get the hashed url for a header.
+				// Update the main edit button link
+				updateEditButton(mdfile);
+
+				// Update title callback functions that spawns a share button to get the hashed url for a header.
 				// The timeout call ensures that the callback configuration is only initiated after the content
 				// is rendered.
 				$timeout(function() {
-					// select all elements with ids that are headers
-					$("#documentation :header")
-						.on("mouseenter", function(event) {
-							// test if the entered element does not contain a share button
-							if (!$(this).find("#share-button").length) {
-								// remove previous share button (singleton).
-								$("#documentation #share-button").fadeOut(400, function() {
-									$(this).remove();
-								});
-								// ensure cleanup of hanging tooltips
-								$("#documentation div.popover.ng-scope").remove();
+					makeShareButtons(mdfile);
 
-								// get id 
-								var id = $(this).attr("id");
-
-								// reference url of section
-								var url = $scope.site_url + "/" + $scope.base_path + "/" + mdfile.split(".")[0] + "#" + id;
-
-								// create new share button on entered element
-								var share_button_html = "<a id='share-button' class='btn btn-default pull-right glyphicon glyphicon-share bs-popover' data-content='" + url + "' data-trigger='click' data-placement='bottom'>url</a>";
-								var share_button = $compile(share_button_html)($scope);  // compile for Angular hover
-								$(event.toElement).append(share_button);
-							}
-						});
-				}, 0);
-
-				// Fix download links by adding target="_self" and prepending with file path.
-				$timeout(function() {
-					$("#documentation").find("a").map(function() {
-						// context of each <a> on loaded documentation view
-						// Detect if <a> links to a file for download and add target="_self" if so
-						// get the end string of the href url (separated by "/")
-						try {
-							var href_rear = ($(this).attr("href").split("/").pop());
-							if (isFileName(href_rear)) {
-								// set target specifying download on following the link
-								$(this).attr("target", "_self");
-							}
-						}
-						catch(err) {
-							console.warn(err);
-						}
-					});
+					// Fix download links by adding target="_self" and prepending with file path.
+					fixDownloadLinks();
 				}, 0);
 			})
 			.error(function(data) {
@@ -177,10 +161,109 @@ mod.controller("DocsCtrl",
 			});
 	};
 
+	$scope.gotoAnchor = function(anchor) {
+		// console.log("hash: ", $location.hash());
+		// console.log("gotoAnchor: ", anchor);
+
+
+		// if ($location.hash()) {
+		// 	if ($location.hash() === anchor) {
+		// 		// same as anchor
+		// 		$anchorScroll();
+		// 	} else  {
+		// 		console.log("different")
+		// 		// different request
+		// 		location.hash($location.hash())
+		// 		$anchorScroll();
+		// 		// $location.hash(anchor);
+		// 		$location.hash("");
+		// 	}
+		// } else {
+		// 	// no hash
+		// 	$location.hash(anchor);
+		// 	$anchorScroll();
+		// 	$location.hash("");
+		// }
+
+
+		$location.hash(anchor);
+		$anchorScroll();
+		$location.hash([]);
+
+
+		// $location.hash(anchor);
+		// $anchorScroll();
+		// $location.hash("");
+
+
+		// update focus
+		setFocus(anchor);
+	};
+
+	$scope.resetUrl = function() {
+		// resetting url
+		console.log("resetting url");
+		$location.update_path($scope.base_path, true);  // true: remember when going back, from angular-location-update
+		$location.hash([]);  // remove hash from url
+	};
+
 	// Set the edit button reference
-	$scope.setEditButtonHref = function(href) {
+	setEditButtonHref = function(href) {
 		$("#edit-button").attr("href", href);
 	};
+
+	updateEditButton = function(mdfile) {
+		if (mdfile === "index.md") {
+			setEditButtonHref("https://github.com/skoplev/lincs-project-org/edit/master/public/" + $scope.base_path + "/index.md");
+		} else {
+			setEditButtonHref("https://github.com/skoplev/lincs-project-org/edit/master/public/" + $scope.base_path + "/articles/" + mdfile);
+		}
+	}
+
+	makeShareButtons = function(mdfile) {
+		// select all elements with ids that are headers
+		$("#documentation :header")
+			.on("mouseenter", function(event) {
+				// test if the entered element does not contain a share button
+				if (!$(this).find("#share-button").length) {
+					// remove previous share button (singleton).
+					$("#documentation #share-button").fadeOut(400, function() {
+						$(this).remove();
+					});
+					// ensure cleanup of hanging tooltips
+					$("#documentation div.popover.ng-scope").remove();
+
+					// get id 
+					var id = $(this).attr("id");
+
+					// reference url of section
+					var url = $scope.site_url + "/" + $scope.base_path + "/" + mdfile.split(".")[0] + "#" + id;
+
+					// create new share button on entered element
+					var share_button_html = "<a id='share-button' class='btn btn-default pull-right glyphicon glyphicon-share bs-popover' data-content='" + url + "' data-trigger='click' data-placement='bottom'>url</a>";
+					var share_button = $compile(share_button_html)($scope);  // compile for Angular hover
+					$(event.toElement).append(share_button);
+				}
+			});
+	}
+
+	fixDownloadLinks = function() {
+		$("#documentation").find("a").map(function() {
+			// context of each <a> on loaded documentation view
+			// Detect if <a> links to a file for download and add target="_self" if so
+			// get the end string of the href url (separated by "/")
+			try {
+				var href_rear = ($(this).attr("href").split("/").pop());
+				if (isFileName(href_rear)) {
+					// set target specifying download on following the link
+					$(this).attr("target", "_self");
+				}
+			}
+			catch(err) {
+				console.warn(err);
+			}
+		});
+	}
 
 	// Function for generating a HTML string for subnavigation with an anchor call.
 	// String must be compiled in the scope.
@@ -220,7 +303,7 @@ mod.controller("DocsCtrl",
 	// Deletes previous subnavigation elements.
 	// toc is a table of content object.
 	// id is the id for the navigation target under which to create the subnav (also the filename of the associated .md file.)
-	$scope.openSubnavigation = function(id, toc) {
+	openSubnavigation = function(id, toc) {
 		// close previous subnavigation
 		$("#subnav").remove();
 
@@ -228,6 +311,12 @@ mod.controller("DocsCtrl",
 		// ---------------------------------------------------------------
 		// find navigation id
 		var parent = $("#nav-" + id);  // find li nav parent
+
+		// Check if the navigation element was found
+		if (parent.length === 0) {
+			console.warn("Navigation target not found: ", id);
+		}
+
 		var current = parent;
 
 		var nav = [];
@@ -238,11 +327,6 @@ mod.controller("DocsCtrl",
 			.attr("id", "subnav")
 			.attr("class", "nav")
 			.appendTo(parent);
-		// console.log(nav_pointer);
-
-		// var current = $("#" + id);  // current li element
-		// var nav_parent = null;
-
 
 		// Loop through table of content data. Array with depth specified by elem.lvl
 		// The algorithm maintains a pointer to current subnav and parent subnav. It loops
@@ -294,8 +378,31 @@ mod.controller("DocsCtrl",
 		};
 	};
 
+	// Changes the focus of the navigation and subnavigation bar. The focus referes to the id
+	// which is extrapolated to "nav-<new_focus>" in the navbar.
+	setFocus = function(new_focus) {
+
+		// test if the suggested focus can be found in sidebar
+		if ($("#sidebar #nav-" + new_focus).length === 0) {
+			console.warn("setFocus() called with invalid id: ", new_focus);
+			return;
+		}
+
+		// Set the focus variable 
+		$scope.focus.id = new_focus;
+
+		// Remove previously selected
+		$("#sidebar li.selected").removeClass("selected");
+
+		// Add selected class to id
+		$("#sidebar #nav-" + new_focus).addClass("selected");
+
+		// Add selected class to all list parents of found focus
+		$("#sidebar #nav-" + new_focus).parents("li").addClass("selected");
+	};
+
 	// Updates the scroll callback function looking for the closest 
-	$scope.updateScrollSpy = function() {
+	updateScrollSpy = function() {
 		// var offset = 100;  // in pixels, the point from the top where the scroll point is considered
 		var offset = 20;
 
@@ -349,43 +456,12 @@ mod.controller("DocsCtrl",
 			// Update focus if it changed
 			var new_focus = all_id_vals[closest];
 			if (new_focus !== undefined && $scope.focus.id !== new_focus) {
-				$scope.setFocus(new_focus);
+				setFocus(new_focus);
 			}
 		}
 
 		// Add the new scroll handler callback 
 		$(window).on("scroll", $scope.scrollHandler);
-	};
-
-	// Initialization called, specified using data-ng-init="init()"
-	$scope.init = function() {
-		// if the optional article is provided as input.
-		if (typeof $routeParams.article !== "undefined") {
-			$scope.setContentFile($routeParams.article + ".md");
-		}
-	};
-
-	// Cleaup called after docs is destroyed, which for example happens on navigating to another page on the site.
-	$scope.$on("$destroy", function() {
-		// console.log("destroy cleanup");
-
-		// Delete scroll handler registered with JQuery.
-		$(window).off("scroll", $scope.scrollHandler);
-	});
-
-	$scope.gotoAnchor = function(anchor) {
-		$location.hash(anchor);
-		$anchorScroll();
-		$location.hash("");
-
-		// update focus
-		$scope.setFocus(anchor);
-	};
-
-	$scope.resetUrl = function() {
-		// resetting url
-		$location.update_path($scope.base_path, true);  // true: remember when going back, from angular-location-update
-		$location.hash([]);  // remove hash from url
 	};
 
 	// Gets last element of an array
