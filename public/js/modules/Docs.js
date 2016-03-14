@@ -1,8 +1,8 @@
 // Documentation module.
 var mod = angular.module("Docs", []);
 mod.controller("DocsCtrl",
-	["$scope", "$http", "$sce", "$routeParams", "$location", "$anchorScroll", "$timeout", "$compile", "$window", "$route",
-	function($scope, $http, $sce, $routeParams, $location, $anchorScroll, $timeout, $compile, $window, $route) {
+	["$scope", "$http", "$sce", "$routeParams", "$location", "$anchorScroll", "$timeout", "$compile", "$window",
+	function($scope, $http, $sce, $routeParams, $location, $anchorScroll, $timeout, $compile, $window) {
 
 	$scope.site_url = "amp.pharm.mssm.edu/lincsprogram";
 	$scope.title = $routeParams.entry;
@@ -126,7 +126,7 @@ mod.controller("DocsCtrl",
 
 					// Update scrollspy on resize to account for new header positions.
 					$(window).resize(function() {
-						$scope.updateScrollSpy();
+						updateScrollSpy();
 					})
 
 				}, 0);
@@ -162,39 +162,14 @@ mod.controller("DocsCtrl",
 	};
 
 	$scope.gotoAnchor = function(anchor) {
-		// console.log("hash: ", $location.hash());
-		// console.log("gotoAnchor: ", anchor);
-
-
-		// if ($location.hash()) {
-		// 	if ($location.hash() === anchor) {
-		// 		// same as anchor
-		// 		$anchorScroll();
-		// 	} else  {
-		// 		console.log("different")
-		// 		// different request
-		// 		location.hash($location.hash())
-		// 		$anchorScroll();
-		// 		// $location.hash(anchor);
-		// 		$location.hash("");
-		// 	}
-		// } else {
-		// 	// no hash
-		// 	$location.hash(anchor);
-		// 	$anchorScroll();
-		// 	$location.hash("");
-		// }
-
 
 		$location.hash(anchor);
 		$anchorScroll();
 		$location.hash([]);
 
-
 		// $location.hash(anchor);
 		// $anchorScroll();
 		// $location.hash("");
-
 
 		// update focus
 		setFocus(anchor);
@@ -202,7 +177,6 @@ mod.controller("DocsCtrl",
 
 	$scope.resetUrl = function() {
 		// resetting url
-		console.log("resetting url");
 		$location.update_path($scope.base_path, true);  // true: remember when going back, from angular-location-update
 		$location.hash([]);  // remove hash from url
 	};

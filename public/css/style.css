@@ -4,6 +4,7 @@ html,body {
 	width: 100%;
 	background-color: rgb(250,250,250);
 	position: relative;
+	font-family: Verdana, Helvetica;
 }
 
 /* default font size overwriting Bootstrap default */
@@ -13,6 +14,8 @@ html,body {
 
 body {
 	display: table;  /* required for responsibe fixed footer */
+	/*background-color: rgb(244,244,224);*/
+	/*background-color: rgb(241,241,226);*/
 }
 
 div.docs-page {
@@ -24,12 +27,44 @@ div.docs-page {
 	color: white;
 }
 
+/* Navbar */
+
+.navbar {
+	margin-bottom: 0px;
+}
+
+nav.navbar {
+	/*background-color: rgb(204, 204, 153);*/
+	background-color: rgb(241,241,226);
+	/*background-color: rgb(204,204,153);*/
+}
+
+div#navbar ul > li > a {
+	/*color: rgb(86, 112, 164);*/
+}
+
+div#navbar  a {
+	color: rgb(86, 112, 164);
+	font-weight: bold;
+}
+
+div#navbar > ul > li:hover > a {
+	color: black;
+}
+
+div#navbar > ul > li.dropdown.open > a {
+	/*background-color: rgb(204, 204, 153);*/
+	background-color: rgb(210, 210, 178);
+}
+
+
 /* resonsive fixed footer, adapted from https://gist.github.com/seyDoggy/e919a429b2459aedf509 */
 footer {
 	display: table-row;  /* required for responsive footer*/
 	height: 1px;  /* required for responsive footer */
 	background-color: rgb(246, 246, 246);
-	/*border-collapse: collapse;*/
+	/*background-color: rgb(43, 61, 98);*/
+	/*color: white;*/
 }
 
 div.panel.no-top-border {
@@ -50,9 +85,6 @@ footer div.container-fluid {
 	background-color: rgb(255, 247, 236);
 }
 
-.navbar {
-	margin-bottom: 0px;
-}
 
 /* For compact footer navigation links */
 ul.nav-list {
@@ -68,6 +100,17 @@ div.placard {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	position: relative;
+}
+
+div.logo-header {
+	/*background-color: rgb(95, 143, 195);*/
+	/*background-color: rgb(102, 154, 204);*/
+	/*background: -webkit-linear-gradient(rgb(103, 155, 203), rgb(164, 194, 223)); /* For Safari 5.1 to 6.0 */*/
+	/*background: -o-linear-gradient(rgb(103, 155, 203), rgb(164, 194, 223)); /* For Opera 11.1 to 12.0 */*/
+	/*background: -moz-linear-gradient(rgb(103, 155, 203), rgb(164, 194, 223)); /* For Firefox 3.6 to 15 */*/
+	/*background: linear-gradient(rgb(103, 155, 203), rgb(164, 194, 223)); /* Standard syntax */*/
+	z-index: 100;
+	background: url(../img/bkg_header_top.jpg) repeat-x left top;
 }
 
 div#banner {
@@ -97,7 +140,6 @@ table.fixed {
 img.headline-img {
 	max-height: 100px;
 	max-width: 100%;
-	// width: 100%;
 }
 
 img.icon {
@@ -128,7 +170,8 @@ img.contact-icon:hover {
 
 
 div.panel div.panel-heading {
-	background-color: white;
+	/*background-color: white;*/
+	background-color: rgb(241,241,226);
 }
 
 iframe {
