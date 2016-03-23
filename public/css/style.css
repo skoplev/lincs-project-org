@@ -113,6 +113,32 @@ div.logo-header {
 	background: url(../img/bkg_header_top.jpg) repeat-x left top;
 }
 
+a#logo {
+	background-image: url(../img/NIH_LINCS_logo.jpg);
+	/*opacity: 0.9;*/
+	width: 401px;
+	height: 107px;
+	/*border: solid;*/
+	/*background-color: red;*/
+	/*transition: background-color 2.0s ease-in-out;*/
+	/*-webkit-transition: -webkit-transform .8s ease-in-out;*/
+
+	-webkit-transition: background-color 1s ease-in-out;
+	-moz-transition: background-color 1s ease-in-out;
+	-o-transition: background-color 1s ease-in-out;
+	transition: background-color 1s ease-in-out;
+}
+
+div.logo-header div.popover {
+	outline: 0;
+}
+
+a#logo:hover {
+	/*background-color: yellow;*/
+	background-color: rgb(239, 239, 224);
+	background-blend-mode: multiply;
+}
+
 div#banner {
 	position: relative;
 }

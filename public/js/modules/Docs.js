@@ -19,7 +19,7 @@ mod.controller("DocsCtrl",
 		// not small
 		$('#sidebar').affix({
 		      offset: {
-		        top: 50
+		        top: 160
 		      }
 		});
 	}
