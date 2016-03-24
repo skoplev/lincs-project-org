@@ -12,7 +12,18 @@
 	</div>
 
 	<!-- [advanced_iframe securitykey="814946c6ee4628313a04c45b48a363d056e7c154" src="http://amp.pharm.mssm.edu/milestones/grid.html"] -->
-	<div class="panel panel-default">
-		<iframe src="http://amp.pharm.mssm.edu/milestones/grid.html" frameborder="0" height="1150px"></iframe>
+	<!-- <div class="panel panel-default"> -->
+		<!-- <iframe src="http://amp.pharm.mssm.edu/milestones/grid.html" frameborder="0" height="1150px"></iframe> -->
+	<!-- </div> -->
+
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div ng-include src="'libs/lincs-milestones/public/gridPartial.html'"></div>
+				</div>
+			</div>
+		</div>
 	</div>
+
 </div>

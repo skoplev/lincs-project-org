@@ -1,20 +1,22 @@
 {
-	"name": "lincs-projct",
-	"version": "1.0.0",
-	"dependencies": {
-		"bootstrap": "latest",
-		"angular": "latest",
-		"jquery": "latest",
-		"angular-route": "latest",
-		"angular-strap": "latest",
-		"angular-youtube-embed": "latest",
-		"marked": "latest",
-		"angular-location-update": "latest",
-		"lincs-direct-access-tools": "https://github.com/skoplev/lincs-direct-access-tools.git",
-		"meta-marked": "https://github.com/j201/meta-marked.git",
-		"js-yaml": "latest",
-		"ngtweet": "latest",
-		"ng-tags-input": "latest",
-		"angular-flash-alert": "latest"
-	}
+  "name": "lincs-projct",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap": "3.3.6",
+    "angular": "latest",
+    "jquery": "latest",
+    "angular-route": "latest",
+    "angular-strap": "latest",
+    "angular-youtube-embed": "latest",
+    "marked": "latest",
+    "angular-location-update": "latest",
+    "lincs-direct-access-tools": "https://github.com/skoplev/lincs-direct-access-tools.git",
+    "lincs-milestones": "https://github.com/skoplev/lincs-milestones.git",
+    "meta-marked": "https://github.com/j201/meta-marked.git",
+    "js-yaml": "latest",
+    "ngtweet": "latest",
+    "ng-tags-input": "latest",
+    "angular-flash-alert": "latest",
+    "d3": "latest"
+  }
 }
