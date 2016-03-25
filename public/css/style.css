@@ -58,11 +58,6 @@ div#navbar > ul > li.dropdown.open > a {
 }
 
 
-// Bootstrap nav-pills for tab-like navigation
-ul.nav-pills li:hover {
-	cursor: pointer;
-}
-
 /* resonsive fixed footer, adapted from https://gist.github.com/seyDoggy/e919a429b2459aedf509 */
 footer {
 	display: table-row;  /* required for responsive footer*/

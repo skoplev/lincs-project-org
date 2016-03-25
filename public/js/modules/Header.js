@@ -1,5 +1,5 @@
 // Header directive
-var mod = angular.module("Header", ["mgcrea.ngStrap.tooltip"]);
+var mod = angular.module("Header", ["mgcrea.ngStrap.tooltip", "mgcrea.ngStrap.popover"]);
 
 mod.directive("header", function() {
 	return {
